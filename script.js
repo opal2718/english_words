@@ -34,10 +34,14 @@ $(function() {
           var word = value[0];
           if(word == "") continue;
           words[i] = word;
-          var meaning = String(value[1]).replace("/", ",");
-          var sentence = String(value[2]).replace("/", ",");
-          var sentence_kor = String(value[3]).replace("/", ",");
-          var blank = String(value[4]).replace("/", ",");
+          for(var j = 1; j <= 4; j++){
+            value[j] = String(value[j]).replace("/", ",");
+            value[j] = value[j].replace("@", "'");
+          }
+          var meaning = value[1];
+          var sentence = value[2];
+          var sentence_kor = value[3];
+          var blank = value[4];
           var split_blank = blank.split("_");
 
           var totalHTML = ""
