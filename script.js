@@ -5,8 +5,27 @@ function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
-var mode = "quiz";
+var mode = $('#mode').val();
+function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
+  
+  var totalHTML = ""
+  if (mode == "Answer") {
+    totalHTML += ("<b>" + word + "</b>" + "<br>");
+    totalHTML += (meaning + "<br><br>");
+    totalHTML += (sentence + "<br>");
+    totalHTML += (sentence_kor + "<br><br><br>");
+  }
+  else if (mode == "Quiz_Korean") {
+    totalHTML += (split_blank[0] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blank[1] + "<br>");
+    totalHTML += (sentence_kor + "<br><br><br>");
+  }
+  else if (mode == "Quiz") {
+    totalHTML += (split_blank[0] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blank[1] + "<br><br><br>");
+  }
 
+
+  $('#textArea').html(totalHTML + "<br>");
+}
 
 $(function() {
   var fileName = "./504words_week1.csv";
@@ -15,8 +34,13 @@ $(function() {
   var parseName = "";	// 파일 이름 + 숫자 (var -> int 할거)
   var parse = 0; 		// var형 i를 정수로 변환시킨 값을 담을 변수
 
+  makePage(fileName, parseName);
 
+  
 
+});
+
+function makePage(fileName, parseName){
   for (var i = 1; i < 2; i++) {
     parse = parseInt(i);
     parseName = fileName;// + parse + '.csv';	// 파일 경로 + sequence + 확장자
@@ -45,28 +69,13 @@ $(function() {
           var blank = value[4];
           var split_blank = blank.split("_");
 
-          var totalHTML = ""
-          if (mode == "ans") {
-            totalHTML += ("<b>" + word + "</b>" + "<br>");
-            totalHTML += (meaning + "<br><br>");
-            totalHTML += (sentence + "<br>");
-            totalHTML += (sentence_kor + "<br><br><br>");
-          }
-          else if (mode == "quiz") {
-            totalHTML += (split_blank[0] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blank[1] + "<br>");
-            totalHTML += (sentence_kor + "<br><br><br>");
-          }
-
-
-          $('#textArea').append(totalHTML + "<br>");
-
+          changeHTML(word, meaning, sentence, sentence_kor, split_blank, i);
         }
 
       }
     });
   }
-
-});
+}
 
 function check(n) {
   if ($('#blank' + n).val() == words[n]) {
@@ -75,5 +84,8 @@ function check(n) {
   else {
     $('#blank' + n).css("color", "red");
   }
-  mode = $('#mode').val();
+  if(mode != $('#mode').val()){
+    mode = $('#mode').val();
+  }
+  makePage("./504words_week1.csv", "");
 }
