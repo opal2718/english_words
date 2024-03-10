@@ -35,7 +35,7 @@ $(function() {
           if(word == "") continue;
           words[i] = word;
           for(var j = 1; j <= 4; j++){
-            value[j] = String(value[j]).replace("/", ",");
+            value[j] = value[j].replace("/", ",");
             value[j] = value[j].replace("@", "'");
           }
           var meaning = value[1];
