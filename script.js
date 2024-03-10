@@ -52,7 +52,7 @@ $(function() {
             totalHTML += (sentence_kor + "<br><br><br>");
           }
           else if (mode == "quiz") {
-            totalHTML += (split_blank[0] + '<input onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blank[1] + "<br>");
+            totalHTML += (split_blank[0] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blank[1] + "<br>");
           }
 
 
