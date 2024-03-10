@@ -7,7 +7,7 @@ function shuffle(array) {
 
 
 $(function() {
-  var fileName = "./word1.csv";
+  var fileName = "./504words_week1.csv";
 
   // 파일 이름
   var parseName = "";	// 파일 이름 + 숫자 (var -> int 할거)
