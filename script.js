@@ -78,6 +78,9 @@ function makePage(fileName, parseName){
 }
 
 function check(n) {
+  if(mode != $('#mode').val()){
+    mode = $('#mode').val();
+  }
   if(n == -1){    
     $('#textArea').html("");
     makePage("./504words_week1.csv", "");
@@ -88,9 +91,6 @@ function check(n) {
     }
     else {
       $('#blank' + n).css("color", "red");
-    }
-    if(mode != $('#mode').val()){
-      mode = $('#mode').val();
     }
   }
 }
