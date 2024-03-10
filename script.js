@@ -30,9 +30,9 @@ function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
 $(function() {
   var fileName = "./504words_week1.csv";
 
-  // ÆÄÀÏ ÀÌ¸§
-  var parseName = "";	// ÆÄÀÏ ÀÌ¸§ + ¼ıÀÚ (var -> int ÇÒ°Å)
-  var parse = 0; 		// varÇü i¸¦ Á¤¼ö·Î º¯È¯½ÃÅ² °ªÀ» ´ãÀ» º¯¼ö
+  // íŒŒì¼ ì´ë¦„
+  var parseName = "";	// íŒŒì¼ ì´ë¦„ + ìˆ«ì (var -> int í• ê±°)
+  var parse = 0; 		// varí˜• ië¥¼ ì •ìˆ˜ë¡œ ë³€í™˜ì‹œí‚¨ ê°’ì„ ë‹´ì„ ë³€ìˆ˜
 
   makePage(fileName, parseName);
 
@@ -43,7 +43,7 @@ $(function() {
 function makePage(fileName, parseName){
   for (var i = 1; i < 2; i++) {
     parse = parseInt(i);
-    parseName = fileName;// + parse + '.csv';	// ÆÄÀÏ °æ·Î + sequence + È®ÀåÀÚ
+    parseName = fileName;// + parse + '.csv';	// íŒŒì¼ ê²½ë¡œ + sequence + í™•ì¥ì
 
     $.ajax({
       url: parseName,
