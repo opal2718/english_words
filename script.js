@@ -24,7 +24,7 @@ function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
   }
 
 
-  $('#textArea').html(totalHTML + "<br>");
+  $('#textArea').append(totalHTML + "<br>");
 }
 
 $(function() {
@@ -87,5 +87,6 @@ function check(n) {
   if(mode != $('#mode').val()){
     mode = $('#mode').val();
   }
+  $('#textArea').html("");
   makePage("./504words_week1.csv", "");
 }
