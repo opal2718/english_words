@@ -5,20 +5,21 @@ function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
+var mode = "quiz";
+
 
 $(function() {
   var fileName = "./504words_week1.csv";
 
-  // íŒŒì¼ ì´ë¦„
-  var parseName = "";	// íŒŒì¼ ì´ë¦„ + ìˆ«ìž (var -> int í• ê±°)
-  var parse = 0; 		// varí˜• ië¥¼ ì •ìˆ˜ë¡œ ë³€í™˜ì‹œí‚¨ ê°’ì„ ë‹´ì„ ë³€ìˆ˜
-  var mode = "quiz";
+  // ÆÄÀÏ ÀÌ¸§
+  var parseName = "";	// ÆÄÀÏ ÀÌ¸§ + ¼ýÀÚ (var -> int ÇÒ°Å)
+  var parse = 0; 		// varÇü i¸¦ Á¤¼ö·Î º¯È¯½ÃÅ² °ªÀ» ´ãÀ» º¯¼ö
 
 
 
   for (var i = 1; i < 2; i++) {
     parse = parseInt(i);
-    parseName = fileName;// + parse + '.csv';	// íŒŒì¼ ê²½ë¡œ + sequence + í™•ìž¥ìž
+    parseName = fileName;// + parse + '.csv';	// ÆÄÀÏ °æ·Î + sequence + È®ÀåÀÚ
 
     $.ajax({
       url: parseName,
@@ -53,12 +54,11 @@ $(function() {
           }
           else if (mode == "quiz") {
             totalHTML += (split_blank[0] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blank[1] + "<br>");
+            totalHTML += (sentence_kor + "<br><br><br>");
           }
 
 
           $('#textArea').append(totalHTML + "<br>");
-          console.log($('#test'));
-
 
         }
 
@@ -75,4 +75,5 @@ function check(n) {
   else {
     $('#blank' + n).css("color", "red");
   }
+  mode = $('#mode').val();
 }
