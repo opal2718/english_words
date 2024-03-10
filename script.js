@@ -78,15 +78,19 @@ function makePage(fileName, parseName){
 }
 
 function check(n) {
-  if ($('#blank' + n).val() == words[n]) {
-    $('#blank' + n).css("color", "blue");
+  if(n == -1){    
+    $('#textArea').html("");
+    makePage("./504words_week1.csv", "");
   }
-  else {
-    $('#blank' + n).css("color", "red");
+  else{
+    if ($('#blank' + n).val() == words[n]) {
+      $('#blank' + n).css("color", "blue");
+    }
+    else {
+      $('#blank' + n).css("color", "red");
+    }
+    if(mode != $('#mode').val()){
+      mode = $('#mode').val();
+    }
   }
-  if(mode != $('#mode').val()){
-    mode = $('#mode').val();
-  }
-  $('#textArea').html("");
-  makePage("./504words_week1.csv", "");
 }
