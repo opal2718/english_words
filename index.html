@@ -3,15 +3,24 @@
 
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5NB29TN2');</script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5NB29TN2');</script>
   <!-- End Google Tag Manager -->
+
+  <!--meta tags-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>영어 시험</title>
+  <title>504 Words 단어 시험 연습</title>
+  <!--open graph-->  
+  <meta property="og:site_name" content="https://opal2718.github.io/english_words/" />
+  <meta property="og:title" content="504 Words 단어 시험 연습" />
+  <meta property="og:image" content="./images/favicon.png" />
+  <meta property="og:description" content="504 Words 단어 시험 문제 출제 페이지" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://opal2718.github.io/english_words/" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link href="style.css" rel="stylesheet" type="text/css" />
@@ -33,11 +42,12 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
     <div>
-        <h5>빨간 색: 틀린거<br> 파란 색: 맞은거<br>@은 '인데 뭔가 오류난 거<br>/은 ,인데 뭔가 오류난 거</h5>
+        <h5>모드와 단어 세트를 변경하면 자동으로 문제 목록이 새로고침됩니다.<br>Quiz와 Quiz_Korean 모드에서 빈칸에 답을 적으시면 자동으로 채점됩니다. <br>빈칸의 글씨가 붉은색이면 오답, 파란색이면 정답입니다.</h5>
         <br>
         <p><b>Mode</b>&nbsp;&nbsp;&nbsp;&nbsp;Answer<input type="checkbox" id="answer" checked> Quiz<input type="checkbox" id="quiz"> Quiz_Korean<input type="checkbox" id="quiz_korean"></p>
         <p><b>Week 1</b>&nbsp;&nbsp;&nbsp;&nbsp;Lesson 1<input type="checkbox" id="check1" checked> Lesson 2<input type="checkbox" id="check2" checked></p>
     </div>
+  <br><br><hr><br><br>
   <div id="textArea">
   </div>
   <script src="script.js"></script>
