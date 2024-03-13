@@ -69,6 +69,7 @@ $(function() {
 for(var i = 1; i <= maxLessons; i++){
   $('#textArea').html("");
   $("#check"+i).change(function(){
+    $('#textArea').html("");
     addWords();
   })
 }
