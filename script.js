@@ -5,7 +5,7 @@ function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
-var mode = $('#mode').val();
+var mode = "Answer";
 function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
   
   var totalHTML = ""
