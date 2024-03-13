@@ -27,47 +27,54 @@ function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
   $('#textArea').append(totalHTML + "<br>");
 }
 
+$("#answer").change(function(){
+  if($("#answer").is(":checked")){
+    mode = "Answer";
+    $("#quiz").prop("checked", false);
+    $("#quiz_korean").prop("checked", false);
+  }
+  else mode = "";
+  $('#textArea').html("");
+  addWords();
+});
+$("#quiz").change(function(){
+  if($("#quiz").is(":checked")){
+    mode = "Quiz";
+    $("#answer").prop("checked", false);
+    $("#quiz_korean").prop("checked", false);
+  }
+  else mode = "";
+  $('#textArea').html("");
+  addWords();
+});
+$("#quiz_korean").change(function(){
+  if($("#quiz_korean").is(":checked")){
+    mode = "Quiz_Korean";
+    $("#quiz").prop("checked", false);
+    $("#answer").prop("checked", false);
+  }
+  else mode = "";
+  addWords();
+});
 
 
 
+//모드 변경
 $(function() {
-  $("#answer").change(function(){
-    if($("#answer").is(":checked")){
-      mode = "Answer";
-      $("#quiz").prop("checked", false);
-      $("#quiz_korean").prop("checked", false);
-    }
-    else mode = "";
-    $('#textArea').html("");
-    addWords();
-  });
-  $("#quiz").change(function(){
-    if($("#quiz").is(":checked")){
-      mode = "Quiz";
-      $("#answer").prop("checked", false);
-      $("#quiz_korean").prop("checked", false);
-    }
-    else mode = "";
-    $('#textArea').html("");
-    addWords();
-  });
-  $("#quiz_korean").change(function(){
-    if($("#quiz_korean").is(":checked")){
-      mode = "Quiz_Korean";
-      $("#quiz").prop("checked", false);
-      $("#answer").prop("checked", false);
-    }
-    else mode = "";
-    $('#textArea').html("");
-    addWords();
-  });
-  
   addWords();
   
 });
 
+//단어 세트 변경
+for(var i = 1; i <= maxLessons; i++){
+  $("#check"+i).change(function(){
+    addWords();
+  })
+}
 function addWords(){  
+  $('#textArea').html("");
   var fileName = "./csvs/504words_lesson";
+  
   for(var i = 1; i <= maxLessons; i++){
     var thisfile = fileName+String(i)+".csv";
     makePage(thisfile, "");
