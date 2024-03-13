@@ -8,7 +8,7 @@ function shuffle(array) {
 var mode = "Answer";
 function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
   
-  var totalHTML = $('#textArea').html();
+  var totalHTML = "";
   if (mode == "Answer") {
     totalHTML += ("<b>" + word + "</b>" + "<br>");
     totalHTML += (meaning + "<br><br>");
@@ -22,9 +22,8 @@ function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
   else if (mode == "Quiz") {
     totalHTML += (split_blank[0] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blank[1] + "<br><br><br>");
   }
+  return totalHTML;
 
-
-  $('#textArea').append(totalHTML + "<br>");
 }
 
 $("#answer").change(function(){
@@ -62,6 +61,7 @@ $("#quiz_korean").change(function(){
 
 //모드 변경
 $(function() {
+  $('#textArea').html("");
   addWords();
 });
 
@@ -97,6 +97,7 @@ function makePage(fileName, parseName){
         var rows = allRow.split("\n");
 
         shuffle(rows);
+        var sentences = "";
         for (var i = 0; i < rows.length; i++) {
           var value = rows[i].split(",");
           var word = value[0];
@@ -112,8 +113,9 @@ function makePage(fileName, parseName){
           var blank = value[4];
           var split_blank = blank.split("_");
 
-          changeHTML(word, meaning, sentence, sentence_kor, split_blank, i);
+          sentences += changeHTML(word, meaning, sentence, sentence_kor, split_blank, i);
         }
+        $('#textArea').append(sentences + "<br>");
 
       }
     });
