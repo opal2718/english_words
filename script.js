@@ -87,6 +87,8 @@ function addWords(){
     makePage(thisfile, "");
     i++;
   }
+  sentencess += changeHTML();
+  $('#textArea').append(sentencess + "<br>");
 }
 
 function makePage(fileName, parseName){
@@ -131,8 +133,6 @@ function makePage(fileName, parseName){
           split_blanks_2.push(split_blank[1]);
 
         }
-        sentencess += changeHTML();
-        $('#textArea').append(sentencess + "<br>");
 
       }
     });
