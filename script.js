@@ -19,7 +19,7 @@ function changeHTML(){
       totalHTML += (meanings[i] + "<br><br>");
       totalHTML += (sentences[i] + "<br>");
       totalHTML += (sentences_kor[i] + "<br><br><br>");
-      
+
     }
     else if (mode == "Quiz_Korean") {
       totalHTML += (split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
@@ -81,6 +81,12 @@ for(var i = 1; i <= maxLessons; i++){
 }
 function addWords(){
   var fileName = "./csvs/504words_lesson";
+  words = [];
+  meanings = [];
+  sentences = [];
+  sentences_kor = [];
+  split_blanks_1 = [];
+  split_blanks_2 = [];
   
   for(var i = 1; i <= maxLessons; i++){
     if(!$("#check"+i).is(":checked")) continue;
@@ -94,12 +100,6 @@ function addWords(){
 }
 
 function makePage(fileName, parseName){
-  words = [];
-  meanings = [];
-  sentences = [];
-  sentences_kor = [];
-  split_blanks_1 = [];
-  split_blanks_2 = [];
   for (var i = 1; i < 2; i++) {
     parse = parseInt(i);
     parseName = fileName;// + parse + '.csv';	// 파일 경로 + sequence + 확장자
