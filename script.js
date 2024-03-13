@@ -60,8 +60,8 @@ function makePage(fileName, parseName){
           if(word == "") continue;
           words[i] = word;
           for(var j = 1; j <= 4; j++){
-            value[j] = value[j].replace("/", ",");
-            value[j] = value[j].replace("@", "'");
+            value[j] = value[j].replace(/쉼표/g, ",");
+            value[j] = value[j].replace(/따옴표/g, "'");
           }
           var meaning = value[1];
           var sentence = value[2];
