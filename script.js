@@ -1,26 +1,32 @@
 var maxLessons = 2;
 var words = [];
+var meanings = [];
+var sentences = [];
+var sentences_kor = [];
+var split_blanks_1 = [];
+var split_blanks_2 = [];
 
 function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
 var mode = "Answer";
-function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
-  
+function changeHTML(){
   var totalHTML = "";
-  if (mode == "Answer") {
-    totalHTML += ("<b>" + word + "</b>" + "<br>");
-    totalHTML += (meaning + "<br><br>");
-    totalHTML += (sentence + "<br>");
-    totalHTML += (sentence_kor + "<br><br><br>");
-  }
-  else if (mode == "Quiz_Korean") {
-    totalHTML += (split_blank[0] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blank[1] + "<br>");
-    totalHTML += (sentence_kor + "<br><br><br>");
-  }
-  else if (mode == "Quiz") {
-    totalHTML += (split_blank[0] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blank[1] + "<br><br><br>");
+  for(var i = 0; i < words.length; i++){
+    if (mode == "Answer") {
+      totalHTML += ("<b>" + words[i] + "</b>" + "<br>");
+      totalHTML += (meanings[i] + "<br><br>");
+      totalHTML += (sentences[i] + "<br>");
+      totalHTML += (sentence_kors[i] + "<br><br><br>");
+    }
+    else if (mode == "Quiz_Korean") {
+      totalHTML += (split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
+      totalHTML += (sentence_kor + "<br><br><br>");
+    }
+    else if (mode == "Quiz") {
+      totalHTML += (split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><br>");
+    }
   }
   return totalHTML;
 
@@ -84,6 +90,12 @@ function addWords(){
 }
 
 function makePage(fileName, parseName){
+  words = [];
+  meanings = [];
+  sentences = [];
+  sentences_kor = [];
+  split_blanks_1 = [];
+  split_blanks_2 = [];
   for (var i = 1; i < 2; i++) {
     parse = parseInt(i);
     parseName = fileName;// + parse + '.csv';	// 파일 경로 + sequence + 확장자
@@ -97,12 +109,11 @@ function makePage(fileName, parseName){
         var rows = allRow.split("\n");
 
         shuffle(rows);
-        var sentences = "";
+        var sentencess = "";
         for (var i = 0; i < rows.length; i++) {
           var value = rows[i].split(",");
           var word = value[0];
           if(word == "") continue;
-          words[i] = word;
           for(var j = 1; j <= 4; j++){
             value[j] = value[j].replace(/쉼표/g, ",");
             value[j] = value[j].replace(/따옴표/g, "'");
@@ -112,10 +123,16 @@ function makePage(fileName, parseName){
           var sentence_kor = value[3];
           var blank = value[4];
           var split_blank = blank.split("_");
+          words.push(word);
+          meanings.push(meaning);
+          sentences.push(sentence);
+          sentences_kor.push(sentence_kor);
+          split_blanks_1.push(split_blank[0]);
+          split_blanks_2.push(split_blank[1]);
 
-          sentences += changeHTML(word, meaning, sentence, sentence_kor, split_blank, i);
         }
-        $('#textArea').append(sentences + "<br>");
+        sentencess += changeHTML();
+        $('#textArea').append(sentencess + "<br>");
 
       }
     });
