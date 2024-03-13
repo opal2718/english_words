@@ -87,6 +87,7 @@ function addWords(){
     makePage(thisfile, "");
     i++;
   }
+  alert(words.length);
   sentencess += changeHTML();
   $('#textArea').append(sentencess + "<br>");
 }
