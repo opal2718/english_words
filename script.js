@@ -87,9 +87,8 @@ function addWords(){
   sentences_kor = [];
   split_blanks_1 = [];
   split_blanks_2 = [];
-  
-  var sentencess = "";
-  
+
+  var sentencess = "";  
   for(var i = 1; i <= maxLessons; i++){
     if(!$("#check"+i).is(":checked")) continue;
     alert(i);
