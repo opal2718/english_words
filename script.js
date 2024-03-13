@@ -8,7 +8,7 @@ function shuffle(array) {
 var mode = "Answer";
 function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
   
-  var totalHTML = $('#textArea').val();
+  var totalHTML = $('#textArea').html();
   if (mode == "Answer") {
     totalHTML += ("<b>" + word + "</b>" + "<br>");
     totalHTML += (meaning + "<br><br>");
@@ -67,7 +67,6 @@ $(function() {
 
 //단어 세트 변경
 for(var i = 1; i <= maxLessons; i++){
-  $('#textArea').html("");
   $("#check"+i).change(function(){
     $('#textArea').html("");
     addWords();
@@ -77,6 +76,7 @@ function addWords(){
   var fileName = "./csvs/504words_lesson";
   
   for(var i = 1; i <= maxLessons; i++){
+    if(!$("#check"+i).is(":checked")) continue;
     var thisfile = fileName+String(i)+".csv";
     makePage(thisfile, "");
     i++;
