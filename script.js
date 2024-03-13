@@ -19,6 +19,7 @@ function changeHTML(){
       totalHTML += (meanings[i] + "<br><br>");
       totalHTML += (sentences[i] + "<br>");
       totalHTML += (sentences_kor[i] + "<br><br><br>");
+      
     }
     else if (mode == "Quiz_Korean") {
       totalHTML += (split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
