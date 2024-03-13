@@ -1,4 +1,4 @@
-
+var maxLessons = 2;
 var words = [];
 
 function shuffle(array) {
@@ -68,8 +68,7 @@ $(function() {
 
 function addWords(){  
   var fileName = "./csvs/504words_lesson";
-  var i = 1;
-  while($("#check")+i){
+  for(var i = 1; i <= maxLessons; i++){
     var thisfile = fileName+String(i)+".csv";
     makePage(thisfile, "");
     i++;
