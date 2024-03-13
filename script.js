@@ -27,41 +27,43 @@ function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
   $('#textArea').append(totalHTML + "<br>");
 }
 
-$("#answer").change(function(){
-  if($("#answer").is(":checked")){
-    mode = "Answer";
-    $("#quiz").prop("checked", false);
-    $("#quiz_korean").prop("checked", false);
-  }
-  else mode = "";
-  $('#textArea').html("");
-  addWords();
-});
-$("#quiz").change(function(){
-  if($("#quiz").is(":checked")){
-    mode = "Quiz";
-    $("#answer").prop("checked", false);
-    $("#quiz_korean").prop("checked", false);
-  }
-  else mode = "";
-  $('#textArea').html("");
-  addWords();
-});
-$("#quiz_korean").change(function(){
-  if($("#quiz_korean").is(":checked")){
-    mode = "Quiz_Korean";
-    $("#quiz").prop("checked", false);
-    $("#answer").prop("checked", false);
-  }
-  else mode = "";
-  $('#textArea').html("");
-  addWords();
-});
 
 
 
 $(function() {
+  $("#answer").change(function(){
+    if($("#answer").is(":checked")){
+      mode = "Answer";
+      $("#quiz").prop("checked", false);
+      $("#quiz_korean").prop("checked", false);
+    }
+    else mode = "";
+    $('#textArea').html("");
+    addWords();
+  });
+  $("#quiz").change(function(){
+    if($("#quiz").is(":checked")){
+      mode = "Quiz";
+      $("#answer").prop("checked", false);
+      $("#quiz_korean").prop("checked", false);
+    }
+    else mode = "";
+    $('#textArea').html("");
+    addWords();
+  });
+  $("#quiz_korean").change(function(){
+    if($("#quiz_korean").is(":checked")){
+      mode = "Quiz_Korean";
+      $("#quiz").prop("checked", false);
+      $("#answer").prop("checked", false);
+    }
+    else mode = "";
+    $('#textArea').html("");
+    addWords();
+  });
+  
   addWords();
+  
 });
 
 function addWords(){  
