@@ -88,6 +88,8 @@ function addWords(){
   split_blanks_1 = [];
   split_blanks_2 = [];
   
+  var sentencess = "";
+  
   for(var i = 1; i <= maxLessons; i++){
     if(!$("#check"+i).is(":checked")) continue;
     alert(i);
@@ -114,7 +116,6 @@ function makePage(fileName, parseName){
         var rows = allRow.split("\n");
 
         shuffle(rows);
-        var sentencess = "";
         for (var i = 0; i < rows.length; i++) {
           var value = rows[i].split(",");
           var word = value[0];
