@@ -28,16 +28,13 @@ function changeHTML(word, meaning, sentence, sentence_kor, split_blank, i){
 }
 
 $(function() {
-  var fileName = "./504words_week1.csv";
-
-  // 파일 이름
-  var parseName = "";	// 파일 이름 + 숫자 (var -> int 할거)
-  var parse = 0; 		// var형 i를 정수로 변환시킨 값을 담을 변수
-
-  makePage(fileName, parseName);
-
-  
-
+  var fileName = "./csvs/504words_lesson";
+  var i = 1;
+  while($("#check")+i){
+    var thisfile = fileName+String(i)+".csv";
+    makePage(thisfile, "");
+    i++;
+  }
 });
 
 function makePage(fileName, parseName){
