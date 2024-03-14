@@ -1,6 +1,6 @@
 var maxLessons_1 = 0;
 var maxLessons_2 = 2;
-var maxLessons_3 = 0;
+var maxLessons_3 = 1;
 var grade = 2;
 var words = [];
 var meanings = [];
@@ -92,7 +92,7 @@ for(let j = 1; j <= maxLessons_1; j++){
   })
 }
 for(let j = 1; j <= maxLessons_2; j++){
-  $("#check1_"+j).change(function(){
+  $("#check2_"+j).change(function(){
     if($("#check2_"+j).is(":checked")){
       grade = 2;
       for(let k = 1; k <= maxLessons_1; k++){
@@ -107,7 +107,7 @@ for(let j = 1; j <= maxLessons_2; j++){
   })
 }
 for(let j = 1; j <= maxLessons_3; j++){
-  $("#check1_"+j).change(function(){
+  $("#check3_"+j).change(function(){
     if($("#check3_"+j).is(":checked")){
       grade = 1;
       for(let k = 1; k <= maxLessons_2; k++){
