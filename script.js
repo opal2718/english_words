@@ -96,7 +96,6 @@ function addWords(){
     if(!$("#check"+lessonN).is(":checked")) continue;
     var thisfile = fileName+String(lessonN)+".csv";
     makePage(thisfile, "");
-    lessonN++;
   }
   setTimeout(() => {
     //alert(words.length);
