@@ -110,8 +110,9 @@ for(var j3 = 1; j3 <= maxLessons_3; j3++){
   $("#check3_"+j3).change(function(){
     if($("#check3_"+j3).is(":checked")){
       grade = 3;
+      alert(maxLessons_2);
       for(var k31 = 1; k31 <= maxLessons_2; k31++){
-        
+
         alert(k31);
         $("#check2_"+k31).prop("checked", false);
       }
