@@ -125,7 +125,7 @@ for(var j3 = 1; j3 <= maxLessons_3; j3++){
 
 function addWords(){
   var fileName = "";
-  var maxLessons;
+  var maxLessons = 0;
   if(grade == 1) {
     fileName = "./csvs/504words_lesson";
     maxLessons = maxLessons_1;
