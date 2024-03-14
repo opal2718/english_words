@@ -150,9 +150,10 @@ function addWords(){
 
   var sentencess = "";  
   for(let lessonN = 1; lessonN <= maxLessons; lessonN++){
-    if(!$("#check"+lessonN).is(":checked")) continue;
+    if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
+    //alert(maxLessons);
     var thisfile = fileName+String(lessonN)+".csv";
-    alert(thisfile);
+    //alert(thisfile);
     makePage(thisfile, "");
   }
   setTimeout(() => {
