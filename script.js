@@ -81,10 +81,10 @@ for(var j1 = 1; j1 <= maxLessons_1; j1++){
     if($("#check1_"+j1).is(":checked")){
       grade = 1;
       for(var k11 = 1; k11 <= maxLessons_2; k11++){
-        $("#check2_"+j1).prop("checked", false);
+        $("#check2_"+k11).prop("checked", false);
       }
       for(var k12 = 1; k12 <= maxLessons_3; k12++){
-        $("#check3_"+j1).prop("checked", false);
+        $("#check3_"+k12).prop("checked", false);
       }
     }
     $('#textArea').html("");
@@ -96,10 +96,10 @@ for(var j2 = 1; j2 <= maxLessons_2; j2++){
     if($("#check2_"+j2).is(":checked")){
       grade = 2;
       for(var k21 = 1; k21 <= maxLessons_1; k21++){
-        $("#check1_"+j2).prop("checked", false);
+        $("#check1_"+k21).prop("checked", false);
       }
       for(var k22 = 1; k22 <= maxLessons_3; k22++){
-        $("#check3_"+j2).prop("checked", false);
+        $("#check3_"+k22).prop("checked", false);
       }
     }
     $('#textArea').html("");
@@ -112,10 +112,10 @@ for(var j3 = 1; j3 <= maxLessons_3; j3++){
     if($("#check3_"+j3).is(":checked")){
       grade = 3;
       for(var k31 = 1; k31 <= maxLessons_2; k31++){
-        $("#check2_"+j3).prop("checked", false);
+        $("#check2_"+k31).prop("checked", false);
       }
       for(var k32 = 1; k32 <= maxLessons_1; k32++){
-        $("#check1_"+j3).prop("checked", false);
+        $("#check1_"+k32).prop("checked", false);
       }
     }
     $('#textArea').html("");
