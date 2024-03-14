@@ -1,4 +1,7 @@
-var maxLessons = 2;
+var maxLessons_1 = 0;
+var maxLessons_2 = 2;
+var maxLessons_3 = 0;
+var grade = 2;
 var words = [];
 var meanings = [];
 var sentences = [];
@@ -73,14 +76,57 @@ $(function() {
 });
 
 //단어 세트 변경
-for(var j = 1; j <= maxLessons; j++){
-  $("#check"+j).change(function(){
+for(let j = 1; j <= maxLessons_1; j++){
+  $("#check1_"+j).change(function(){
+    if($("#check1_"+j).is(":checked")){
+      grade = 1;
+      for(let k = 1; k <= maxLessons_2; k++){
+        $("#check2_"+j).prop("checked", false);
+      }
+      for(let k = 1; k <= maxLessons_3; k++){
+        $("#check3_"+j).prop("checked", false);
+      }
+    }
     $('#textArea').html("");
     addWords();
   })
 }
+for(let j = 1; j <= maxLessons_2; j++){
+  $("#check1_"+j).change(function(){
+    if($("#check2_"+j).is(":checked")){
+      grade = 2;
+      for(let k = 1; k <= maxLessons_1; k++){
+        $("#check1_"+j).prop("checked", false);
+      }
+      for(let k = 1; k <= maxLessons_3; k++){
+        $("#check3_"+j).prop("checked", false);
+      }
+    }
+    $('#textArea').html("");
+    addWords();
+  })
+}
+for(let j = 1; j <= maxLessons_3; j++){
+  $("#check1_"+j).change(function(){
+    if($("#check3_"+j).is(":checked")){
+      grade = 1;
+      for(let k = 1; k <= maxLessons_2; k++){
+        $("#check2_"+j).prop("checked", false);
+      }
+      for(let k = 1; k <= maxLessons_1; k++){
+        $("#check1_"+j).prop("checked", false);
+      }
+    }
+    $('#textArea').html("");
+    addWords();
+  })
+}
+
 function addWords(){
-  var fileName = "./csvs/504words_lesson";
+  var fileName = "";
+  if(grade == 1) fileName = "./csvs/504words_lesson";
+  else if(grade == 2) fileName = "./csvs/504words_lesson";
+  else if(grade == 3) fileName = "./csvs/Hackers_TEPS_lesson";
   words = [];
   meanings = [];
   sentences = [];
