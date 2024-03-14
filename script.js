@@ -90,7 +90,7 @@ function addWords(){
 
   var sentencess = "";  
   for(var i = 1; i <= maxLessons; i++){
-
+    alert(maxLessons);
     alert(i);
     alert($("#check"+i).is(":checked"));
     if(!$("#check"+i).is(":checked")) continue;
