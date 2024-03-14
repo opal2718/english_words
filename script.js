@@ -22,11 +22,11 @@ function changeHTML(){
 
     }
     else if (mode == "Quiz_Korean") {
-      totalHTML += (i+". "+split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
+      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
       totalHTML += (sentences_kor[i] + "<br><br><br>");
     }
     else if (mode == "Quiz") {
-      totalHTML += (i+". "+split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><br>");
+      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><br>");
     }
   }
   return totalHTML;
