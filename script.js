@@ -107,8 +107,8 @@ for(let j2 = 1; j2 <= maxLessons_2; j2++){
   })
 }
 for(let j3 = 1; j3 <= maxLessons_3; j3++){
-  alert($("#check3_"+j3));
   $("#check3_"+j3).change(function(){
+    alert($("#check3_"+j3));
     if($("#check3_"+j3).is(":checked")){
       grade = 3;
       for(let k31 = 1; k31 <= maxLessons_2; k31++){
