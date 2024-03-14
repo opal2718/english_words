@@ -90,17 +90,18 @@ function addWords(){
 
   var sentencess = "";  
   for(var i = 1; i <= maxLessons; i++){
-    if(!$("#check"+i).is(":checked")) continue;
     alert(i);
+    alert($("#check"+i).is(":checked"));
+    if(!$("#check"+i).is(":checked")) continue;
     var thisfile = fileName+String(i)+".csv";
     makePage(thisfile, "");
     i++;
   }
   setTimeout(() => {
-    alert(words.length);
+    //alert(words.length);
     sentencess += changeHTML();
     $('#textArea').append(sentencess + "<br>");
-  }, 1000);
+  }, 500);
 }
 
 function makePage(fileName, parseName){
