@@ -1,4 +1,4 @@
-var maxLessons_1 = 0;
+var maxLessons_1 = 2;
 var maxLessons_2 = 2;
 var maxLessons_3 = 1;
 var grade = 2;
@@ -130,7 +130,7 @@ function addWords(){
 
   var maxLessons = 0;
   if(grade == 1) {
-    fileName = "./csvs/504words_lesson";
+    fileName = "./csvs/Word_Master_week";
     maxLessons = maxLessons_1;
   }
   else if(grade == 2) {
