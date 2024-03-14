@@ -108,10 +108,10 @@ for(var j2 = 1; j2 <= maxLessons_2; j2++){
 }
 for(var j3 = 1; j3 <= maxLessons_3; j3++){
   $("#check3_"+j3).change(function(){
-    alert($("#check3_"+j3));
     if($("#check3_"+j3).is(":checked")){
       grade = 3;
       for(var k31 = 1; k31 <= maxLessons_2; k31++){
+        alert($("#check2_"+k31));
         $("#check2_"+k31).prop("checked", false);
       }
       for(var k32 = 1; k32 <= maxLessons_1; k32++){
@@ -125,7 +125,7 @@ for(var j3 = 1; j3 <= maxLessons_3; j3++){
 
 function addWords(){
   var fileName = "";
-  
+
   var maxLessons = 0;
   if(grade == 1) {
     fileName = "./csvs/504words_lesson";
