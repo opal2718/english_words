@@ -89,7 +89,7 @@ function addWords(){
   split_blanks_2 = [];
 
   var sentencess = "";  
-  for(var lessonN = 1; lessonN <= maxLessons; lessonN++){
+  for(let lessonN = 1; lessonN <= maxLessons; lessonN++){
     alert(maxLessons);
     alert(lessonN);
     alert($("#check"+lessonN).is(":checked"));
