@@ -114,7 +114,7 @@ function makePage(fileName, parseName){
       dataType: 'text',
       success: function(data) {
         var allRow = data;
-        console.log(allRow);
+        //console.log(allRow);
         var rows = allRow.split("\n");
 
         shuffle(rows);
