@@ -125,9 +125,19 @@ for(var j3 = 1; j3 <= maxLessons_3; j3++){
 
 function addWords(){
   var fileName = "";
-  if(grade == 1) fileName = "./csvs/504words_lesson";
-  else if(grade == 2) fileName = "./csvs/504words_lesson";
-  else if(grade == 3) fileName = "./csvs/Hackers_TEPS_lesson";
+  var maxLessons;
+  if(grade == 1) {
+    fileName = "./csvs/504words_lesson";
+    maxLessons = maxLessons_1;
+  }
+  else if(grade == 2) {
+    fileName = "./csvs/504words_lesson";
+    maxLessons = maxLessons_2;
+  }
+  else if(grade == 3) {
+    fileName = "./csvs/Hackers_TEPS_lesson";
+    maxLessons = maxLessons_3;
+  }
   words = [];
   meanings = [];
   sentences = [];
