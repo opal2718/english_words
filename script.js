@@ -96,9 +96,11 @@ function addWords(){
     makePage(thisfile, "");
     i++;
   }
-  alert(words.length);
-  sentencess += changeHTML();
-  $('#textArea').append(sentencess + "<br>");
+  setTimeout(() => {
+    alert(words.length);
+    sentencess += changeHTML();
+    $('#textArea').append(sentencess + "<br>");
+  }, 1000);
 }
 
 function makePage(fileName, parseName){
