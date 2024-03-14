@@ -90,9 +90,6 @@ function addWords(){
 
   var sentencess = "";  
   for(let lessonN = 1; lessonN <= maxLessons; lessonN++){
-    alert(maxLessons);
-    alert(lessonN);
-    alert($("#check"+lessonN).is(":checked"));
     if(!$("#check"+lessonN).is(":checked")) continue;
     var thisfile = fileName+String(lessonN)+".csv";
     makePage(thisfile, "");
