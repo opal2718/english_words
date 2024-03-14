@@ -22,11 +22,11 @@ function changeHTML(){
 
     }
     else if (mode == "Quiz_Korean") {
-      totalHTML += (split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
+      totalHTML += (i+". "+split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
       totalHTML += (sentences_kor[i] + "<br><br><br>");
     }
     else if (mode == "Quiz") {
-      totalHTML += (split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><br>");
+      totalHTML += (i+". "+split_blanks_1[i] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><br>");
     }
   }
   return totalHTML;
@@ -96,7 +96,7 @@ function addWords(){
   }
   setTimeout(() => {
     //alert(words.length);
-    
+
     sentencess += changeHTML();
     $('#textArea').append(sentencess + "<br>");
   }, 500);
