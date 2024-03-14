@@ -1,4 +1,4 @@
-var maxLessons_1 = 2;
+var maxLessons_1 = 1;
 var maxLessons_2 = 2;
 var maxLessons_3 = 1;
 var grade = 2;
