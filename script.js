@@ -73,8 +73,8 @@ $(function() {
 });
 
 //단어 세트 변경
-for(var i = 1; i <= maxLessons; i++){
-  $("#check"+i).change(function(){
+for(var j = 1; j <= maxLessons; j++){
+  $("#check"+j).change(function(){
     $('#textArea').html("");
     addWords();
   })
@@ -89,14 +89,14 @@ function addWords(){
   split_blanks_2 = [];
 
   var sentencess = "";  
-  for(var i = 1; i <= maxLessons; i++){
+  for(var lessonN = 1; lessonN <= maxLessons; lessonN++){
     alert(maxLessons);
-    alert(i);
-    alert($("#check"+i).is(":checked"));
-    if(!$("#check"+i).is(":checked")) continue;
-    var thisfile = fileName+String(i)+".csv";
+    alert(lessonN);
+    alert($("#check"+lessonN).is(":checked"));
+    if(!$("#check"+lessonN).is(":checked")) continue;
+    var thisfile = fileName+String(lessonN)+".csv";
     makePage(thisfile, "");
-    i++;
+    lessonN++;
   }
   setTimeout(() => {
     //alert(words.length);
