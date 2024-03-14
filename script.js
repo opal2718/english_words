@@ -76,14 +76,14 @@ $(function() {
 });
 
 //단어 세트 변경
-for(let j1 = 1; j1 <= maxLessons_1; j1++){
+for(var j1 = 1; j1 <= maxLessons_1; j1++){
   $("#check1_"+j1).change(function(){
     if($("#check1_"+j1).is(":checked")){
       grade = 1;
-      for(let k11 = 1; k11 <= maxLessons_2; k11++){
+      for(var k11 = 1; k11 <= maxLessons_2; k11++){
         $("#check2_"+j1).prop("checked", false);
       }
-      for(let k12 = 1; k12 <= maxLessons_3; k12++){
+      for(var k12 = 1; k12 <= maxLessons_3; k12++){
         $("#check3_"+j1).prop("checked", false);
       }
     }
@@ -91,14 +91,14 @@ for(let j1 = 1; j1 <= maxLessons_1; j1++){
     addWords();
   })
 }
-for(let j2 = 1; j2 <= maxLessons_2; j2++){
+for(var j2 = 1; j2 <= maxLessons_2; j2++){
   $("#check2_"+j2).change(function(){
     if($("#check2_"+j2).is(":checked")){
       grade = 2;
-      for(let k21 = 1; k21 <= maxLessons_1; k21++){
+      for(var k21 = 1; k21 <= maxLessons_1; k21++){
         $("#check1_"+j2).prop("checked", false);
       }
-      for(let k22 = 1; k22 <= maxLessons_3; k22++){
+      for(var k22 = 1; k22 <= maxLessons_3; k22++){
         $("#check3_"+j2).prop("checked", false);
       }
     }
@@ -106,15 +106,15 @@ for(let j2 = 1; j2 <= maxLessons_2; j2++){
     addWords();
   })
 }
-for(let j3 = 1; j3 <= maxLessons_3; j3++){
+for(var j3 = 1; j3 <= maxLessons_3; j3++){
   $("#check3_"+j3).change(function(){
     alert($("#check3_"+j3));
     if($("#check3_"+j3).is(":checked")){
       grade = 3;
-      for(let k31 = 1; k31 <= maxLessons_2; k31++){
+      for(var k31 = 1; k31 <= maxLessons_2; k31++){
         $("#check2_"+j3).prop("checked", false);
       }
-      for(let k32 = 1; k32 <= maxLessons_1; k32++){
+      for(var k32 = 1; k32 <= maxLessons_1; k32++){
         $("#check1_"+j3).prop("checked", false);
       }
     }
