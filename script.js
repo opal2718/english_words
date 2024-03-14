@@ -96,6 +96,7 @@ function addWords(){
   }
   setTimeout(() => {
     //alert(words.length);
+    
     sentencess += changeHTML();
     $('#textArea').append(sentencess + "<br>");
   }, 500);
