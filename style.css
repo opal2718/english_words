@@ -29,6 +29,7 @@ html{
 }
 
 .BookID{
-  border-color: black;
-  border-width: 5px;
+  border: medium solid black;
+  margin-right: 10%;
+  margin-left: 10%;
 }
