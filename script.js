@@ -25,11 +25,11 @@ function changeHTML(){
 
     }
     else if (mode == "Quiz_Korean") {
-      totalHTML += ((i+1)+". "+split_blanks_1[i] +words[i][0] + '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
+      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+words[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
       totalHTML += ("&nbsp;&nbsp;"+sentences_kor[i] + "<br><br><br>");
     }
     else if (mode == "Quiz") {
-      totalHTML += ((i+1)+". "+split_blanks_1[i] +words[i][0]+ '<input autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><br>");
+      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+words[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><br>");
     }
   }
   return totalHTML;
@@ -209,7 +209,7 @@ function check(n) {
   if(n == -1){    
   }
   else{
-    if (words[n][0]+$('#blank' + n).val() == words[n]) {
+    if ($('#blank' + n).val() == words[n]) {
       $('#blank' + n).css("color", "blue");
     }
     else {
