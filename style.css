@@ -27,3 +27,8 @@
 html{
   word-break: keep-all;
 }
+
+.BookID{
+  border-color: black;
+  border-width: 5px;
+}
