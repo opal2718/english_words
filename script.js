@@ -197,7 +197,7 @@ function makePage(fileName, parseName){
           var sentence = value[2];
           var sentence_kor = value[3];
           var blank = value[4];
-          var answer = value[5];
+          var answer = value[6];
           var split_blank = blank.split("_");
           words.push(word);
           meanings.push(meaning);
