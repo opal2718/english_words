@@ -208,8 +208,8 @@ function makePage(fileName, parseName){
           answers.push(answer);
 
           if(i == 0){
-            alert(value[5]);
-            alert(value[6]);
+            //alert(value[5]);
+            //alert(value[6]);
           }
 
         }
@@ -224,6 +224,8 @@ function check(n) {
   }
   else{
     if ($('#blank' + n).val() == answers[n]) {
+      alert($('#blank' + n).val());
+      alert(answers[n]);
       $('#blank' + n).css("color", "blue");
     }
     else {
