@@ -221,8 +221,8 @@ function makePage(fileName, parseName){
 }
 
 function check(n) {
-  alert($('#blank' + n).val());
-  alert(answers[n]);
+  //alert($('#blank' + n).val());
+  //alert(answers[n]);
   if(n == -1){    
   }
   else{
