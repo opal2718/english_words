@@ -220,12 +220,12 @@ function makePage(fileName, parseName){
 }
 
 function check(n) {
+  alert($('#blank' + n).val());
+  alert(answers[n]);
   if(n == -1){    
   }
   else{
     if ($('#blank' + n).val() == answers[n]) {
-      alert($('#blank' + n).val());
-      alert(answers[n]);
       $('#blank' + n).css("color", "blue");
     }
     else {
