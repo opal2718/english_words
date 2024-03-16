@@ -8,6 +8,7 @@ var sentences = [];
 var sentences_kor = [];
 var split_blanks_1 = [];
 var split_blanks_2 = [];
+var answers = [];
 
 function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
@@ -196,6 +197,7 @@ function makePage(fileName, parseName){
           var sentence = value[2];
           var sentence_kor = value[3];
           var blank = value[4];
+          var answer = value[5];
           var split_blank = blank.split("_");
           words.push(word);
           meanings.push(meaning);
@@ -203,6 +205,7 @@ function makePage(fileName, parseName){
           sentences_kor.push(sentence_kor);
           split_blanks_1.push(split_blank[0]);
           split_blanks_2.push(split_blank[1]);
+          answers.push(answer);
 
         }
 
@@ -215,7 +218,7 @@ function check(n) {
   if(n == -1){    
   }
   else{
-    if ($('#blank' + n).val() == words[n]) {
+    if ($('#blank' + n).val() == answers[n]) {
       $('#blank' + n).css("color", "blue");
     }
     else {
