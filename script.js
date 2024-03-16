@@ -207,6 +207,11 @@ function makePage(fileName, parseName){
           split_blanks_2.push(split_blank[1]);
           answers.push(answer);
 
+          if(i == 0){
+            alert(value[5]);
+            alert(value[6]);
+          }
+
         }
 
       }
