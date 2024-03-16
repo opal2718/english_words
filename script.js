@@ -154,6 +154,7 @@ function addWords(){
   sentences_kor = [];
   split_blanks_1 = [];
   split_blanks_2 = [];
+  words = [];
 
   var sentencess = "";  
   for(let lessonN = 1; lessonN <= maxLessons; lessonN++){
