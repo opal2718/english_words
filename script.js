@@ -1,5 +1,5 @@
-var maxLessons_1 = 2;
-var maxLessons_2 = 4;
+var maxLessons_1 = 3;
+var maxLessons_2 = 6;
 var maxLessons_3 = 1;
 var grade = 2;
 var words = [];
@@ -193,6 +193,9 @@ function makePage(fileName, parseName){
           for(var j = 1; j <= 4; j++){
             value[j] = value[j].replace(/쉼표/g, ",");
             value[j] = value[j].replace(/따옴표/g, "'");
+            while(value[j].indexOf("__") != -1){
+              value[j] = value[j].replace("__", "_");
+            }
           }
           var meaning = value[1];
           var sentence = value[2];
@@ -231,6 +234,10 @@ function check(n) {
     }
     else {
       $('#blank' + n).css("color", "red");
+    }
+    if($('#blank' + n).val() == "?"){
+      $('#blank' + n).val(answers[n]);
+      $('#blank' + n).css("color", "black");
     }
   }
 }
