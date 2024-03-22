@@ -78,9 +78,9 @@ $(function() {
 
 //단어 세트 변경
 for(var j1 = 1; j1 <= maxLessons_1; j1++){
-  var temp = j1;
-  $("#check1_"+temp).change(function(){
-    if($("#check1_"+temp).is(":checked")){
+  var temp1 = j1;
+  $("#check1_"+temp1).change(function(){
+    if($("#check1_"+temp1).is(":checked")){
       grade = 1;
       document.title = "Hello Worlds! | Grade 1";
       for(var k11 = 1; k11 <= maxLessons_2; k11++){
@@ -97,9 +97,9 @@ for(var j1 = 1; j1 <= maxLessons_1; j1++){
   })
 }
 for(var j2 = 1; j2 <= maxLessons_2; j2++){
-  var temp = j2;
-  $("#check2_"+temp).change(function(){
-    if($("#check2_"+temp).is(":checked")){
+  var temp2 = j2;
+  $("#check2_"+temp2).change(function(){
+    if($("#check2_"+temp2).is(":checked")){
       grade = 2;
       document.title = "Hello Worlds! | Grade 2";
       for(var k21 = 1; k21 <= maxLessons_1; k21++){
@@ -116,9 +116,9 @@ for(var j2 = 1; j2 <= maxLessons_2; j2++){
   })
 }
 for(var j3 = 1; j3 <= maxLessons_3; j3++){
-  var temp = j3;
-  $("#check3_"+temp).change(function(){
-    if($("#check3_"+temp).is(":checked")){
+  var temp3 = j3;
+  $("#check3_"+temp3).change(function(){
+    if($("#check3_"+temp3).is(":checked")){
       grade = 3;
       document.title = "Hello Worlds! | Grade 3";
       for(var k31 = 1; k31 <= maxLessons_2; k31++){
@@ -163,6 +163,7 @@ function addWords(){
   for(let lessonN = 1; lessonN <= maxLessons; lessonN++){
     if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
     if(grade == 1 && lessonN == 1) continue;//없는 데이터 예외처리
+    alert(grade); alert(lessonN);
     var thisfile = fileName+String(lessonN)+".csv";
     //alert(thisfile);
     makePage(thisfile, "");
