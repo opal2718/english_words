@@ -163,9 +163,8 @@ function addWords(){
   for(let lessonN = 1; lessonN <= maxLessons; lessonN++){
     if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
     if(grade == 1 && lessonN == 1) continue;//없는 데이터 예외처리
-    alert(grade); alert(lessonN);
     var thisfile = fileName+String(lessonN)+".csv";
-    //alert(thisfile);
+    alert(thisfile);
     makePage(thisfile, "");
   }
   setTimeout(() => {
@@ -186,7 +185,7 @@ function makePage(fileName, parseName){
       dataType: 'text',
       success: function(data) {
         var allRow = data;
-        //console.log(allRow);
+        console.log(allRow);
         var rows = allRow.split("\n");
 
         shuffle(rows);
