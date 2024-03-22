@@ -189,7 +189,7 @@ function makePage(fileName, parseName){
         shuffle(rows);
         for (var i = 0; i < rows.length; i++) {
           var value = rows[i].split(",");
-          console.log(value);
+          console.log(rows[i]);
           var word = value[0];
           if(word == "") continue;
           for(var j = 1; j <= 4; j++){
