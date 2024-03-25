@@ -33,3 +33,22 @@ html{
   margin-right: 10%;
   margin-left: 10%;
 }
+
+#dday{
+  padding:0.3em;
+  margin:0;
+  font-size: 30pt;
+  align-items: center;
+}
+
+#ad{
+  border-width: 5px;
+  border-radius: 100%;
+  border-color: black;
+  background-color: violet;
+  position: fixed;
+  right: 2em; 
+  bottom: 2em;
+  aspect-ratio: 1/1;
+  padding: 0.5%;
+}
