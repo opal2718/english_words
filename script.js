@@ -186,12 +186,13 @@ function addWords(){
   answers = [];
 
   var sentencess = "";  
-  for(let lessonN = 0; lessonN <= maxLessons; lessonN++){
+  for(let lessonN = -5; lessonN <= maxLessons; lessonN++){
     if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
     if(grade == 1 && lessonN == 1) continue;//없는 데이터 예외처리
     if(grade != 2 && lessonN <= 0) continue;//없는 데이터 예외처리
     var thisfile = fileName+String(lessonN)+".csv";
     if(grade == 2 && lessonN < 0) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv"
+    //alert(thisfile)
     makePage(thisfile, "");
   }
   setTimeout(() => {
