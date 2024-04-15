@@ -22,7 +22,7 @@ function changeHTML(){
       totalHTML += ("<b>" + words[i] + "</b>" + "<br>");
       totalHTML += (meanings[i] + "<br><br>");
       totalHTML += (sentences[i] + "<br>");
-      totalHTML += (sentences_kor[i] + "<br><br><br>");
+      totalHTML += (sentences_kor[i] + "<br><hr><br>");
 
     }
     else if (mode == "Quiz_Korean") {
