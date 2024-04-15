@@ -17,7 +17,28 @@ function shuffle(array) {
 var mode = "Answer";
 function changeHTML(){
   var totalHTML = "";
-  shuffle(words)
+  var empty = [];
+  var emptyI = 0;
+  for(emptyI = 0; emptyI < words.length; emptyI++){
+    empty.push(emptyI);
+  }
+  shuffle(empty);
+  var Twords = words;
+  var Tmeanings = meanings;
+  var Tsentences = sentences;
+  var Tsentences_kor = sentences_kor;
+  var Tsplit_blanks_1 = split_blanks_1;
+  var Tsplit_blanks_2 = split_blanks_2;
+  var Tanswers = answers;
+  for(emptyI = 0; emptyI < words.length; emptyI++){
+    words[emptyI] = Twords[empty[emptyI]];
+    meanings[emptyI] = Tmeanings[empty[emptyI]];
+    sentences[emptyI] = Tsentences[empty[emptyI]];
+    sentences_kor[emptyI] = Tsentences_kor[empty[emptyI]];
+    split_blanks_1[emptyI] = Tsplit_blanks_1[empty[emptyI]];
+    split_blanks_2[emptyI] = Tsplit_blanks_2[empty[emptyI]];
+    answers[emptyI] = Tanswers[empty[emptyI]];
+  }
   for(var i = 0; i < words.length; i++){
     if (mode == "Answer") {
       totalHTML += ("<b>" + words[i] + "</b>" + "<br>");
