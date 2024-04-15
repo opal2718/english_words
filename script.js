@@ -22,14 +22,17 @@ function changeHTML(){
       totalHTML += ("<b>" + words[i] + "</b>" + "<br>");
       totalHTML += (meanings[i] + "<br><br>");
       totalHTML += (sentences[i] + "<br>");
-      totalHTML += (sentences_kor[i] + "<br><hr><br>");
+      totalHTML += (sentences_kor[i] + "<br><br><hr>");
 
     }
     else if (mode == "Quiz_Korean") {
-      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
+      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
       totalHTML += ("&nbsp;&nbsp;"+sentences_kor[i] + "<br><br><br>");
     }
     else if (mode == "Quiz") {
+      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><br>");
+    }
+    else if (mode == "Quiz_Korean_First") {
       totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><br>");
     }
   }
@@ -50,6 +53,7 @@ $("#answer").change(function(){
     mode = "Answer";
     $("#quiz").prop("checked", false);
     $("#quiz_korean").prop("checked", false);
+    $("#quiz_korean_first").prop("checked", false);
   }
   else mode = "";
   $('#textArea').html("");
@@ -60,6 +64,7 @@ $("#quiz").change(function(){
     mode = "Quiz";
     $("#answer").prop("checked", false);
     $("#quiz_korean").prop("checked", false);
+    $("#quiz_korean_first").prop("checked", false);
   }
   else mode = "";
   $('#textArea').html("");
@@ -70,6 +75,18 @@ $("#quiz_korean").change(function(){
     mode = "Quiz_Korean";
     $("#quiz").prop("checked", false);
     $("#answer").prop("checked", false);
+    $("#quiz_korean_first").prop("checked", false);
+  }
+  else mode = "";
+  $('#textArea').html("");
+  addWords();
+});
+$("#quiz_korean_first").change(function(){
+  if($("#quiz_korean_first").is(":checked")){
+    mode = "Quiz_Korean_First";
+    $("#quiz").prop("checked", false);
+    $("#answer").prop("checked", false);
+    $("#quiz_korean").prop("checked", false);
   }
   else mode = "";
   $('#textArea').html("");
