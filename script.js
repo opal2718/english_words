@@ -17,6 +17,7 @@ function shuffle(array) {
 var mode = "Answer";
 function changeHTML(){
   var totalHTML = "";
+  shuffle(words)
   for(var i = 0; i < words.length; i++){
     if (mode == "Answer") {
       totalHTML += ("<b>" + words[i] + "</b>" + "<br>");
@@ -25,12 +26,16 @@ function changeHTML(){
       totalHTML += (sentences_kor[i] + "<br><br><hr>");
 
     }
+    if (mode == "Words") {
+      totalHTML += ("<b>" + words[i] + "</b>" + "<br><br><hr>");
+
+    }
     else if (mode == "Quiz_Korean") {
       totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
       totalHTML += ("&nbsp;&nbsp;"+sentences_kor[i] + "<br><br><br>");
     }
     else if (mode == "Quiz") {
-      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><br>");
+      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><hr>");
     }
     else if (mode == "Quiz_Korean_First") {
       totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
@@ -53,6 +58,19 @@ $("#answer").change(function(){
   if($("#answer").is(":checked")){
     mode = "Answer";
     $("#quiz").prop("checked", false);
+    $("#words").prop("checked", false);
+    $("#quiz_korean").prop("checked", false);
+    $("#quiz_korean_first").prop("checked", false);
+  }
+  else mode = "";
+  $('#textArea').html("");
+  addWords();
+});
+$("#words").change(function(){
+  if($("#words").is(":checked")){
+    mode = "Words";
+    $("#quiz").prop("checked", false);
+    $("#answer").prop("checked", false);
     $("#quiz_korean").prop("checked", false);
     $("#quiz_korean_first").prop("checked", false);
   }
@@ -66,6 +84,7 @@ $("#quiz").change(function(){
     $("#answer").prop("checked", false);
     $("#quiz_korean").prop("checked", false);
     $("#quiz_korean_first").prop("checked", false);
+    $("#words").prop("checked", false);
   }
   else mode = "";
   $('#textArea').html("");
@@ -77,6 +96,7 @@ $("#quiz_korean").change(function(){
     $("#quiz").prop("checked", false);
     $("#answer").prop("checked", false);
     $("#quiz_korean_first").prop("checked", false);
+    $("#words").prop("checked", false);
   }
   else mode = "";
   $('#textArea').html("");
@@ -88,6 +108,7 @@ $("#quiz_korean_first").change(function(){
     $("#quiz").prop("checked", false);
     $("#answer").prop("checked", false);
     $("#quiz_korean").prop("checked", false);
+    $("#words").prop("checked", false);
   }
   else mode = "";
   $('#textArea').html("");
