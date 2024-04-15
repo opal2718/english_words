@@ -122,7 +122,7 @@ for(var j1 = 1; j1 <= maxLessons_1; j1++){
     addWords();
   })
 }
-for(var j2 = 0; j2 <= maxLessons_2; j2++){
+for(var j2 = -5; j2 <= maxLessons_2; j2++){
   var temp2 = j2;
   $("#check2_"+temp2).change(function(){
     if($("#check2_"+temp2).is(":checked")){
@@ -189,9 +189,9 @@ function addWords(){
   for(let lessonN = 0; lessonN <= maxLessons; lessonN++){
     if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
     if(grade == 1 && lessonN == 1) continue;//없는 데이터 예외처리
-    if(grade != 2 && lessonN == 0) continue;//없는 데이터 예외처리
+    if(grade != 2 && lessonN <= 0) continue;//없는 데이터 예외처리
     var thisfile = fileName+String(lessonN)+".csv";
-    if(grade == 2 && lessonN == 0) thisfile = "./csvs/grade2_s1_mid.csv"
+    if(grade == 2 && lessonN < 0) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv"
     makePage(thisfile, "");
   }
   setTimeout(() => {
