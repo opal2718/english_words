@@ -173,7 +173,7 @@ function addWords(){
     if(grade == 1 && lessonN == 1) continue;//없는 데이터 예외처리
     if(grade != 2 && lessonN == 0) continue;//없는 데이터 예외처리
     var thisfile = fileName+String(lessonN)+".csv";
-    if(grade == 2 && lessonN == 0) thisfile = "./csvs/grade2_s1_mid"
+    if(grade == 2 && lessonN == 0) thisfile = "./csvs/grade2_s1_mid.csv"
     makePage(thisfile, "");
   }
   setTimeout(() => {
