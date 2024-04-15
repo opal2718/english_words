@@ -78,7 +78,12 @@ reiterate,-,-,반복하다[되풀이하다],_,,reiterate
 reliable,-,-,믿을 수 있는쉼표 신뢰할 수 있는,_,,reliable
 repercussion,-,-,(어떤 사건이 초래한쉼표 보통 좋지 못한쉼표 간접적인) 영향,_,,repercussion
 replicate,-,-,정확히 모사하다쉼표 복제하다,_,,replicate
-result in / give rise(birth) to / trigger / cause / bring about,-,-,~을 초래하다,_,,result in / give rise(birth) to / trigger / cause / bring about
+result in,-,-,~을 초래하다(1),_,,result in
+give rise to,-,-,~을 초래하다(2),_,,give rise to
+give birth to,-,-,~을 초래하다(3),_,,give birth to
+trigger,-,-,~을 초래하다(4),_,,trigger
+cause,-,-,~을 초래하다(5),_,,cause
+bring about,-,-,~을 초래하다(6),_,,bring about
 reverberate,-,-,울리다쉼표 (큰 소리 때문에) 떠나갈 듯 하다쉼표 반향[파문]을 불러일으키다,_,,reverberate
 scarce,-,-,부족한쉼표 드문,_,,scarce
 scoop,-,-,숟갈쉼표 뜨다쉼표 재빨리 들어올리다,_,,scoop
