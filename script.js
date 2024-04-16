@@ -24,6 +24,9 @@ function changeHTML(){
     console.log(emptyI);
   }
   shuffle(empty);
+  for(emptyI = 0; emptyI < words.length; emptyI++){
+    console.log(emptyI);
+  }
   var Twords = words;
   var Tmeanings = meanings;
   var Tsentences = sentences;
@@ -261,7 +264,7 @@ function makePage(fileName, parseName){
         shuffle(rows);
         for (var i = 0; i < rows.length; i++) {
           var value = rows[i].split(",");
-          console.log(rows[i]);
+          //console.log(rows[i]);
           var word = value[0];
           if(word == "") continue;
           for(var j = 1; j <= 4; j++){
