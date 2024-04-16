@@ -25,7 +25,7 @@ function changeHTML(){
   }
   shuffle(empty);
   for(emptyI = 0; emptyI < words.length; emptyI++){
-    console.log(emptyI);
+    console.log(empty[emptyI]);
   }
   var Twords = words;
   var Tmeanings = meanings;
