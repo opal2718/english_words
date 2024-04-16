@@ -18,22 +18,28 @@ var mode = "Answer";
 function changeHTML(){
   var totalHTML = "";
   var empty = [];
+  
+  var Twords = [];
+  var Tmeanings = [];
+  var Tsentences = [];
+  var Tsentences_kor = [];
+  var Tsplit_blanks_1 = [];
+  var Tsplit_blanks_2 = [];
+  var Tanswers = [];
+
   var emptyI = 0;
   for(emptyI = 0; emptyI < words.length; emptyI++){
     empty.push(emptyI);
-    console.log(emptyI);
+    Twords.push(words[emptyI]);
+    Tmeanings.push(meanings[emptyI]);
+    Tsentences.push(sentences[emptyI]);
+    Tsentences_kor.push(sentences_kor[emptyI]);
+    Tsplit_blanks_1.push(split_blanks_1[emptyI]);
+    Tsplit_blanks_2.push(split_blanks_2[emptyI]);
+    Tanswers.push(answers[emptyI]);
   }
   shuffle(empty);
-  for(emptyI = 0; emptyI < words.length; emptyI++){
-    console.log(empty[emptyI]);
-  }
-  var Twords = words;
-  var Tmeanings = meanings;
-  var Tsentences = sentences;
-  var Tsentences_kor = sentences_kor;
-  var Tsplit_blanks_1 = split_blanks_1;
-  var Tsplit_blanks_2 = split_blanks_2;
-  var Tanswers = answers;
+
   for(emptyI = 0; emptyI < words.length; emptyI++){
     words[emptyI] = Twords[empty[emptyI]];
     meanings[emptyI] = Tmeanings[empty[emptyI]];
