@@ -21,7 +21,7 @@ function changeHTML(){
   var emptyI = 0;
   for(emptyI = 0; emptyI < words.length; emptyI++){
     empty.push(emptyI);
-    console.log(emptyI);
+    alert(emptyI);
   }
   shuffle(empty);
   var Twords = words;
