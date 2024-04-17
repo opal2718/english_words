@@ -36,7 +36,7 @@ function changeHTML(){
     Tsentences_kor.push(sentences_kor[emptyI]);
     Tsplit_blanks_1.push(split_blanks_1[emptyI]);
     Tsplit_blanks_2.push(split_blanks_2[emptyI]);
-    Tanswers.push(answers[emptyI]);
+    Tanswers.push(answers [emptyI]);
   }
   shuffle(empty);
 
@@ -174,7 +174,7 @@ for(var j1 = 1; j1 <= maxLessons_1; j1++){
     addWords();
   })
 }
-for(var j2 = -5; j2 <= maxLessons_2; j2++){
+for(var j2 = -6; j2 <= maxLessons_2; j2++){
   var temp2 = j2;
   $("#check2_"+temp2).change(function(){
     if($("#check2_"+temp2).is(":checked")){
@@ -238,12 +238,13 @@ function addWords(){
   answers = [];
 
   var sentencess = "";  
-  for(let lessonN = -5; lessonN <= maxLessons; lessonN++){
+  for(let lessonN = -6; lessonN <= maxLessons; lessonN++){
     if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
     if(grade == 1 && lessonN == 1) continue;//없는 데이터 예외처리
     if(grade != 2 && lessonN <= 0) continue;//없는 데이터 예외처리
     var thisfile = fileName+String(lessonN)+".csv";
     if(grade == 2 && lessonN < 0) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv"
+    if(grade == 2 && lessonN == -6) thisfile = "./csvs/grade2_s1_mid_munhak.csv"
     //alert(thisfile)
     makePage(thisfile, "");
   }
