@@ -160,7 +160,7 @@ for(var j1 = 1; j1 <= maxLessons_1; j1++){
   $("#check1_"+temp1).change(function(){
     if($("#check1_"+temp1).is(":checked")){
       grade = 1;
-      document.title = "Hello Worlds! | Grade 1";
+      document.title = "Hello Words! | Grade 1";
       for(var k11 = 1; k11 <= maxLessons_2; k11++){
         var temp11 = k11;
         $("#check2_"+temp11).prop("checked", false);
@@ -179,7 +179,7 @@ for(var j2 = -13; j2 <= maxLessons_2; j2++){
   $("#check2_"+temp2).change(function(){
     if($("#check2_"+temp2).is(":checked")){
       grade = 2;
-      document.title = "Hello Worlds! | Grade 2";
+      document.title = "Hello Words! | Grade 2";
       for(var k21 = 1; k21 <= maxLessons_1; k21++){
         var temp21 = k21;
         $("#check1_"+temp21).prop("checked", false);
@@ -198,7 +198,7 @@ for(var j3 = 1; j3 <= maxLessons_3; j3++){
   $("#check3_"+temp3).change(function(){
     if($("#check3_"+temp3).is(":checked")){
       grade = 3;
-      document.title = "Hello Worlds! | Grade 3";
+      document.title = "Hello Words! | Grade 3";
       for(var k31 = 1; k31 <= maxLessons_2; k31++){
         var temp31 = k31;
         $("#check2_"+temp31).prop("checked", false);
@@ -245,7 +245,10 @@ function addWords(){
     var thisfile = fileName+String(lessonN)+".csv";
     if(grade == 2 && lessonN < 0 && -6 < lessonN) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv"
     if(grade == 2 && lessonN == -6) thisfile = "./csvs/grade2_s1_mid_munhak.csv"
-    if(grade == 2 && lessonN < -6 && -14 < lessonN) thisfile = "./csvs/grade2_s1_mid_info_"+String(-lessonN-6)+".csv"
+    if(grade == 2 && lessonN < -6 && -14 < lessonN) {
+      thisfile = "./csvs/grade2_s1_mid_info_"+String(-lessonN-6)+".csv"
+      document.title = "Hello 'Worlds!' | Grade 2";
+    }
     //alert(thisfile)
     makePage(thisfile, "");
   }
