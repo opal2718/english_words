@@ -276,6 +276,7 @@ function makePage(fileName, parseName){
           if(value[0] == "") continue;
           for(var j = 1; j <= 4; j++){
             value[j] = value[j].replace(/쉼표/g, ",");
+            value[j] = value[j].replace(/큰따옴표/g, '"');
             value[j] = value[j].replace(/따옴표/g, "'");
             value[j] = value[j].replace(/엔터/g, "<br>");
             value[j] = value[j].replace(/숫자/g, "");

@@ -8,4 +8,4 @@
 [1쉼표 2쉼표 4쉼표 5],-,-,my_list = [1쉼표 2쉼표 3쉼표 4쉼표 5]엔터my_list.remove(3)엔터print(my_list),_,,[1쉼표 2쉼표 4쉼표 5]
 [따옴표물리따옴표쉼표 따옴표화학따옴표쉼표 따옴표생물따옴표쉼표 따옴표지구과학따옴표],-,-,list_a = [따옴표물리따옴표쉼표따옴표화학따옴표쉼표따옴표생물따옴표쉼표따옴표지구과학따옴표쉼표따옴표정보과학따옴표]엔터del list_a[4]엔터print(list_a),_,,[따옴표물리따옴표쉼표 따옴표화학따옴표쉼표 따옴표생물따옴표쉼표 따옴표지구과학따옴표]
 [2쉼표 4쉼표 6쉼표 9],-,-,list_a=[4쉼표6쉼표2쉼표9]엔터list_a.sort()엔터print(list_a),_,,[2쉼표 4쉼표 6쉼표 9]
-3 is in the list,-,-,"my_list = [1쉼표 2쉼표 3쉼표 4쉼표 5]엔터if 3 in my_list:엔터    print(""3 is in the list"")엔터else:엔터    print(""3 is not in the list"")",_,,3 is in the list
+3 is in the list,-,-,my_list = [1쉼표 2쉼표 3쉼표 4쉼표 5]엔터if 3 in my_list:엔터    print(큰따옴표3 is in the list큰따옴표)엔터else:엔터    print(큰따옴표3 is not in the list큰따옴표),_,,3 is in the list
