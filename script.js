@@ -174,7 +174,7 @@ for(var j1 = 1; j1 <= maxLessons_1; j1++){
     addWords();
   })
 }
-for(var j2 = -6; j2 <= maxLessons_2; j2++){
+for(var j2 = -13; j2 <= maxLessons_2; j2++){
   var temp2 = j2;
   $("#check2_"+temp2).change(function(){
     if($("#check2_"+temp2).is(":checked")){
@@ -238,13 +238,14 @@ function addWords(){
   answers = [];
 
   var sentencess = "";  
-  for(let lessonN = -6; lessonN <= maxLessons; lessonN++){
+  for(let lessonN = -13; lessonN <= maxLessons; lessonN++){
     if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
     if(grade == 1 && lessonN == 1) continue;//없는 데이터 예외처리
     if(grade != 2 && lessonN <= 0) continue;//없는 데이터 예외처리
     var thisfile = fileName+String(lessonN)+".csv";
-    if(grade == 2 && lessonN < 0) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv"
+    if(grade == 2 && lessonN < 0 && -6 < lessonN) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv"
     if(grade == 2 && lessonN == -6) thisfile = "./csvs/grade2_s1_mid_munhak.csv"
+    if(grade == 2 && lessonN < -6 && -14 < lessonN) thisfile = "./csvs/grade2_s1_mid_info_"+String(-lessonN-6)+".csv"
     //alert(thisfile)
     makePage(thisfile, "");
   }
@@ -272,15 +273,17 @@ function makePage(fileName, parseName){
         for (var i = 0; i < rows.length; i++) {
           var value = rows[i].split(",");
           //console.log(rows[i]);
-          var word = value[0];
-          if(word == "") continue;
+          if(value[0] == "") continue;
           for(var j = 1; j <= 4; j++){
             value[j] = value[j].replace(/쉼표/g, ",");
             value[j] = value[j].replace(/따옴표/g, "'");
+            value[j] = value[j].replace(/엔터/g, "<br>");
+            value[j] = value[j].replace(/숫자/g, "");
             while(value[j].indexOf("__") != -1){
               value[j] = value[j].replace("__", "_");
             }
           }
+          var word = value[0];
           var meaning = value[1];
           var sentence = value[2];
           var sentence_kor = value[3];

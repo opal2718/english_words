@@ -1,0 +1,15 @@
+﻿substring,-,-,주어진 문자열에서 부분 문자열을 탐색함.,_(),,substring
+count,-,-,주어진 문자열에서 부분 문자열이 몇 번 나오는지 세어서 반환,_(),,count
+find(sub쉼표 start쉼표 end),-,-,주어진 문자열에서 부분 문자열을을 찾아 첫 번째로 나오는 인덱스를 반환쉼표 만약 찾지 못하면?: -1 (옵션: start와 end 인자: 탐색을 시작하고 끝낼 위치를 지정할 수 있음.),_,,find(sub쉼표 start쉼표 end)
+index,-,-, find와 비슷쉼표 만약 찾는 문자열이 없으면 ValueError를 발생,_(),,index
+startswith,-,-,지정된 문자열로 시작하는지 여부를 반환 (접두사),_(),,startswith
+endswith,-,-,지정된 문자열로 끝나는지 여부를 반환 (접미사),_(),,endswith
+숫자False,-,-,"string3 = ""After LIKE""엔터print(string3.isalpha())",_,,숫자False
+숫자False,-,-,"string3 = ""After LIKE""엔터print(string3.isdigit())",_,,숫자False
+숫자False,-,-,"string3 = ""After LIKE""엔터print(string3.isupper())",_,,숫자False
+숫자False,-,-,"string3 = ""After LIKE""엔터print(string3.islower())",_,,숫자False
+strip,-,-,문자열 앞뒤의 공백 제거쉼표 지정한 문자나 문자열 제거 가능,_(),,strip
+rstrip,-,-,문자열의 오른쪽 끝에 있는 공백 제거,_(),,rstrip
+lstrip,-,-,문자열의 왼쪽 끝에 있는 공백 제거,_(),,lstrip
+replace,-,-,특정 문자나 문자열을 다른 문자나 문자열로 대체,_(),,replace
+숫자True,-,-,"print(""안녕"" in ""안녕하세요"")",_,,숫자True

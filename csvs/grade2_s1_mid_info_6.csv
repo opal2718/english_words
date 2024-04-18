@@ -1,0 +1,6 @@
+﻿안녕하세요쉼표 철수님!,-,-,"def greeting(name):엔터    print(""안녕하세요쉼표 "" + name + ""님!"")엔터greeting(""철수"")",_,,안녕하세요쉼표 철수님!
+합계는 8입니다.,-,-,"def add_numbers(x쉼표 y):엔터    result = x + y엔터    return result엔터sum = add_numbers(3쉼표 5)엔터print(""합계는 "" + str(sum) + ""입니다."")",_,,합계는 8입니다.
+안녕하세요쉼표 철수님!&안녕하세요쉼표 영희님!&안녕하세요쉼표 민수님!&,-,-,"def greetings(*names):엔터    for name in names:        print(""안녕하세요쉼표 "" + name + ""님!""쉼표 end=따옴표&따옴표)",_,,안녕하세요쉼표 철수님!&안녕하세요쉼표 영희님!&안녕하세요쉼표 민수님!&
+Hello쉼표 world!,-,-,"def greeting3(name=""world""):엔터    print(""Hello쉼표 "" + name + ""!"")엔터greeting3()",_,,Hello쉼표 world!
+안녕하세요쉼표 철수님!&안녕하세요쉼표 영희님!&2,-,-,"def greeting2(*names쉼표n):엔터    for name in names:엔터        print(""안녕하세요쉼표 "" + name + ""님!""쉼표 end=따옴표&따옴표)엔터    print(n)엔터greeting2(""철수""쉼표 ""영희""쉼표 n=2)",_,,안녕하세요쉼표 철수님!&안녕하세요쉼표 영희님!&2
+저는 철수이고쉼표 25살입니다.,-,-,"def greeting(name쉼표 age):엔터    print(""저는 "" + name + ""이고쉼표 "" + str(age) + ""살입니다."")엔터greeting(age=25쉼표 name=""철수"")",_,,저는 철수이고쉼표 25살입니다.
