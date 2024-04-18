@@ -1,7 +1,7 @@
 ﻿준,-,-,TNX = [따옴표오성준따옴표쉼표따옴표은휘따옴표쉼표따옴표우경준따옴표]엔터print(TNX[0][2]),_,,준
 [0쉼표 1쉼표 2쉼표 3쉼표 4쉼표 5쉼표 6쉼표 7쉼표 8쉼표 9],-,-,list(range(10)),_,,[0쉼표 1쉼표 2쉼표 3쉼표 4쉼표 5쉼표 6쉼표 7쉼표 8쉼표 9]
 [2쉼표 4쉼표 6],-,-,list(range(2쉼표8쉼표2)),_,,[2쉼표 4쉼표 6]
-[1쉼표 2쉼표 3쉼표 4쉼표 5쉼표 6],-,-,my_list = [1쉼표 2쉼표 3]엔터other_list = [4쉼표 5쉼표 7]엔터my_list.extend(other_list)엔터print(my_list),_,,[1쉼표 2쉼표 3쉼표 4쉼표 5쉼표 6]
+[1쉼표 2쉼표 3쉼표 4쉼표 5쉼표 6],-,-,my_list = [1쉼표 2쉼표 3]엔터other_list = [4쉼표 5쉼표 6]엔터my_list.extend(other_list)엔터print(my_list),_,,[1쉼표 2쉼표 3쉼표 4쉼표 5쉼표 6]
 [1쉼표 2쉼표 20쉼표 3쉼표 4쉼표 5쉼표 6],-,-,my_list = [1쉼표 2쉼표 3]엔터other_list = [4쉼표 5쉼표 6]엔터my_list.extend(other_list)엔터my_list.insert(2쉼표20)엔터print(my_list),_,,[1쉼표 2쉼표 20쉼표 3쉼표 4쉼표 5쉼표 6]
 숫자4,-,-,my_list = [1쉼표 2쉼표 3쉼표 4쉼표 5]엔터removed_value = my_list.pop(3)엔터print(removed_value),_,,숫자4
 [1쉼표 2쉼표 3쉼표 5],-,-,my_list = [1쉼표 2쉼표 3쉼표 4쉼표 5]엔터removed_value = my_list.pop(3)엔터print(my_list),_,,[1쉼표 2쉼표 3쉼표 5]
