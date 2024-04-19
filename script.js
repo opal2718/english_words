@@ -102,14 +102,14 @@ function check_reversed(n) {
       if(answerV[-1] == ":"){
         var whichOps = parseInt(answerV[answerV.length-2], 10);
         if(whichOps == NaN){
-          answerV = (answerV.slice(0, -1)).trim();
+          answerV = (answerV.slice(0, answerV.length-1)).trim();
         }
         if(whichOps >= 0){
-          answerV = (answerV.slice(0, -2)).trim();
+          answerV = (answerV.slice(0, answerV.length-2)).trim();
         }
         else{
           
-          answerV = (answerV.slice(0, -1)).trim();
+          answerV = (answerV.slice(0, answerV.length-1)).trim();
         }
       }
       console.log(answerV);
