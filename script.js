@@ -120,7 +120,7 @@ function check_reversed(n) {
         optionsArr += "&nbsp;&nbsp;&nbsp;&nbsp;"
         optionsArr += ttttt;
         optionsArr += ": ";
-        var tttttS = String(related[ttttt]).replace(/<br>/g, '<br>&nbsp;&nbsp;&nbsp;&nbsp;');
+        var tttttS = String(related[ttttt]).replace(/<br>/g, '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
         optionsArr += tttttS;
         optionsArr += "<br>";
         console.log(optionsArr);
