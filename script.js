@@ -94,6 +94,10 @@ function check_reversed(n) {
     else {
       $('#blank' + n).css("color", "red");
     }
+    if($('#blank' + n).val() == "?"){
+      $('#blank' + n).val(sentences_kor[n]);
+      $('#blank' + n).css("color", "black");
+    }
     if(answerV[0] == ":"){
       var tttt = 0;
       var related = [];
@@ -135,6 +139,8 @@ function check_reversed(n) {
         if(whichOps >= 0){
           console.log(related[whichOps]);
           $('#blank' + n).val(related[whichOps]);
+          $('#options' + String(n)).html("");
+          check_reversed(n);
         }
       }
     }
