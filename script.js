@@ -99,7 +99,17 @@ function check_reversed(n) {
       var related = [];
       answerV = (answerV.slice(1)).trim();
       if(answerV[-1] == ":"){
-        answerV = (answerV.slice(0, -2)).trim();
+        var whichOps = parseInt(answerV[-2], 10);
+        if(whichOps == NaN){
+          answerV = (answerV.slice(0, -1)).trim();
+        }
+        if(whichOps >= 0){
+          answerV = (answerV.slice(0, -2)).trim();
+        }
+        else{
+          
+          answerV = (answerV.slice(0, -1)).trim();
+        }
       }
       console.log(answerV);
       for(tttt = 0; tttt < words.length; tttt++){
