@@ -133,8 +133,8 @@ function check_reversed(n) {
         var whichOps = parseInt(guessing, 10);
         console.log(whichOps);
         if(whichOps >= 0){
-          console.log(optionsArr[whichOps]);
-          $('#blank' + n).val(optionsArr[whichOps]);
+          console.log(related[whichOps]);
+          $('#blank' + n).val(related[whichOps]);
         }
       }
     }
