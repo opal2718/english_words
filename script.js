@@ -310,7 +310,7 @@ function addWords(){
     if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
     if(grade == 1 && lessonN == 1) continue;//없는 데이터 예외처리
     if(grade != 2 && lessonN <= 0) continue;//없는 데이터 예외처리
-    document.title = "Hello 'Worlds!' | Grade "+String(grade);
+    document.title = "Hello Words! | Grade "+String(grade);
     var thisfile = fileName+String(lessonN)+".csv";
     if(grade == 2 && lessonN < 0 && -6 < lessonN) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv"
     if(grade == 2 && lessonN == -6) thisfile = "./csvs/grade2_s1_mid_munhak.csv"
