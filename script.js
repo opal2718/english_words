@@ -67,7 +67,7 @@ function changeHTML(){
     }
     else if (mode == "Quiz_Reversed") {
       totalHTML += ((i+1)+". "+'<input value="" autocomplete="off" onkeyup="check_reversed(' + i + ')" type="text" id="blank' + i + '">'+ "<br>");
-      totalHTML += ("보기: "+'<div id="options'+i+'">'+'<br>');
+      totalHTML += ("보기: "+'<div id="options'+i+'">'+'</div><br>');
       totalHTML += (words[i] + "<br><br><br>");
     }
     else if (mode == "Quiz") {
@@ -97,8 +97,10 @@ function check_reversed(n) {
     if(answerV[0] == ":"){
       var tttt = 0;
       var related = [];
+      var guessing = false;
       answerV = (answerV.slice(1)).trim();
       if(answerV[answerV.length-2] == ":"){
+        guessing = true;
         answerV = (answerV.slice(0, answerV.length-2)).trim();
       }
       if(answerV[answerV.length-1] == ":"){
@@ -125,7 +127,7 @@ function check_reversed(n) {
       $('#options' + String(n)).html("");
       $('#options' + String(n)).append(optionsArr);
       //$('#blank' + n).val(answers[n]);
-      if(answerV[answerV.length-2] == ":"){
+      if(guessing){
         var whichOps = parseInt(answerV[answerV.length-1], 10);
         console.log(whichOps);
         if(whichOps >= 0){
