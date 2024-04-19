@@ -97,8 +97,14 @@ function check_reversed(n) {
     if(answerV[0] == ":"){
       var tttt = 0;
       var related = [];
+      console.log(answerV);
       for(tttt = 0; tttt < words.length; tttt++){
-        if(words[tttt].includes(answerV)) related.push(words[tttt])
+        //console.log(words[tttt]);
+        if(words[tttt].includes(answerV)) {
+          related.push(words[tttt]);
+          console.log(words[tttt]);
+        }
+
       }
       var ttttt = 0;
       var optionsArr = "";
