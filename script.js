@@ -118,7 +118,8 @@ function check_reversed(n) {
       var optionsArr = "보기: <br>";
       for(ttttt = 0; ttttt < Math.min(related.length, 10); ttttt++){
         optionsArr += "&nbsp;&nbsp;&nbsp;&nbsp;"
-        optionsArr += String(ttttt);
+        var tttttS = String(ttttt).replace(/<br>/g, '<br>&nbsp;&nbsp;&nbsp;&nbsp;');
+        optionsArr += tttttS;
         optionsArr += ": ";
         optionsArr += related[ttttt];
         optionsArr += "<br>";
