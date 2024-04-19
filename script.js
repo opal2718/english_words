@@ -98,9 +98,9 @@ function check_reversed(n) {
       var tttt = 0;
       var related = [];
       answerV = (answerV.slice(1)).trim();
-      console.log(answerV[answerV.length-1]);
-      if(answerV[-1] == ":"){
+      if(answerV[answerV.length-1] == ":"){
         var whichOps = parseInt(answerV[answerV.length-2], 10);
+        console.log(whichOps);
         if(whichOps == NaN){
           answerV = (answerV.slice(0, answerV.length-1)).trim();
         }
