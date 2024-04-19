@@ -99,6 +99,7 @@ function check_reversed(n) {
       var related = [];
       answerV = (answerV.slice(1)).trim();
       if(answerV[-1] == ":"){
+        console.log(answerV[-1]);
         var whichOps = parseInt(answerV[-2], 10);
         if(whichOps == NaN){
           answerV = (answerV.slice(0, -1)).trim();
