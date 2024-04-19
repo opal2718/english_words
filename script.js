@@ -129,7 +129,7 @@ function check_reversed(n) {
         console.log(optionsArr);
       }
       optionsArr += "...";
-      $('#options' + n).html(optionsArr);
+      $('#options' + n).innerHTML(optionsArr);
       //$('#blank' + n).val(answers[n]);
       if(answerV[-1] == ":"){
         var whichOps = parseInt(answerV[-2], 10);
