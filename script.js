@@ -98,7 +98,7 @@ function check_reversed(n) {
       var tttt = 0;
       var related = [];
       for(tttt = 0; tttt < words.length; tttt++){
-        if((words[tttt].toLowerCase()).contains((answerV.toLowerCase()).trim())) related.push(words[tttt])
+        if(words[tttt].contains(answerV)) related.push(words[tttt])
       }
       var ttttt = 0;
       var optionsArr = "";
@@ -168,7 +168,7 @@ $("#quiz").change(function(){
   addWords();
 });
 $("#quiz_reversed").change(function(){
-  if($("#quiz").is(":checked")){
+  if($("#quiz_reversed").is(":checked")){
     mode = "Quiz_Reversed";
     $("#quiz").prop("checked", false);
     $("#answer").prop("checked", false);
