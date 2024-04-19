@@ -98,6 +98,9 @@ function check_reversed(n) {
       var tttt = 0;
       var related = [];
       answerV = (answerV.slice(1)).trim();
+      if(answerV[-1] == ":"){
+        answerV = (answerV.slice(0, -2)).trim();
+      }
       console.log(answerV);
       for(tttt = 0; tttt < words.length; tttt++){
         //console.log(words[tttt]);
