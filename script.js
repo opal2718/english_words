@@ -97,10 +97,10 @@ function check_reversed(n) {
     if(answerV[0] == ":"){
       var tttt = 0;
       var related = [];
-      var guessing = false;
+      var guessing = -1;
       answerV = (answerV.slice(1)).trim();
       if(answerV[answerV.length-2] == ":"){
-        guessing = true;
+        guessing = answerV[answerV.length-1];
         answerV = (answerV.slice(0, answerV.length-2)).trim();
       }
       if(answerV[answerV.length-1] == ":"){
@@ -129,7 +129,7 @@ function check_reversed(n) {
       $('#options' + String(n)).html("");
       $('#options' + String(n)).append(optionsArr);
       //$('#blank' + n).val(answers[n]);
-      if(guessing){
+      if(guessing >= 0){
         console.log(answerV[answerV.length-1]);
         var whichOps = parseInt(answerV[answerV.length-1], 10);
         console.log(whichOps);
