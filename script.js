@@ -124,7 +124,7 @@ function check_reversed(n) {
         console.log(optionsArr);
       }
       optionsArr += "...";
-      $('#options' + String(n)).html("");
+      $('#options' + String(n)).innerHTML("");
       $('#options' + String(n)).append(optionsArr);
       //$('#blank' + n).val(answers[n]);
       if(guessing){
