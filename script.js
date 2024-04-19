@@ -103,7 +103,6 @@ function check_reversed(n) {
         //console.log(words[tttt]);
         if(sentences_kor[tttt].includes(answerV)) {
           related.push(sentences_kor[tttt]);
-          console.log(sentences_kor[tttt]);
         }
 
       }
@@ -113,9 +112,10 @@ function check_reversed(n) {
         optionsArr += String(ttttt);
         optionsArr += ": ";
         optionsArr += related[ttttt];
-        optionsArr += ", "
+        optionsArr += ", ";
+        console.log(optionsArr);
       }
-      optionsArr += "..."
+      optionsArr += "...";
       $('#options' + n).val(optionsArr);
       if(answerV[-1] == ":"){
         var whichOps = parseInt(answerV[-2], 10);
