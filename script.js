@@ -65,6 +65,11 @@ function changeHTML(){
       totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
       totalHTML += (sentences_kor[i] + "<br><br><br>");
     }
+    else if (mode == "Quiz_Reversed") {
+      totalHTML += ((i+1)+". "+'<input value="" autocomplete="off" onkeyup="check_reversed(' + i + ')" type="text" id="blank' + i + '">'+ "<br>");
+      totalHTML += ("보기: "+'<div id="options'+i+'">'+'<br>');
+      totalHTML += (words[i] + "<br><br><br>");
+    }
     else if (mode == "Quiz") {
       totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><hr>");
     }
@@ -75,6 +80,44 @@ function changeHTML(){
   }
   return totalHTML;
 
+}
+function check_reversed(n) {
+  //alert($('#blank' + n).val());
+  //alert(answers[n]);
+  if(n == -1){    
+  }
+  else{
+    var answerV = $('#blank' + n).val();
+    if ($('#blank' + n).val().toLowerCase() == words[n].toLowerCase()) {
+      $('#blank' + n).css("color", "blue");
+    }
+    else {
+      $('#blank' + n).css("color", "red");
+    }
+    if(answerV[0] == ":"){
+      var tttt = 0;
+      var related = [];
+      for(tttt = 0; tttt < words.length; tttt++){
+        if(words[tttt].toLowerCase().contains(answerV.toLowerCase().trim())) related.push(words[tttt])
+      }
+      var ttttt = 0;
+      var optionsArr = "";
+      for(ttttt = 0; ttttt < Math.min(related.length, 10); ttttt++){
+        optionsArr += String(ttttt);
+        optionsArr += ": ";
+        optionsArr += related[ttttt];
+        optionsArr += ", "
+      }
+      optionsArr += "..."
+      $('#options' + n).val(optionsArr);
+      if(answerV[-1] == ":"){
+        var whichOps = parseInt(answerV[-2], 10);
+        if(whichOps >= 0){
+          $('#blank' + n).val(optionsArr[whichOps]);
+        }
+      }
+    }
+  }
 }
 
 var date = new Date();
@@ -92,6 +135,7 @@ $("#answer").change(function(){
     $("#words").prop("checked", false);
     $("#quiz_korean").prop("checked", false);
     $("#quiz_korean_first").prop("checked", false);
+    $("#quiz_reversed").prop("checked", false);
   }
   else mode = "";
   $('#textArea').html("");
@@ -104,6 +148,7 @@ $("#words").change(function(){
     $("#answer").prop("checked", false);
     $("#quiz_korean").prop("checked", false);
     $("#quiz_korean_first").prop("checked", false);
+    $("#quiz_reversed").prop("checked", false);
   }
   else mode = "";
   $('#textArea').html("");
@@ -112,6 +157,20 @@ $("#words").change(function(){
 $("#quiz").change(function(){
   if($("#quiz").is(":checked")){
     mode = "Quiz";
+    $("#answer").prop("checked", false);
+    $("#quiz_korean").prop("checked", false);
+    $("#quiz_korean_first").prop("checked", false);
+    $("#words").prop("checked", false);
+    $("#quiz_reversed").prop("checked", false);
+  }
+  else mode = "";
+  $('#textArea').html("");
+  addWords();
+});
+$("#quiz_reversed").change(function(){
+  if($("#quiz").is(":checked")){
+    mode = "Quiz_Reversed";
+    $("#quiz").prop("checked", false);
     $("#answer").prop("checked", false);
     $("#quiz_korean").prop("checked", false);
     $("#quiz_korean_first").prop("checked", false);
@@ -128,6 +187,7 @@ $("#quiz_korean").change(function(){
     $("#answer").prop("checked", false);
     $("#quiz_korean_first").prop("checked", false);
     $("#words").prop("checked", false);
+    $("#quiz_reversed").prop("checked", false);
   }
   else mode = "";
   $('#textArea').html("");
@@ -140,6 +200,7 @@ $("#quiz_korean_first").change(function(){
     $("#answer").prop("checked", false);
     $("#quiz_korean").prop("checked", false);
     $("#words").prop("checked", false);
+    $("#quiz_reversed").prop("checked", false);
   }
   else mode = "";
   $('#textArea').html("");
