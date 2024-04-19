@@ -115,8 +115,9 @@ function check_reversed(n) {
 
       }
       var ttttt = 0;
-      var optionsArr = "";
+      var optionsArr = "보기: <br>";
       for(ttttt = 0; ttttt < Math.min(related.length, 10); ttttt++){
+        optionsArr += "&nbsp;&nbsp;&nbsp;&nbsp;"
         optionsArr += String(ttttt);
         optionsArr += ": ";
         optionsArr += related[ttttt];
@@ -124,7 +125,7 @@ function check_reversed(n) {
         console.log(optionsArr);
       }
       optionsArr += "...";
-      $('#options' + String(n)).innerHTML("");
+      $('#options' + String(n)).html("");
       $('#options' + String(n)).append(optionsArr);
       //$('#blank' + n).val(answers[n]);
       if(guessing){
