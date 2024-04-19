@@ -71,10 +71,10 @@ function changeHTML(){
       totalHTML += (words[i] + "<br><br><br>");
     }
     else if (mode == "Quiz") {
-      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><hr>");
+      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+sentences_kor[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><hr>");
     }
     else if (mode == "Quiz_Korean_First") {
-      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
+      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+sentences_kor[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
       totalHTML += (sentences_kor[i] + "<br><br><br>");
     }
   }
@@ -102,8 +102,8 @@ function check_reversed(n) {
       for(tttt = 0; tttt < words.length; tttt++){
         //console.log(words[tttt]);
         if(words[tttt].includes(answerV)) {
-          related.push(answers[tttt]);
-          console.log(answers[tttt]);
+          related.push(sentences_kor[tttt]);
+          console.log(sentences_kor[tttt]);
         }
 
       }
