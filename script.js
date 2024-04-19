@@ -98,9 +98,9 @@ function check_reversed(n) {
       var tttt = 0;
       var related = [];
       answerV = (answerV.slice(1)).trim();
-      console.log(answerV[-1]);
+      console.log(answerV[answerV.length-1]);
       if(answerV[-1] == ":"){
-        var whichOps = parseInt(answerV[-2], 10);
+        var whichOps = parseInt(answerV[answerV.length-2], 10);
         if(whichOps == NaN){
           answerV = (answerV.slice(0, -1)).trim();
         }
@@ -133,8 +133,8 @@ function check_reversed(n) {
       $('#options' + String(n)).html("");
       $('#options' + String(n)).append(optionsArr);
       //$('#blank' + n).val(answers[n]);
-      if(answerV[-1] == ":"){
-        var whichOps = parseInt(answerV[-2], 10);
+      if(answerV[answerV.length-1] == ":"){
+        var whichOps = parseInt(answerV[answerV.length-2], 10);
         if(whichOps >= 0){
           $('#blank' + n).val(optionsArr[whichOps]);
         }
