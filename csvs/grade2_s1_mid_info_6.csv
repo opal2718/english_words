@@ -1,6 +1,6 @@
 ﻿안녕하세요쉼표 철수님!,-,-,def greeting(name):엔터    print(큰따옴표안녕하세요쉼표 큰따옴표 + name + 큰따옴표님!큰따옴표)엔터greeting(큰따옴표철수큰따옴표),_,,안녕하세요쉼표 철수님!
 합계는 8입니다.,-,-,def add_numbers(x쉼표 y):엔터    result = x + y엔터    return result엔터sum = add_numbers(3쉼표 5)엔터print(큰따옴표합계는 큰따옴표 + str(sum) + 큰따옴표입니다.큰따옴표),_,,합계는 8입니다.
-안녕하세요쉼표 철수님!&안녕하세요쉼표 영희님!&안녕하세요쉼표 민수님!&,-,-,def greetings(*names):엔터    for name in names:        print(큰따옴표안녕하세요쉼표 큰따옴표 + name + 큰따옴표님!큰따옴표쉼표 end=따옴표&따옴표),_,,안녕하세요쉼표 철수님!&안녕하세요쉼표 영희님!&안녕하세요쉼표 민수님!&
+안녕하세요쉼표 철수님!&안녕하세요쉼표 영희님!&안녕하세요쉼표 민수님!&,-,-,def greetings(*names):엔터    for name in names:        print(큰따옴표안녕하세요쉼표 큰따옴표 + name + 큰따옴표님!큰따옴표쉼표 end=따옴표&따옴표)엔터greetings("철수", "영희", "민수"),_,,안녕하세요쉼표 철수님!&안녕하세요쉼표 영희님!&안녕하세요쉼표 민수님!&
 Hello쉼표 world!,-,-,def greeting3(name=큰따옴표world큰따옴표):엔터    print(큰따옴표Hello쉼표 큰따옴표 + name + 큰따옴표!큰따옴표)엔터greeting3(),_,,Hello쉼표 world!
 안녕하세요쉼표 철수님!&안녕하세요쉼표 영희님!&2,-,-,def greeting2(*names쉼표n):엔터    for name in names:엔터        print(큰따옴표안녕하세요쉼표 큰따옴표 + name + 큰따옴표님!큰따옴표쉼표 end=따옴표&따옴표)엔터    print(n)엔터greeting2(큰따옴표철수큰따옴표쉼표 큰따옴표영희큰따옴표쉼표 n=2),_,,안녕하세요쉼표 철수님!&안녕하세요쉼표 영희님!&2
 저는 철수이고쉼표 25살입니다.,-,-,def greeting(name쉼표 age):엔터    print(큰따옴표저는 큰따옴표 + name + 큰따옴표이고쉼표 큰따옴표 + str(age) + 큰따옴표살입니다.큰따옴표)엔터greeting(age=25쉼표 name=큰따옴표철수큰따옴표),_,,저는 철수이고쉼표 25살입니다.
