@@ -119,6 +119,7 @@ function check_reversed(n) {
           }
 
         }
+        shuffle(related);
         var ttttt = 0;
         var optionsArr = "보기: <br>";
         for(ttttt = 0; ttttt < Math.min(related.length, 10); ttttt++){
