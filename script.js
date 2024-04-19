@@ -112,11 +112,12 @@ function check_reversed(n) {
         optionsArr += String(ttttt);
         optionsArr += ": ";
         optionsArr += related[ttttt];
-        optionsArr += ", ";
+        optionsArr += "<br>";
         console.log(optionsArr);
       }
       optionsArr += "...";
-      $('#options' + n).val(optionsArr);
+      $('#options' + n).html(optionsArr);
+      //$('#blank' + n).val(answers[n]);
       if(answerV[-1] == ":"){
         var whichOps = parseInt(answerV[-2], 10);
         if(whichOps >= 0){
