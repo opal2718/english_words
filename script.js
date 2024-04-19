@@ -236,7 +236,7 @@ $("#quiz_korean_first").change(function(){
   addWords();
 });
 
-
+alert("단어 제시 퀴즈가 새로 생겼습니다. 사용하기 전에 안내문을 잘 읽어주세요.")
 
 //모드 변경
 $(function() {
