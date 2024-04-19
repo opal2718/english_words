@@ -110,37 +110,39 @@ function check_reversed(n) {
       if(answerV[answerV.length-1] == ":"){
         answerV = (answerV.slice(0, answerV.length-1)).trim();
       }
-      console.log(answerV);
-      for(tttt = 0; tttt < words.length; tttt++){
-        //console.log(words[tttt]);
-        if(sentences_kor[tttt].includes(answerV)) {
-          related.push(sentences_kor[tttt]);
-        }
+      //console.log(answerV);
+      if(answerV!="" && answerV!=" "){
+        for(tttt = 0; tttt < words.length; tttt++){
+          //console.log(words[tttt]);
+          if(sentences_kor[tttt].includes(answerV)) {
+            related.push(sentences_kor[tttt]);
+          }
 
-      }
-      var ttttt = 0;
-      var optionsArr = "보기: <br>";
-      for(ttttt = 0; ttttt < Math.min(related.length, 10); ttttt++){
-        optionsArr += "&nbsp;&nbsp;&nbsp;&nbsp;"
-        optionsArr += ttttt;
-        optionsArr += ": ";
-        var tttttS = String(related[ttttt]).replace(/<br>/g, '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-        optionsArr += tttttS;
-        optionsArr += "<br>";
-        console.log(optionsArr);
-      }
-      optionsArr += "...";
-      $('#options' + String(n)).html("");
-      $('#options' + String(n)).append(optionsArr);
-      //$('#blank' + n).val(answers[n]);
-      if(guessing >= 0){
-        var whichOps = parseInt(guessing, 10);
-        console.log(whichOps);
-        if(whichOps >= 0){
-          console.log(related[whichOps]);
-          $('#blank' + n).val(related[whichOps]);
-          $('#options' + String(n)).html("");
-          check_reversed(n);
+        }
+        var ttttt = 0;
+        var optionsArr = "보기: <br>";
+        for(ttttt = 0; ttttt < Math.min(related.length, 10); ttttt++){
+          optionsArr += "&nbsp;&nbsp;&nbsp;&nbsp;"
+          optionsArr += ttttt;
+          optionsArr += ": ";
+          var tttttS = String(related[ttttt]).replace(/<br>/g, '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+          optionsArr += tttttS;
+          optionsArr += "<br>";
+          console.log(optionsArr);
+        }
+        optionsArr += "...";
+        $('#options' + String(n)).html("");
+        $('#options' + String(n)).append(optionsArr);
+        //$('#blank' + n).val(answers[n]);
+        if(guessing >= 0){
+          var whichOps = parseInt(guessing, 10);
+          console.log(whichOps);
+          if(whichOps >= 0){
+            console.log(related[whichOps]);
+            $('#blank' + n).val(related[whichOps]);
+            $('#options' + String(n)).html("");
+            check_reversed(n);
+          }
         }
       }
     }
