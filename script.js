@@ -102,8 +102,8 @@ function check_reversed(n) {
       for(tttt = 0; tttt < words.length; tttt++){
         //console.log(words[tttt]);
         if(words[tttt].includes(answerV)) {
-          related.push(words[tttt]);
-          console.log(words[tttt]);
+          related.push(answers[tttt]);
+          console.log(answers[tttt]);
         }
 
       }
