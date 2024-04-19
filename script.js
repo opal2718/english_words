@@ -88,7 +88,7 @@ function check_reversed(n) {
   }
   else{
     var answerV = $('#blank' + n).val();
-    if ($('#blank' + n).val().toLowerCase() == words[n].toLowerCase()) {
+    if ($('#blank' + n).val() == sentences_kor[n]) {
       $('#blank' + n).css("color", "blue");
     }
     else {
