@@ -13,6 +13,6 @@
 숫자-0052,-,-,output_d = 큰따옴표{:05d}큰따옴표.format(-52)엔터print(output_d),_,,숫자-0052
 숫자+52,-,-,output_f = 큰따옴표{:+d}큰따옴표.format(52)엔터print(output_f),_,,숫자+52
 숫자+0052,-,-,output_l = 큰따옴표{:+05d}큰따옴표.format(52)엔터print(output_l),_,,숫자+0052
-숫자      52.273000,-,-,output_b = 큰따옴표{:15f}큰따옴표.format(52.273) # 15칸 만들기엔터print(output_b),_,,숫자      52.273000
+숫자      52.273000,-,-,output_b = 큰따옴표{:15f}큰따옴표.format(52.273)엔터print(output_b),_,,숫자      52.273000
 숫자          52.27,-,-,output_f = 큰따옴표{:15.2f}큰따옴표.format(52.273)엔터print(output_f),_,,숫자          52.27
 숫자52.273,-,-,print(0.52273e2),_,,숫자52.273
