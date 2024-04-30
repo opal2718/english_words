@@ -1,5 +1,5 @@
 var maxLessons_1 = 3;
-var maxLessons_2 = 10;
+var maxLessons_2 = 12;
 var maxLessons_3 = 1;
 var grade = 2;
 var words = [];
