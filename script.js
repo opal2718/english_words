@@ -1,5 +1,6 @@
 var maxLessons_1 = 3;
 var maxLessons_2 = 12;
+var minLessons_2 = -14;
 var maxLessons_3 = 1;
 var grade = 2;
 var words = [];
@@ -265,7 +266,7 @@ for(var j1 = 1; j1 <= maxLessons_1; j1++){
     addWords();
   })
 }
-for(var j2 = -14; j2 <= maxLessons_2; j2++){
+for(var j2 = maxLessons_2; j2 <= maxLessons_2; j2++){
   var temp2 = j2;
   $("#check2_"+temp2).change(function(){
     if($("#check2_"+temp2).is(":checked")){
@@ -329,16 +330,16 @@ function addWords(){
   answers = [];
 
   var sentencess = "";  
-  for(let lessonN = -14; lessonN <= maxLessons; lessonN++){
+  for(let lessonN = minLessons_2; lessonN <= maxLessons; lessonN++){
     if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
     if(grade == 1 && lessonN == 1) continue;//없는 데이터 예외처리
     if(grade != 2 && lessonN <= 0) continue;//없는 데이터 예외처리
     document.title = "Hello Words! | Grade "+String(grade);
     var thisfile = fileName+String(lessonN)+".csv";
     if(grade == 2){
-      if(lessonN < 0 && -6 < lessonN) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv";
+      if(-6 < lessonN && lessonN < 0) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv";
       if(lessonN == -6) thisfile = "./csvs/grade2_s1_mid_munhak.csv";
-      if(lessonN < -6 && -14 < lessonN) {
+      if(-14 < lessonN && lessonN < -6) {
         thisfile = "./csvs/grade2_s1_mid_info_"+String(-lessonN-6)+".csv"
         document.title = "Hello 'Worlds!' | Grade 2";
       }
