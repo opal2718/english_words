@@ -45,7 +45,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <header style="background-color: #eeeeee;">
     <h1 style="text-align: center; margin-bottom: 0; padding-bottom: 0;">단어 테스트</h1>
-    <p style="color: #999999; text-align: center;">version 1.14.5<br>버그가 있는데 안 고쳐써요</p>
+    <p style="color: #999999; text-align: center;">version 1.15.1<br>버그가 있는데 안 고쳐써요</p>
     
   </header>
   <hr>
@@ -93,6 +93,7 @@
         <br>
         <div class="BookID">
           Word Master 데이터의 경우 Lesson 번호가 일치하지 않을 수 있습니다. <br>반드시 단어책과 대조하여 확인 후 학습 바랍니다.
+          <br>1학년들 현재 진도가 어딘지 몰라서 업데이트를 못하겠어요 매주 업데이트해야 하는 위치 알려줄 친구 구합니다
           <br><br>
           <b>Week 1</b>&nbsp;&nbsp;&nbsp;&nbsp;
           데이터 없음<input type="checkbox" id="check1_1" disabled>
@@ -109,50 +110,62 @@
         <b>504 Words</b>
         <br>
         <div class="BookID">
-          <b>Week 1</b>&nbsp;&nbsp;&nbsp;&nbsp;
-          Lesson 1<input type="checkbox" id="check2_1" > 
-          Lesson 2<input type="checkbox" id="check2_2" >
+          <details>
+            <summary>중간고사 이전</summary>
+            <b>Week 1</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Lesson 1<input type="checkbox" id="check2_1" > 
+            Lesson 2<input type="checkbox" id="check2_2" >
+            <br>
+            <b>Week 2</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Lesson 3<input type="checkbox" id="check2_3" > 
+            Lesson 4<input type="checkbox" id="check2_4" >
+            <br>
+            <b>Week 3</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Lesson 5<input type="checkbox" id="check2_5"> 
+            Lesson 6<input type="checkbox" id="check2_6">
+            <br>
+            <b>Week 4</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Lesson 7<input type="checkbox" id="check2_7" > 
+            Lesson 8<input type="checkbox" id="check2_8" >
+            <br>
+            <b>Week 5</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Lesson 9<input type="checkbox" id="check2_9"> 
+            Lesson 10<input type="checkbox" id="check2_10">
+          </details>
+
+          <details>
+            <summary>중간고사</summary>
+            <b>이 아래는 Quiz(ENG, KOR)로 하셔야 함<br>빈칸에는 출력 결과 쓰세요</b><br>
+            <b>Midterm Exam(영독작)</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Words List(1~20)<input type="checkbox" id="check2_-1" >
+            Words List(21~40)<input type="checkbox" id="check2_-2" >
+            Words List(41~60)<input type="checkbox" id="check2_-3" >
+            Words List(61~80)<input type="checkbox" id="check2_-4" >
+            Words List(81~)<input type="checkbox" id="check2_-5" >
+            <br>
+            <b>Midterm Exam(구문)</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Words List<input type="checkbox" id="check2_-6" >
+            <br>
+            <b>객체 중간고사(이안순T)</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            객체1<input type="checkbox" id="check2_-7" >
+            객체2<input type="checkbox" id="check2_-8" >
+            객체3<input type="checkbox" id="check2_-9" >
+            객체4<input type="checkbox" id="check2_-10" disabled>
+            객체5<input type="checkbox" id="check2_-11" disabled>
+            객체6<input type="checkbox" id="check2_-12" >
+            객체7<input type="checkbox" id="check2_-13" >
+            <br>
+          </details>
+          
           <br>
-          <b>Week 2</b>&nbsp;&nbsp;&nbsp;&nbsp;
-          Lesson 3<input type="checkbox" id="check2_3" > 
-          Lesson 4<input type="checkbox" id="check2_4" >
-          <br>
-          <b>Week 3</b>&nbsp;&nbsp;&nbsp;&nbsp;
-          Lesson 5<input type="checkbox" id="check2_5"> 
-          Lesson 6<input type="checkbox" id="check2_6">
-          <br>
-          <b>Week 4</b>&nbsp;&nbsp;&nbsp;&nbsp;
-          Lesson 7<input type="checkbox" id="check2_7" > 
-          Lesson 8<input type="checkbox" id="check2_8" >
-          <br>
-          <b>Week 5</b>&nbsp;&nbsp;&nbsp;&nbsp;
-          Lesson 9<input type="checkbox" id="check2_9"> 
-          Lesson 10<input type="checkbox" id="check2_10">
-          <br>
-          <b>Week 6</b>&nbsp;&nbsp;&nbsp;&nbsp;
-          Lesson 11<input type="checkbox" id="check2_11" checked> 
-          Lesson 12<input type="checkbox" id="check2_12" checked>
-          <br>
-          <br><b>이 아래는 Quiz(ENG, KOR)로 하셔야 함<br>빈칸에는 출력 결과 쓰세요</b><br>
-          <b>Midterm Exam(영독작)</b>&nbsp;&nbsp;&nbsp;&nbsp;
-          Words List(1~20)<input type="checkbox" id="check2_-1" >
-          Words List(21~40)<input type="checkbox" id="check2_-2" >
-          Words List(41~60)<input type="checkbox" id="check2_-3" >
-          Words List(61~80)<input type="checkbox" id="check2_-4" >
-          Words List(81~)<input type="checkbox" id="check2_-5" >
-          <br>
-          <b>Midterm Exam(구문)</b>&nbsp;&nbsp;&nbsp;&nbsp;
-          Words List<input type="checkbox" id="check2_-6" >
-          <br>
-          <b>객체 중간고사(이안순T)</b>&nbsp;&nbsp;&nbsp;&nbsp;
-          객체1<input type="checkbox" id="check2_-7" >
-          객체2<input type="checkbox" id="check2_-8" >
-          객체3<input type="checkbox" id="check2_-9" >
-          객체4<input type="checkbox" id="check2_-10" disabled>
-          객체5<input type="checkbox" id="check2_-11" disabled>
-          객체6<input type="checkbox" id="check2_-12" >
-          객체7<input type="checkbox" id="check2_-13" >
-          <br>
+          <div>
+            <b>Week 6</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Lesson 11<input type="checkbox" id="check2_11" checked> 
+            Lesson 12<input type="checkbox" id="check2_12" checked>  
+            <br> 
+            <b>Size(구문)</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Size<input type="checkbox" id="check2_-14">           
+          </div>
         </div>
       </p>
       <p>
