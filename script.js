@@ -159,7 +159,7 @@ var dayLeft = dday-day;
 for(var leftDI=month; leftDI<dmonth; leftDI++) dayLeft+=monthLength[leftDI];
 if(dayLeft >= 0) $("#dday").html("D-"+(dayLeft));
 else $("#dday").html("D+"+(-dayLeft));
-alert("시험 "+dayLeft+"일 남음 ㅋㅋㅋㅋ");
+//alert("시험 "+dayLeft+"일 남음 ㅋㅋㅋㅋ");
 
 $("#answer").change(function(){
   if($("#answer").is(":checked")){
