@@ -1,4 +1,4 @@
-var maxLessons_1 = 3;
+var maxLessons_1 = 7;
 var maxLessons_2 = 12;
 var minLessons_2 = -14;
 var maxLessons_3 = 1;
@@ -333,7 +333,7 @@ function addWords(){
   var sentencess = "";  
   for(let lessonN = minLessons_2; lessonN <= maxLessons; lessonN++){
     if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
-    if(grade == 1 && lessonN == 1) continue;//없는 데이터 예외처리
+    if(grade == 1 && (lessonN == 1 || lessonN == 4)) continue;//없는 데이터 예외처리
     if(grade != 2 && lessonN <= 0) continue;//없는 데이터 예외처리
     document.title = "Hello Words! | Grade "+String(grade);
     var thisfile = fileName+String(lessonN)+".csv";
