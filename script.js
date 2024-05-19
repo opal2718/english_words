@@ -1,7 +1,9 @@
 var maxLessons_1 = 7;
+var minLessons_1 = 0;
 var maxLessons_2 = 12;
 var minLessons_2 = -14;
 var maxLessons_3 = 1;
+var minLessons_3 = 0;
 var grade = 2;
 var words = [];
 var meanings = [];
@@ -310,17 +312,21 @@ function addWords(){
   var fileName = "";
 
   var maxLessons = 0;
+  var minLessons = 0;
   if(grade == 1) {
     fileName = "./csvs/Word_Master_week";
     maxLessons = maxLessons_1;
+    minLessons = minLessons_1;
   }
   else if(grade == 2) {
     fileName = "./csvs/504words_lesson";
     maxLessons = maxLessons_2;
+    minLessons = minLessons_2;
   }
   else if(grade == 3) {
     fileName = "./csvs/Hackers_TEPS_lesson";
     maxLessons = maxLessons_3;
+    minLessons = minLessons_3;
   }
   words = [];
   meanings = [];
@@ -331,7 +337,7 @@ function addWords(){
   answers = [];
 
   var sentencess = "";  
-  for(let lessonN = minLessons_2; lessonN <= maxLessons; lessonN++){
+  for(let lessonN = minLessons; lessonN <= maxLessons; lessonN++){
     if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
     if(grade == 1 && (lessonN == 1 || lessonN == 4)) continue;//없는 데이터 예외처리
     if(grade != 2 && lessonN <= 0) continue;//없는 데이터 예외처리
