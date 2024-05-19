@@ -250,17 +250,17 @@ $(function() {
 });
 
 //단어 세트 변경
-for(var j1 = 1; j1 <= maxLessons_1; j1++){
+for(var j1 = minLessons_1; j1 <= maxLessons_1; j1++){
   var temp1 = j1;
   $("#check1_"+temp1).change(function(){
     if($("#check1_"+temp1).is(":checked")){
       grade = 1;
       document.title = "Hello Words! | Grade 1";
-      for(var k11 = 1; k11 <= maxLessons_2; k11++){
+      for(var k11 = minLessons_2; k11 <= maxLessons_2; k11++){
         var temp11 = k11;
         $("#check2_"+temp11).prop("checked", false);
       }
-      for(var k12 = 1; k12 <= maxLessons_3; k12++){
+      for(var k12 = minLessons_3; k12 <= maxLessons_3; k12++){
         var temp12 = k12;
         $("#check3_"+temp12).prop("checked", false);
       }
@@ -269,17 +269,17 @@ for(var j1 = 1; j1 <= maxLessons_1; j1++){
     addWords();
   })
 }
-for(var j2 = maxLessons_2; j2 <= maxLessons_2; j2++){
+for(var j2 = minLessons_2; j2 <= maxLessons_2; j2++){
   var temp2 = j2;
   $("#check2_"+temp2).change(function(){
     if($("#check2_"+temp2).is(":checked")){
       grade = 2;
       document.title = "Hello Words! | Grade 2";
-      for(var k21 = 1; k21 <= maxLessons_1; k21++){
+      for(var k21 = minLessons_1; k21 <= maxLessons_1; k21++){
         var temp21 = k21;
         $("#check1_"+temp21).prop("checked", false);
       }
-      for(var k22 = 1; k22 <= maxLessons_3; k22++){
+      for(var k22 = minLessons_3; k22 <= maxLessons_3; k22++){
         var temp22 = k22;
         $("#check3_"+temp22).prop("checked", false);
       }
@@ -288,17 +288,17 @@ for(var j2 = maxLessons_2; j2 <= maxLessons_2; j2++){
     addWords();
   })
 }
-for(var j3 = 1; j3 <= maxLessons_3; j3++){
+for(var j3 = minLessons_3; j3 <= maxLessons_3; j3++){
   var temp3 = j3;
   $("#check3_"+temp3).change(function(){
     if($("#check3_"+temp3).is(":checked")){
       grade = 3;
       document.title = "Hello Words! | Grade 3";
-      for(var k31 = 1; k31 <= maxLessons_2; k31++){
+      for(var k31 = minLessons_2; k31 <= maxLessons_2; k31++){
         var temp31 = k31;
         $("#check2_"+temp31).prop("checked", false);
       }
-      for(var k32 = 1; k32 <= maxLessons_1; k32++){
+      for(var k32 = minLessons_1; k32 <= maxLessons_1; k32++){
         var temp32 = k32;
         $("#check1_"+temp32).prop("checked", false);
       }
