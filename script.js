@@ -353,7 +353,7 @@ function addWords(){
       if(lessonN == -14) thisfile = "./csvs/grade2_munhak_size.csv";
       if(lessonN == -15) thisfile = "./csvs/grade2_munhak_generalization.csv";
       if(lessonN == -16) thisfile = "./csvs/grade2_munhak_urgency.csv";
-      if(lessonN == -17) thisfile = "./csvs/grade2_s1_final_1.csv";
+      if(-21 <= lessonN && lessonN <= -17) thisfile = "./csvs/grade2_s1_final_"+String(-lessonN-16)+".csv";
     }
     //alert(thisfile)
     makePage(thisfile, "");
