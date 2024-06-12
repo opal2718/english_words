@@ -1,7 +1,7 @@
 var maxLessons_1 = 7;
 var minLessons_1 = 0;
 var maxLessons_2 = 12;
-var minLessons_2 = -16;
+var minLessons_2 = -17;
 var maxLessons_3 = 1;
 var minLessons_3 = 0;
 var grade = 2;
@@ -353,6 +353,7 @@ function addWords(){
       if(lessonN == -14) thisfile = "./csvs/grade2_munhak_size.csv";
       if(lessonN == -15) thisfile = "./csvs/grade2_munhak_generalization.csv";
       if(lessonN == -16) thisfile = "./csvs/grade2_munhak_urgency.csv";
+      if(lessonN == -17) thisfile = "./csvs/grade2_s1_final_1.csv";
     }
     //alert(thisfile)
     makePage(thisfile, "");
