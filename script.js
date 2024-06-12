@@ -381,7 +381,8 @@ function makePage(fileName, parseName){
         shuffle(rows);
         for (var i = 0; i < rows.length; i++) {
           var value = rows[i].split(",");
-          //console.log(rows[i]);
+          console.log(rows[i]);
+          console.log(value);
           if(value[0] == "") continue;
           for(var j = 0; j <= 6; j++){
             value[j] = value[j].replace(/쉼표/g, ",");
