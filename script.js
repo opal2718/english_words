@@ -113,13 +113,10 @@ function check_reversed(n) {
       if(answerV[answerV.length-1] == ":"){
         answerV = (answerV.slice(0, answerV.length-1)).trim();
       }
-      //console.log(answerV);
       if(answerV!="" && answerV!=" "){
         if(guessing >= 0){
           var whichOps = parseInt(guessing, 10);
-          console.log(whichOps);
           if(whichOps >= 0){
-            console.log(related[whichOps]);
             $('#blank' + n).val(related[whichOps]);
             $('#options' + String(n)).html("");
             check_reversed(n);
@@ -127,7 +124,6 @@ function check_reversed(n) {
         }
         related = [];
         for(tttt = 0; tttt < words.length; tttt++){
-          //console.log(words[tttt]);
           if(meanings[tttt].includes(answerV)) {
             related.push(meanings[tttt]);
           }
@@ -143,7 +139,6 @@ function check_reversed(n) {
           var tttttS = String(related[ttttt]).replace(/<br>/g, '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
           optionsArr += tttttS;
           optionsArr += "<br>";
-          console.log(optionsArr);
         }
         optionsArr += "...";
         $('#options' + String(n)).html("");
@@ -386,8 +381,6 @@ function makePage(fileName, parseName){
         shuffle(rows);
         for (var i = 0; i < rows.length; i++) {
           var value = rows[i].split(",");
-          console.log(rows[i]);
-          console.log(value);
           if(value[0] == "") continue;
           for(var j = 0; j < value.length; j++){
             value[j] = value[j].replace(/쉼표/g, ",");
@@ -433,6 +426,9 @@ function check(n) {
   if(n == -1){    
   }
   else{
+    console.log($('#blank' + n).val().toLowerCase());
+    console.log(answers[n].toLowerCase());
+
     if ($('#blank' + n).val().toLowerCase() == answers[n].toLowerCase()) {
       $('#blank' + n).css("color", "blue");
     }
