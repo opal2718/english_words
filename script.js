@@ -84,6 +84,7 @@ function changeHTML(){
   return totalHTML;
 
 }
+var related = [];
 function check_reversed(n) {
   //alert($('#blank' + n).val());
   //alert(answers[n]);
@@ -103,7 +104,6 @@ function check_reversed(n) {
     }
     if(answerV[0] == ":"){
       var tttt = 0;
-      var related = [];
       var guessing = -1;
       answerV = (answerV.slice(1)).trim();
       if(answerV[answerV.length-2] == ":"){
@@ -115,6 +115,17 @@ function check_reversed(n) {
       }
       //console.log(answerV);
       if(answerV!="" && answerV!=" "){
+        if(guessing >= 0){
+          var whichOps = parseInt(guessing, 10);
+          console.log(whichOps);
+          if(whichOps >= 0){
+            console.log(related[whichOps]);
+            $('#blank' + n).val(related[whichOps]);
+            $('#options' + String(n)).html("");
+            check_reversed(n);
+          }
+        }
+        related = [];
         for(tttt = 0; tttt < words.length; tttt++){
           //console.log(words[tttt]);
           if(sentences_kor[tttt].includes(answerV)) {
@@ -138,16 +149,6 @@ function check_reversed(n) {
         $('#options' + String(n)).html("");
         $('#options' + String(n)).append(optionsArr);
         //$('#blank' + n).val(answers[n]);
-        if(guessing >= 0){
-          var whichOps = parseInt(guessing, 10);
-          console.log(whichOps);
-          if(whichOps >= 0){
-            console.log(related[whichOps]);
-            $('#blank' + n).val(related[whichOps]);
-            $('#options' + String(n)).html("");
-            check_reversed(n);
-          }
-        }
       }
     }
   }
