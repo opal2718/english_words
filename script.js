@@ -394,6 +394,7 @@ function makePage(fileName, parseName){
 
           if(value.length >= 10){
             for(var j = 0; j < meaning.length; j++){
+              console.log(meaning[j]);
               meaning[j] += "<br>"+value[9][j];
             }
           }
