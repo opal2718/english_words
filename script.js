@@ -449,4 +449,6 @@ function check(n) {
 
 window.addEventListener("keydown", (e) => {
   if (e.key == "F2") newSet();
+  console.log(e.key);
+  console.log(e.key == "F2");
 });
