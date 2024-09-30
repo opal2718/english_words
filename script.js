@@ -392,6 +392,7 @@ function makePage(fileName, parseName){
           var answer = value[6];
           var split_blank = blank.split("_");
 
+          console.log(value.length);
           if(value.length >= 10){
             for(var j = 0; j < meaning.length; j++){
               console.log(meaning[j]);
