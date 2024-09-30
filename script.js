@@ -1,7 +1,7 @@
 var maxLessons_1 = 7;
 var minLessons_1 = 0;
 var maxLessons_2 = 22;
-var minLessons_2 = -21;
+var minLessons_2 = -22;
 var maxLessons_3 = 1;
 var minLessons_3 = 0;
 var grade = 2;
@@ -70,7 +70,7 @@ function changeHTML(){
     }
     else if (mode == "Quiz_Reversed") {
       totalHTML += ((i+1)+". "+'<input value="" autocomplete="off" onkeyup="check_reversed(' + i + ')" type="text" id="blank' + i + '">'+ "<br>");
-      totalHTML += ("보기: "+'<div id="options'+i+'">'+'</div><br>');
+      totalHTML += ('<div id="options'+i+'">'+'</div><br>');
       totalHTML += (words[i] + "<br><br><br>");
     }
     else if (mode == "Quiz") {
@@ -334,7 +334,7 @@ function addWords(){
     if(grade != 2 && lessonN <= 0) continue;//없는 데이터 예외처리
     document.title = "Hello Words! | Grade "+String(grade);
     var thisfile = fileName+String(lessonN)+".csv";
-    if(grade == 2){
+    if(grade == 2){/*
       if(-6 < lessonN && lessonN < 0) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv";
       if(lessonN == -6) thisfile = "./csvs/grade2_s1_mid_munhak.csv";
       if(-14 < lessonN && lessonN < -6) {
@@ -344,7 +344,8 @@ function addWords(){
       if(lessonN == -14) thisfile = "./csvs/grade2_munhak_size.csv";
       if(lessonN == -15) thisfile = "./csvs/grade2_munhak_generalization.csv";
       if(lessonN == -16) thisfile = "./csvs/grade2_munhak_urgency.csv";
-      if(-21 <= lessonN && lessonN <= -17) thisfile = "./csvs/grade2_s1_final_"+String(-lessonN-16)+".csv";
+      if(-21 <= lessonN && lessonN <= -17) thisfile = "./csvs/grade2_s1_final_"+String(-lessonN-16)+".csv";*/
+      if(lessonN == -22) thisfile = "./csvs/Midterm1.csv";
     }
     //alert(thisfile)
     makePage(thisfile, "");
@@ -390,6 +391,15 @@ function makePage(fileName, parseName){
           var blank = value[4];
           var answer = value[6];
           var split_blank = blank.split("_");
+
+          if(value.length >= 10){
+            for(var j = 0; j < meaning.length; j++){
+              meaning[j] += "<br>"+value[9][j];
+            }
+          }
+
+
+
           words.push(word);
           meanings.push(meaning);
           sentences.push(sentence);
