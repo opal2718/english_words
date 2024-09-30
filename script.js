@@ -128,8 +128,8 @@ function check_reversed(n) {
         related = [];
         for(tttt = 0; tttt < words.length; tttt++){
           //console.log(words[tttt]);
-          if(sentences_kor[tttt].includes(answerV)) {
-            related.push(sentences_kor[tttt]);
+          if(meanings[tttt].includes(answerV)) {
+            related.push(meanings[tttt]);
           }
 
         }
