@@ -444,3 +444,9 @@ function check(n) {
     }
   }
 }
+
+
+
+window.addEventListener("keydown", (e) => {
+  if (e.key == "F2") newSet();
+});
