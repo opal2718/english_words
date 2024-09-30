@@ -393,11 +393,8 @@ function makePage(fileName, parseName){
           var split_blank = blank.split("_");
 
           console.log(value.length);
-          if(value.length >= 10){
-            for(var j = 0; j < meaning.length; j++){
-              console.log(meaning[j]);
-              meaning[j] += "<br>"+value[9][j];
-            }
+          if(value.length >= 10 && value[9] != ""){
+            meaning[j] += "<br>"+value[9];
           }
 
 
