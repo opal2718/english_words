@@ -245,10 +245,14 @@ $("#quiz_korean_first").change(function(){
 
 
 //모드 변경
-$(function() {
-  $('#textArea').html("");
-  addWords();
-});
+function newSet(){
+  $(function() {
+    $('#textArea').html("");
+    addWords();
+  });
+}
+
+newSet();
 
 //단어 세트 변경
 for(var j1 = minLessons_1; j1 <= maxLessons_1; j1++){

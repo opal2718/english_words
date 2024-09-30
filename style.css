@@ -60,3 +60,14 @@ html{
   aspect-ratio: 1/1;
   padding: 0.5%;
 }
+#reload{
+  border-width: 5px;
+  border-radius: 100%;
+  border-color: black;
+  background-color: rgb(68, 97, 241);
+  position: fixed;
+  left: 2em; 
+  bottom: 2em;
+  aspect-ratio: 1/1;
+  padding: 0.5%;
+}
