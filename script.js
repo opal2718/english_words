@@ -389,7 +389,7 @@ function makePage(fileName, parseName){
           console.log(rows[i]);
           console.log(value);
           if(value[0] == "") continue;
-          for(var j = 0; j <= 6; j++){
+          for(var j = 0; j < value.size(); j++){
             value[j] = value[j].replace(/쉼표/g, ",");
             value[j] = value[j].replace(/큰따옴표/g, '"');
             value[j] = value[j].replace(/따옴표/g, "'");
@@ -449,6 +449,4 @@ function check(n) {
 
 window.addEventListener("keydown", (e) => {
   if (e.key == "F2") newSet();
-  console.log(e.key);
-  console.log(e.key == "F2");
 });
