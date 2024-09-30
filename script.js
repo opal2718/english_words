@@ -92,16 +92,7 @@ function check_reversed(n) {
   }
   else{
     var answerV = $('#blank' + n).val();
-    if ($('#blank' + n).val() == sentences_kor[n]) {
-      $('#blank' + n).css("color", "blue");
-    }
-    else {
-      $('#blank' + n).css("color", "red");
-    }
-    if($('#blank' + n).val() == "?"){
-      $('#blank' + n).val(sentences_kor[n]);
-      $('#blank' + n).css("color", "black");
-    }
+    check(n);
     if(answerV[0] == ":"){
       var tttt = 0;
       var guessing = -1;
@@ -426,8 +417,6 @@ function check(n) {
   if(n == -1){    
   }
   else{
-    console.log($('#blank' + n).val().toLowerCase());
-    console.log(answers[n].toLowerCase());
 
     if ($('#blank' + n).val().toLowerCase() == answers[n].toLowerCase()) {
       $('#blank' + n).css("color", "blue");
