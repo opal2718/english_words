@@ -412,7 +412,8 @@ function makePage(fileName, parseName){
           sentences_kor.push(sentence_kor);
           split_blanks_1.push(split_blank[0]);
           split_blanks_2.push(split_blank[1]);
-          answers.push(answer);
+          if(mode == "Quiz_Reversed") answers.push(meaning);
+          else answers.push(answer);
 
           if(i == 0){
             //alert(value[5]);
