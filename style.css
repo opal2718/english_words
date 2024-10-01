@@ -54,31 +54,55 @@ html{
   src : url(newjeans.ttf)
 }
 
-#dday{
+#ad{
   border-width: 5px;
   border-radius: 100%;
-  border-color: black;
-  background-color: violet;
   position: fixed;
-  right: 1em; 
-  bottom: 1em;
+  right: 2em; 
+  bottom: 2em;
   padding: 0.5%;
-  width: 2.5em;
-  height: 2.5em;
+  width: 10em;
+  height: 10em;
   text-align: center;
+}
+#dday{
   line-height: 2.5em;
   text-decoration-line: none;
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: 'Newjeans';
+  position: absolute;
+  top: 2.5em;
+  left: 2em;
+  font-weight: bold;
+}
+#njimg{
+  height: 100%;
+  width: 100%;
 }
 #reload{
   border-width: 5px;
   border-radius: 100%;
-  border-color: black;
-  background-color: rgb(68, 97, 241);
   position: fixed;
   left: 2em; 
   bottom: 2em;
-  aspect-ratio: 1/1;
-  padding: 0.5%;
+  width: 10em;
+  height: 10em;
+  text-align: center;
+  background:none;
+}
+#reloadtext{
+  line-height: 2.5em;
+  text-decoration-line: none;
+  font-size: 1em;
+  position: absolute;
+  top: 4.5em;
+  left: 4em;
+  color: blue;
+  user-select: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#refreshimg{
+  height: 100%;
+  width: 100%;
+  background: none;
 }

@@ -45,7 +45,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <header style="background-color: #eeeeee;">
     <h1 style="text-align: center; margin-bottom: 0; padding-bottom: 0;">단어 테스트</h1>
-    <p style="color: #999999; text-align: center;">version 2.7.8</p>
+    <p style="color: #999999; text-align: center;">version 2.8.1</p>
     
   </header>
   <hr>
@@ -252,10 +252,18 @@
   </div>
 
   <!--오른쪽 아래 광고-->
-  <a id = "dday" href="https://newjeans.kr/"  target="_blank">D</a>
+  <div id = "ad">
+    <a id = "dday" href="https://newjeans.kr/"  target="_blank">D</a>
+    <img id = "njimg" src="Newjeans_Murakami.png">
+  </div>
 
   <!--왼쪽 아래 새로고침-->
-  <button id = "reload" type="button" onclick="newSet()">Refresh</button>
+  <div id="reload">
+    <button style="border:none; margin:1em" type="button" onclick="newSet()">
+      <img id = "refreshimg" src="refresh.png">
+      <div id="reloadtext">REFRESH</div>
+    </button>
+  </div>
   
 
   <!--안내문-->

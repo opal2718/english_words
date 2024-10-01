@@ -146,8 +146,8 @@ var dyear = 2024, dmonth=10, dday=14;
 var monthLength=[0,31,29,31,30,31,30,31,31,30,31,30,31];
 var dayLeft = dday-day;
 for(var leftDI=month; leftDI<dmonth; leftDI++) dayLeft+=monthLength[leftDI];
-if(dayLeft >= 0) $("#dday").html("D-"+(dayLeft));
-else $("#dday").html("D+"+(-dayLeft));
+if(dayLeft >= 0) $("#dday").html("D - "+(dayLeft));
+else $("#dday").html("D + "+(-dayLeft));
 //alert("시험 "+dayLeft+"일 남음 ㅋㅋㅋㅋ");
 
 $("#answer").change(function(){
