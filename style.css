@@ -49,16 +49,27 @@ html{
   align-items: center;
 }
 
-#ad{
+@font-face {
+  font-family : 'Newjeans';
+  src : url(newjeans.ttf)
+}
+
+#dday{
   border-width: 5px;
   border-radius: 100%;
   border-color: black;
   background-color: violet;
   position: fixed;
-  right: 2em; 
-  bottom: 2em;
-  aspect-ratio: 1/1;
+  right: 1em; 
+  bottom: 1em;
   padding: 0.5%;
+  width: 2.5em;
+  height: 2.5em;
+  text-align: center;
+  line-height: 2.5em;
+  text-decoration-line: none;
+  font-size: 2em;
+  font-family: 'Newjeans';
 }
 #reload{
   border-width: 5px;
