@@ -77,6 +77,7 @@ function changeHTML(){
       totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br><br><hr>");
     }
     else if (mode == "Quiz_Korean_First") {
+      if(split_blanks_1[0]=="") continue;
       totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="'+answers[i][0]+'" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
       totalHTML += (sentences_kor[i] + "<br><br><br>");
     }
