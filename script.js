@@ -357,7 +357,7 @@ function addWords(){
         case -30: thisfile = "./csvs/Midterm1_t2z.csv";
       }
     }
-    //alert(thisfile)
+    console.log(thisfile)
     makePage(thisfile, "");
   }
   setTimeout(() => {
