@@ -64,9 +64,9 @@ function changeHTML(){
       totalHTML += ("<b>" + words[i] + "</b>" + "<br><br><hr>");
 
     }
-    else if (mode == "Quiz_Korean") {
-      totalHTML += ((i+1)+". "+split_blanks_1[i] + '<input value="" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">' + split_blanks_2[i] + "<br>");
-      totalHTML += (sentences_kor[i] + "<br><br><br>");
+    else if (mode == "Quiz_Korean") { //뜻 > 단어
+      totalHTML += (meanings[i] + "<br><br><br>");
+      totalHTML += ((i+1)+". "+'<input value="" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">'+ "<br>");
     }
     else if (mode == "Quiz_Reversed") {
       totalHTML += ((i+1)+". "+'<input value="" autocomplete="off" onkeyup="check_reversed(' + i + ')" type="text" id="blank' + i + '">'+ "<br>");
