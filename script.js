@@ -346,15 +346,15 @@ function addWords(){
       if(lessonN == -16) thisfile = "./csvs/grade2_munhak_urgency.csv";
       if(-21 <= lessonN && lessonN <= -17) thisfile = "./csvs/grade2_s1_final_"+String(-lessonN-16)+".csv";*/
       switch(lessonN){
-        case -22: thisfile = "./csvs/Midterm1.csv";
-        case -23: thisfile = "./csvs/Midterm_Important.csv";
-        case -24: thisfile = "./csvs/Midterm1_abc.csv";
-        case -25: thisfile = "./csvs/Midterm1_de.csv";
-        case -26: thisfile = "./csvs/Midterm1_f2n.csv";
-        case -27: thisfile = "./csvs/Midterm1_opq.csv";
-        case -28: thisfile = "./csvs/Midterm1_r.csv";
-        case -29: thisfile = "./csvs/Midterm1_s.csv";
-        case -30: thisfile = "./csvs/Midterm1_t2z.csv";
+        case -22: thisfile = "./csvs/Midterm1.csv"; break;
+        case -23: thisfile = "./csvs/Midterm_Important.csv"; break;
+        case -24: thisfile = "./csvs/Midterm1_abc.csv"; break;
+        case -25: thisfile = "./csvs/Midterm1_de.csv"; break;
+        case -26: thisfile = "./csvs/Midterm1_f2n.csv"; break;
+        case -27: thisfile = "./csvs/Midterm1_opq.csv"; break;
+        case -28: thisfile = "./csvs/Midterm1_r.csv"; break;
+        case -29: thisfile = "./csvs/Midterm1_s.csv"; break;
+        case -30: thisfile = "./csvs/Midterm1_t2z.csv"; break;
       }
     }
     console.log(thisfile)
