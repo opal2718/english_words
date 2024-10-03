@@ -1,7 +1,7 @@
 var maxLessons_1 = 7;
 var minLessons_1 = 0;
 var maxLessons_2 = 22;
-var minLessons_2 = -22;
+var minLessons_2 = -30;
 var maxLessons_3 = 1;
 var minLessons_3 = 0;
 var grade = 2;
@@ -345,7 +345,17 @@ function addWords(){
       if(lessonN == -15) thisfile = "./csvs/grade2_munhak_generalization.csv";
       if(lessonN == -16) thisfile = "./csvs/grade2_munhak_urgency.csv";
       if(-21 <= lessonN && lessonN <= -17) thisfile = "./csvs/grade2_s1_final_"+String(-lessonN-16)+".csv";*/
-      if(lessonN == -22) thisfile = "./csvs/Midterm1.csv";
+      switch(lessonN){
+        case -22: thisfile = "./csvs/Midterm1.csv";
+        case -23: thisfile = "./csvs/Midterm_Important.csv";
+        case -24: thisfile = "./csvs/Midterm1_abc.csv";
+        case -25: thisfile = "./csvs/Midterm1_de.csv";
+        case -26: thisfile = "./csvs/Midterm1_f2n.csv";
+        case -27: thisfile = "./csvs/Midterm1_opq.csv";
+        case -28: thisfile = "./csvs/Midterm1_r.csv";
+        case -29: thisfile = "./csvs/Midterm1_s.csv";
+        case -30: thisfile = "./csvs/Midterm1_t2z.csv";
+      }
     }
     //alert(thisfile)
     makePage(thisfile, "");
@@ -392,31 +402,34 @@ function makePage(fileName, parseName){
           var answer = value[6];
           var split_blank = blank.split("_");
 
+          if(value.length >= 8 && value[7] != ""){
+            meaning = "*"+meaning;
+          }
           if(value.length >= 10 && value[9] != ""){
             meaning += "<br>"+value[9];
           }
-
-
-
-          words.push(word);
-          meanings.push(meaning);
-          sentences.push(sentence);
-          sentences_kor.push(sentence_kor);
-          split_blanks_1.push(split_blank[0]);
-          split_blanks_2.push(split_blank[1]);
-          if(mode == "Quiz_Reversed") answers.push(meaning);
-          else answers.push(answer);
-
-          if(i == 0){
-            //alert(value[5]);
-            //alert(value[6]);
+          if(value.length >= 11 && value[10] != ""){
+            meaning += "<br>synonyms: "+value[10];
+            for(var j = 11; j < value.length; j++){
+              meaning += ", "+value[j];
+            }
           }
-
+          wordSetAdd(word, meaning, sentence, sentence_kor, split_blank, answer);
         }
-
       }
     });
   }
+}
+
+function wordSetAdd(word, meaning, sentence, sentence_kor, split_blank, answer){
+  words.push(word);
+  meanings.push(meaning);
+  sentences.push(sentence);
+  sentences_kor.push(sentence_kor);
+  split_blanks_1.push(split_blank[0]);
+  split_blanks_2.push(split_blank[1]);
+  if(mode == "Quiz_Reversed") answers.push(meaning);
+  else answers.push(answer);
 }
 
 function check(n) {
