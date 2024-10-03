@@ -55,9 +55,9 @@ function changeHTML(){
   for(var i = 0; i < words.length; i++){
     if (mode == "Answer") {
       totalHTML += ("<b>" + words[i] + "</b>" + "<br>");
-      totalHTML += (meanings[i] + "<br><br>");
-      totalHTML += (sentences[i] + "<br>");
-      totalHTML += (sentences_kor[i] + "<br><br><hr>");
+      totalHTML += ("뜻:"+meanings[i] + "<br><br>");
+      totalHTML += ("예문:"+sentences[i] + "<br>");
+      totalHTML += ("예문 번역:"+sentences_kor[i] + "<br><br><hr>");
 
     }
     if (mode == "Words") {
