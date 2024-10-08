@@ -359,6 +359,7 @@ function addWords(){
         case -28: thisfile = "./csvs/Midterm1_r.csv"; break;
         case -29: thisfile = "./csvs/Midterm1_s.csv"; break;
         case -30: thisfile = "./csvs/Midterm1_t2z.csv"; break;
+        case -31: thisfile = "./csvs/Midterm1_added1.csv"; break;
       }
     }
     console.log(thisfile)
