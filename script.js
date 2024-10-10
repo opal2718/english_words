@@ -360,7 +360,7 @@ function addWords(){
         case -29: thisfile = "./csvs/Midterm1_s.csv"; break;
         case -30: thisfile = "./csvs/Midterm1_t2z.csv"; break;
         case -31: thisfile = "./csvs/Midterm1_added1.csv"; break;
-        case -31: thisfile = "./csvs/Biology_Words.csv"; break;
+        case -32: thisfile = "./csvs/Biology_Words.csv"; break;
       }
     }
     console.log(thisfile)
