@@ -65,8 +65,8 @@ function changeHTML(){
 
     }
     else if (mode == "Quiz_Korean") { //뜻 > 단어
-      totalHTML += (meanings[i] + "<br><br><br>");
       totalHTML += ((i+1)+". "+'<input value="" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">'+ "<br>");
+      totalHTML += (meanings[i] + "<br><br><br>");
     }
     else if (mode == "Quiz_Reversed") {
       totalHTML += ((i+1)+". "+'<input value="" autocomplete="off" onkeyup="check_reversed(' + i + ')" type="text" id="blank' + i + '">'+ "<br>");
