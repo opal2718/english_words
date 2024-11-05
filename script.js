@@ -1,6 +1,6 @@
 var maxLessons_1 = 7;
 var minLessons_1 = 0;
-var maxLessons_2 = 25;
+var maxLessons_2 = 28;
 var minLessons_2 = -32;
 var maxLessons_3 = 1;
 var minLessons_3 = 0;
