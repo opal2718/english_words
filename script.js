@@ -1,7 +1,7 @@
 var maxLessons_1 = 7;
 var minLessons_1 = 0;
 var maxLessons_2 = 28;
-var minLessons_2 = -32;
+var minLessons_2 = -33;
 var maxLessons_3 = 1;
 var minLessons_3 = 0;
 var grade = 2;
@@ -361,6 +361,7 @@ function addWords(){
         case -30: thisfile = "./csvs/Midterm1_t2z.csv"; break;
         case -31: thisfile = "./csvs/Midterm1_added1.csv"; break;
         case -32: thisfile = "./csvs/Biology_Words.csv"; break;
+        case -33: thisfile = "./csvs/grade2_s2_final.csv"; break;
       }
     }
     console.log(thisfile)
