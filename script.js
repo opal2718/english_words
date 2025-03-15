@@ -216,7 +216,7 @@ function addWords(){
     shuffleWords();
     sentencess += changeHTML();
     $('#textArea').append(sentencess + "<br>");
-  }, 100);
+  }, 200);
 }
 
 function check(n) {

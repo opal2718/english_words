@@ -6,6 +6,20 @@
     margin-left: 10%;
     margin-right: 10%;
   }
+  .gradeBox{    
+    width: calc(100% / 3);   /* Divides the parent into three equal-width columns */
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;           /* Optional: If you want to align items inside gradeBox */
+    flex-direction: column;  /* Optional: Aligns content in vertical order */
+    margin-bottom: 1em;
+    border: thin solid black; 
+  }
+  #gradeBoxParent{
+    display: flex;         /* Enables flex layout */
+    justify-content: space-between; /* Distributes space between items */
+    align-items: stretch; /* Ensures all children stretch to the same height */
+  }
   #dday{
     font-size: 30pt;
   }
@@ -69,6 +83,12 @@
     margin-left: 0%;
     margin-right: 0%;
   }
+  .gradeBox{
+    
+    border: thin solid black; 
+    margin-left: 10%;
+    margin-right: 10%;
+  }
   #dday{
     font-size: 5pt;
   }
@@ -131,7 +151,6 @@ html{
 }
 
 .BookID{
-  border: thin solid black;
   margin-right: 10%;
   margin-left: 10%;
 }

@@ -45,7 +45,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <header style="background-color: #eeeeee;">
     <h1 style="text-align: center; margin-bottom: 0; padding-bottom: 0;">단어 테스트</h1>
-    <p style="color: #999999; text-align: center;">version 3.0.12</p>
+    <p style="color: #999999; text-align: center;">version 3.1.2</p>
     
   </header>
   <hr>
@@ -91,83 +91,85 @@
         <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(한국어 문장 > 단어), 첫 글자 보임<input type="checkbox" id="Quiz_Korean_First">
         <!--단어만, 문장만, 단어&문장 버튼 추가-->
       </p>
-      <br><hr><br>
-      <details open>
-        <summary><b>1학년</b></summary>
+      <div id="gradeBoxParent">
+        <br><hr><br>
+        <details open class="gradeBox">
+          <summary><b>1학년</b></summary>
+          <br>
+          <div class="BookID">
+            Word Master 데이터의 경우 Lesson 번호가 일치하지 않을 수 있습니다. <br>반드시 단어책과 대조하여 확인 후 학습 바랍니다.
+            <br><br>
+            Lesson 1, 2 - 데이터 없음<input type="checkbox" id="check1_1" disabled>
+            <br>
+            Lesson 3, 4<input type="checkbox" id="check1_2">
+            <br>
+            Lesson 5, 6<input type="checkbox" id="check1_3">
+            <br>
+            Lesson 7, 8 - 데이터 없음<input type="checkbox" id="check1_4" disabled>
+            <br>
+            Lesson 9, 10<input type="checkbox" id="check1_5">
+            <br>
+            Lesson 11, 12<input type="checkbox" id="check1_6">
+            <br>
+            Lesson 13, 14<input type="checkbox" id="check1_7">
+            <br>
+          </div>
+        </details>
         <br>
-        <div class="BookID">
-          Word Master 데이터의 경우 Lesson 번호가 일치하지 않을 수 있습니다. <br>반드시 단어책과 대조하여 확인 후 학습 바랍니다.
-          <br><br>
-          Lesson 1, 2 - 데이터 없음<input type="checkbox" id="check1_1" disabled>
+        <details open class="gradeBox">
+          <summary><b>2학년</b></summary>
           <br>
-          Lesson 3, 4<input type="checkbox" id="check1_2">
-          <br>
-          Lesson 5, 6<input type="checkbox" id="check1_3">
-          <br>
-          Lesson 7, 8 - 데이터 없음<input type="checkbox" id="check1_4" disabled>
-          <br>
-          Lesson 9, 10<input type="checkbox" id="check1_5">
-          <br>
-          Lesson 11, 12<input type="checkbox" id="check1_6">
-          <br>
-          Lesson 13, 14<input type="checkbox" id="check1_7">
-          <br>
-        </div>
-      </details>
-      <br>
-      <details open>
-        <summary><b>2학년</b></summary>
+          <div class="BookID">
+              Lesson 1<input type="checkbox" id="check2_1" > 
+              Lesson 2<input type="checkbox" id="check2_2" >
+              <br>
+              Lesson 3<input type="checkbox" id="check2_3" > 
+              Lesson 4<input type="checkbox" id="check2_4" >
+              <br>
+              Lesson 5<input type="checkbox" id="check2_5"> 
+              Lesson 6<input type="checkbox" id="check2_6">
+              <br>
+              Lesson 7<input type="checkbox" id="check2_7" > 
+              Lesson 8<input type="checkbox" id="check2_8" >
+              <br>
+              Lesson 9<input type="checkbox" id="check2_9"> 
+              Lesson 10<input type="checkbox" id="check2_10">
+              <br>
+              Lesson 11<input type="checkbox" id="check2_11" > 
+              Lesson 12<input type="checkbox" id="check2_12" >  
+              <br>
+              Lesson 15<input type="checkbox" id="check2_15" > 
+              Lesson 16<input type="checkbox" id="check2_16" >  
+              <br>        
+              Lesson 17<input type="checkbox" id="check2_17" > 
+              Lesson 18<input type="checkbox" id="check2_18" >  
+              Lesson 19<input type="checkbox" id="check2_19" >  
+              <br>         
+              Lesson 20<input type="checkbox" id="check2_20" > 
+              Lesson 21<input type="checkbox" id="check2_21" >  
+              Lesson 22<input type="checkbox" id="check2_22" >  
+              <br>   
+              Lesson 23<input type="checkbox" id="check2_23" > 
+              Lesson 24<input type="checkbox" id="check2_24" >  
+              Lesson 25<input type="checkbox" id="check2_25" >  
+              <br>         
+              Lesson 26<input type="checkbox" id="check2_26" > 
+              Lesson 27<input type="checkbox" id="check2_27" >  
+              Lesson 28<input type="checkbox" id="check2_28" >  
+              <br>         
+          </div>
+        </details>
         <br>
-        <div class="BookID">
-            Lesson 1<input type="checkbox" id="check2_1" > 
-            Lesson 2<input type="checkbox" id="check2_2" >
+        <details open class="gradeBox">
+          <summary><b>3학년</b></summary>
+          <div class="BookID">
+            <b>Week 1</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Lesson 1<input type="checkbox" id="check3_1">
             <br>
-            Lesson 3<input type="checkbox" id="check2_3" > 
-            Lesson 4<input type="checkbox" id="check2_4" >
-            <br>
-            Lesson 5<input type="checkbox" id="check2_5"> 
-            Lesson 6<input type="checkbox" id="check2_6">
-            <br>
-            Lesson 7<input type="checkbox" id="check2_7" > 
-            Lesson 8<input type="checkbox" id="check2_8" >
-            <br>
-            Lesson 9<input type="checkbox" id="check2_9"> 
-            Lesson 10<input type="checkbox" id="check2_10">
-            <br>
-            Lesson 11<input type="checkbox" id="check2_11" > 
-            Lesson 12<input type="checkbox" id="check2_12" >  
-            <br>
-            Lesson 15<input type="checkbox" id="check2_15" > 
-            Lesson 16<input type="checkbox" id="check2_16" >  
-            <br>        
-            Lesson 17<input type="checkbox" id="check2_17" > 
-            Lesson 18<input type="checkbox" id="check2_18" >  
-            Lesson 19<input type="checkbox" id="check2_19" >  
-            <br>         
-            Lesson 20<input type="checkbox" id="check2_20" > 
-            Lesson 21<input type="checkbox" id="check2_21" >  
-            Lesson 22<input type="checkbox" id="check2_22" >  
-            <br>   
-            Lesson 23<input type="checkbox" id="check2_23" > 
-            Lesson 24<input type="checkbox" id="check2_24" >  
-            Lesson 25<input type="checkbox" id="check2_25" >  
-            <br>         
-            Lesson 26<input type="checkbox" id="check2_26" > 
-            Lesson 27<input type="checkbox" id="check2_27" >  
-            Lesson 28<input type="checkbox" id="check2_28" >  
-            <br>         
-        </div>
-      </details>
-      <br>
-      <details open>
-        <summary><b>3학년</b></summary>
-        <div class="BookID">
-          <b>Week 1</b>&nbsp;&nbsp;&nbsp;&nbsp;
-          Lesson 1<input type="checkbox" id="check3_1">
-          <br>
-        </div>
-      </details>
-      <br>
+          </div>
+        </details>
+        <br>
+      </div>
     </div>
   </div>
   <hr><br><br>
