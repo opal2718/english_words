@@ -10,7 +10,7 @@ var sentences_kor = [];
 var split_blanks_1 = [];
 var split_blanks_2 = [];
 var answers = [];
-var buttons = ["#Answer", "#Quiz", "#Words", "#Quiz_Korean", "#Quiz_Korean_First", "#Quiz_Reversed"]
+var buttons = ["Answer", "Quiz", "Words", "Quiz_Korean", "Quiz_Korean_First", "Quiz_Reversed"]
 // Answer Words Quiz_Korean Quiz_Reversed Quiz Quiz_Korean_First
 var mode = "Answer";
 var doShuffle = true;
@@ -54,7 +54,6 @@ function shuffleWords(){
   }
 }
 function changeHTML(){
-  console.log(mode);
   var totalHTML = "";
   for(var i = 0; i < words.length; i++){
     if (mode == "Answer") {
@@ -316,12 +315,13 @@ function buttonInit(){
   }
   //mode alteration
   for(let i = 0; i < buttons.length; i++){
-    $(buttons[i]).change(function(){
-      if($(buttons[i]).is(":checked")){
+    $("#"+buttons[i]).change(function(){
+      if("#"+$(buttons[i]).is(":checked")){
         mode = buttons[i];
+        console.log(mode);
         for(let j = 0; j < buttons.length; j++){
           if(i == j) continue;
-          $(buttons[j]).prop("checked", false);
+          $("#"+buttons[j]).prop("checked", false);
         }
       }
       else mode = "";
