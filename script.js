@@ -1,9 +1,6 @@
-var maxLessons_1 = 7;
-var minLessons_1 = 0;
-var maxLessons_2 = 28;
-var minLessons_2 = -33;
-var maxLessons_3 = 1;
-var minLessons_3 = 0;
+var minLessonsList = [null, 0, -33, 0];
+var maxLessonsList = [null, 7, 28, 1];
+var directory_grade = [null, "./csvs/Grade1/Word_Master_week", "./csvs/Grade2/504words_lesson", "./csvs/Grade3/Hackers_TEPS_lesson"];
 var grade = 2;
 var words = [];
 var meanings = [];
@@ -12,12 +9,13 @@ var sentences_kor = [];
 var split_blanks_1 = [];
 var split_blanks_2 = [];
 var answers = [];
+var buttons = ["#Answer", "#Quiz", "#Words", "#Quiz_Korean", "#Quiz_Korean_First", "#Quiz_Reversed"]
+var mode = "Answer";
 
 function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
-var mode = "Answer";
 function changeHTML(){
   var totalHTML = "";
   var empty = [];
@@ -144,185 +142,16 @@ function check_reversed(n) {
   }
 }
 
-var date = new Date();
-var year=date.getFullYear(), month=date.getMonth()+1, day=date.getDate(), hour=date.getHours(), minute=date.getMinutes();
-var dyear = 2024, dmonth=10, dday=14;
-var monthLength=[0,31,29,31,30,31,30,31,31,30,31,30,31];
-var dayLeft = dday-day;
-for(var leftDI=month; leftDI<dmonth; leftDI++) dayLeft+=monthLength[leftDI];
-if(dayLeft >= 0) $("#dday").html("D - "+(dayLeft));
-else $("#dday").html("D + "+(-dayLeft));
-//alert("시험 "+dayLeft+"일 남음 ㅋㅋㅋㅋ");
-
-$("#answer").change(function(){
-  if($("#answer").is(":checked")){
-    mode = "Answer";
-    $("#quiz").prop("checked", false);
-    $("#words").prop("checked", false);
-    $("#quiz_korean").prop("checked", false);
-    $("#quiz_korean_first").prop("checked", false);
-    $("#quiz_reversed").prop("checked", false);
-  }
-  else mode = "";
-  $('#textArea').html("");
-  addWords();
-});
-$("#words").change(function(){
-  if($("#words").is(":checked")){
-    mode = "Words";
-    $("#quiz").prop("checked", false);
-    $("#answer").prop("checked", false);
-    $("#quiz_korean").prop("checked", false);
-    $("#quiz_korean_first").prop("checked", false);
-    $("#quiz_reversed").prop("checked", false);
-  }
-  else mode = "";
-  $('#textArea').html("");
-  addWords();
-});
-$("#quiz").change(function(){
-  if($("#quiz").is(":checked")){
-    mode = "Quiz";
-    $("#answer").prop("checked", false);
-    $("#quiz_korean").prop("checked", false);
-    $("#quiz_korean_first").prop("checked", false);
-    $("#words").prop("checked", false);
-    $("#quiz_reversed").prop("checked", false);
-  }
-  else mode = "";
-  $('#textArea').html("");
-  addWords();
-});
-$("#quiz_reversed").change(function(){
-  if($("#quiz_reversed").is(":checked")){
-    mode = "Quiz_Reversed";
-    $("#quiz").prop("checked", false);
-    $("#answer").prop("checked", false);
-    $("#quiz_korean").prop("checked", false);
-    $("#quiz_korean_first").prop("checked", false);
-    $("#words").prop("checked", false);
-  }
-  else mode = "";
-  $('#textArea').html("");
-  addWords();
-});
-$("#quiz_korean").change(function(){
-  if($("#quiz_korean").is(":checked")){
-    mode = "Quiz_Korean";
-    $("#quiz").prop("checked", false);
-    $("#answer").prop("checked", false);
-    $("#quiz_korean_first").prop("checked", false);
-    $("#words").prop("checked", false);
-    $("#quiz_reversed").prop("checked", false);
-  }
-  else mode = "";
-  $('#textArea').html("");
-  addWords();
-});
-$("#quiz_korean_first").change(function(){
-  if($("#quiz_korean_first").is(":checked")){
-    mode = "Quiz_Korean_First";
-    $("#quiz").prop("checked", false);
-    $("#answer").prop("checked", false);
-    $("#quiz_korean").prop("checked", false);
-    $("#words").prop("checked", false);
-    $("#quiz_reversed").prop("checked", false);
-  }
-  else mode = "";
-  $('#textArea').html("");
-  addWords();
-});
-
-
-//모드 변경
-function newSet(){
-  $(function() {
-    $('#textArea').html("");
-    addWords();
-  });
-}
-
-newSet();
-
-//단어 세트 변경
-for(var j1 = minLessons_1; j1 <= maxLessons_1; j1++){
-  var temp1 = j1;
-  $("#check1_"+temp1).change(function(){
-    if($("#check1_"+temp1).is(":checked")){
-      grade = 1;
-      document.title = "Hello Words! | Grade 1";
-      for(var k11 = minLessons_2; k11 <= maxLessons_2; k11++){
-        var temp11 = k11;
-        $("#check2_"+temp11).prop("checked", false);
-      }
-      for(var k12 = minLessons_3; k12 <= maxLessons_3; k12++){
-        var temp12 = k12;
-        $("#check3_"+temp12).prop("checked", false);
-      }
-    }
-    $('#textArea').html("");
-    addWords();
-  })
-}
-for(var j2 = minLessons_2; j2 <= maxLessons_2; j2++){
-  var temp2 = j2;
-  $("#check2_"+temp2).change(function(){
-    if($("#check2_"+temp2).is(":checked")){
-      grade = 2;
-      document.title = "Hello Words! | Grade 2";
-      for(var k21 = minLessons_1; k21 <= maxLessons_1; k21++){
-        var temp21 = k21;
-        $("#check1_"+temp21).prop("checked", false);
-      }
-      for(var k22 = minLessons_3; k22 <= maxLessons_3; k22++){
-        var temp22 = k22;
-        $("#check3_"+temp22).prop("checked", false);
-      }
-    }
-    $('#textArea').html("");
-    addWords();
-  })
-}
-for(var j3 = minLessons_3; j3 <= maxLessons_3; j3++){
-  var temp3 = j3;
-  $("#check3_"+temp3).change(function(){
-    if($("#check3_"+temp3).is(":checked")){
-      grade = 3;
-      document.title = "Hello Words! | Grade 3";
-      for(var k31 = minLessons_2; k31 <= maxLessons_2; k31++){
-        var temp31 = k31;
-        $("#check2_"+temp31).prop("checked", false);
-      }
-      for(var k32 = minLessons_1; k32 <= maxLessons_1; k32++){
-        var temp32 = k32;
-        $("#check1_"+temp32).prop("checked", false);
-      }
-    }
-    $('#textArea').html("");
-    addWords();
-  })
+function alterGrade(target){
+  grade = target
+  document.title = "Hello Words! | Grade "+target;
 }
 
 function addWords(){
-  var fileName = "";
-
-  var maxLessons = 0;
-  var minLessons = 0;
-  if(grade == 1) {
-    fileName = "./csvs/Word_Master_week";
-    maxLessons = maxLessons_1;
-    minLessons = minLessons_1;
-  }
-  else if(grade == 2) {
-    fileName = "./csvs/504words_lesson";
-    maxLessons = maxLessons_2;
-    minLessons = minLessons_2;
-  }
-  else if(grade == 3) {
-    fileName = "./csvs/Hackers_TEPS_lesson";
-    maxLessons = maxLessons_3;
-    minLessons = minLessons_3;
-  }
+  var fileName = directory_grade[grade];
+  var maxLessons = maxLessonsList[grade];
+  var minLessons = minLessonsList[grade];
+  
   words = [];
   meanings = [];
   sentences = [];
@@ -459,8 +288,69 @@ function check(n) {
   }
 }
 
+function buttonInit(){
+  //단어 세트 변경
+  for(let grade_temp = 1; grade_temp <= 3; grade_temp++){
+    for(let i = minLessonsList[grade_temp]; i <= maxLessonsList[grade_temp]; i++){
+      let buttonName = ("#check"+grade_temp+"_"+i);
+      $(buttonName).change(function(){
+        if($(buttonName).is(":checked")){
+          alterGrade(grade_temp)
+          for(let j = 1; j <= 3; j++){
+            if(grade_temp == j) continue;
+            for(let k = minLessonsList[j]; k <= maxLessonsList[j]; k++){
+              $("#check"+j+"_"+k).prop("checked", false);
+            }
+          }
+        }
+        $('#textArea').html("");
+        addWords();
+      })
+    }
+  }
+  //mode alteration
+  for(let i = 0; i < buttons.length; i++){
+    $(buttons[i]).change(function(){
+      if($(buttons[i]).is(":checked")){
+        mode = buttons[i];
+        for(let j = 0; j < buttons.length; j++){
+          if(i == j) continue;
+          $(buttons[j]).prop("checked", false);
+        }
+      }
+      else mode = "";
+      $('#textArea').html("");
+      addWords();
+    });
+  }
+}
 
+function SetDday(){
+  var date = new Date();
+  var year=date.getFullYear(), month=date.getMonth()+1, day=date.getDate(), hour=date.getHours(), minute=date.getMinutes();
+  var dyear = 2024, dmonth=10, dday=14;
+  var monthLength=[0,31,29,31,30,31,30,31,31,30,31,30,31];
+  var dayLeft = dday-day;
+  for(var leftDI=month; leftDI<dmonth; leftDI++) dayLeft+=monthLength[leftDI];
+  if(dayLeft >= 0) $("#dday").html("D - "+(dayLeft));
+  else $("#dday").html("D + "+(-dayLeft));
+  //alert("시험 "+dayLeft+"일 남음 ㅋㅋㅋㅋ");
+}
 
-window.addEventListener("keydown", (e) => {
-  if (e.key == "F2") newSet();
-});
+//모드 변경
+function newSet(){
+  $(function() {
+    $('#textArea').html("");
+    addWords();
+  });
+}
+
+function Initiate(){
+  buttonInit();
+  SetDday();
+  window.addEventListener("keydown", (e) => {
+    if (e.key == "F2") newSet();
+  });
+  newSet();
+}
+Initiate();

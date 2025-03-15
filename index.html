@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width">
   <link id='favicon' rel="shortcut icon" href="./images/favicon.png">
   
-  <title>Hello Words! | Grade 2</title>
+  <title>Hello Words! | Grade 3</title>
   <!--open graph-->  
   <meta property="og:site_name" content="https://opal2718.github.io/english_words/" />
   <meta property="og:title" content="Hello Words!" />
@@ -45,7 +45,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <header style="background-color: #eeeeee;">
     <h1 style="text-align: center; margin-bottom: 0; padding-bottom: 0;">단어 테스트</h1>
-    <p style="color: #999999; text-align: center;">version 2.Final.0</p>
+    <p style="color: #999999; text-align: center;">version 3.0.1</p>
     
   </header>
   <hr>
@@ -83,16 +83,16 @@
       <br>
       <p style="line-height: 170%;">
         <b style="font-size: larger;">Mode</b><br>
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Words<input type="checkbox" id="answer" checked>
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Words_No Meaning<input type="checkbox" id="words">
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(단어 제시)<input type="checkbox" id="quiz_reversed">
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(영어 문장 > 단어)<input type="checkbox" id="quiz">
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(뜻 > 단어)<input type="checkbox" id="quiz_korean">
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(한국어 문장 > 단어), 첫 글자 보임<input type="checkbox" id="quiz_korean_first">
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Words<input type="checkbox" id="Answer" checked>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Words_No Meaning<input type="checkbox" id="Words">
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(단어 제시)<input type="checkbox" id="Quiz_Reversed">
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(영어 문장 > 단어)<input type="checkbox" id="Quiz">
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(뜻 > 단어)<input type="checkbox" id="Quiz_Korean">
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(한국어 문장 > 단어), 첫 글자 보임<input type="checkbox" id="Quiz_Korean_First">
         <!--단어만, 문장만, 단어&문장 버튼 추가-->
       </p>
       <br><hr><br>
-      <details>
+      <details open>
         <summary><b>1학년</b></summary>
         <br>
         <div class="BookID">
@@ -122,169 +122,52 @@
           <br>
         </div>
       </details>
-
-      <br><br><br>
-
+      <br>
       <details open>
         <summary><b>2학년</b></summary>
         <br>
         <div class="BookID">
-          <!--
-          <details>
-            <summary>1학기</summary>
+            Lesson 1<input type="checkbox" id="check2_1" > 
+            Lesson 2<input type="checkbox" id="check2_2" >
             <br>
-            <details>
-              <summary>중간고사 이전</summary>
-              <b>Week 1</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              Lesson 1<input type="checkbox" id="check2_1" > 
-              Lesson 2<input type="checkbox" id="check2_2" >
-              <br>
-              <b>Week 2</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              Lesson 3<input type="checkbox" id="check2_3" > 
-              Lesson 4<input type="checkbox" id="check2_4" >
-              <br>
-              <b>Week 3</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              Lesson 5<input type="checkbox" id="check2_5"> 
-              Lesson 6<input type="checkbox" id="check2_6">
-              <br>
-              <b>Week 4</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              Lesson 7<input type="checkbox" id="check2_7" > 
-              Lesson 8<input type="checkbox" id="check2_8" >
-              <br>
-              <b>Week 5</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              Lesson 9<input type="checkbox" id="check2_9"> 
-              Lesson 10<input type="checkbox" id="check2_10">
-            </details>
-
-            <details>
-              <summary>중간고사</summary>
-              <b>이 아래는 Quiz(ENG, KOR)로 하셔야 함<br>빈칸에는 출력 결과 쓰세요</b><br>
-              <b>Midterm Exam(영독작)</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              Words List(1~20)<input type="checkbox" id="check2_-1" >
-              Words List(21~40)<input type="checkbox" id="check2_-2" >
-              Words List(41~60)<input type="checkbox" id="check2_-3" >
-              Words List(61~80)<input type="checkbox" id="check2_-4" >
-              Words List(81~)<input type="checkbox" id="check2_-5" >
-              <br>
-              <b>Midterm Exam(구문)</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              Words List<input type="checkbox" id="check2_-6" >
-              <br>
-              <b>객체 중간고사(이안순T)</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              객체1<input type="checkbox" id="check2_-7" >
-              객체2<input type="checkbox" id="check2_-8" >
-              객체3<input type="checkbox" id="check2_-9" >
-              객체4<input type="checkbox" id="check2_-10" disabled>
-              객체5<input type="checkbox" id="check2_-11" disabled>
-              객체6<input type="checkbox" id="check2_-12" >
-              객체7<input type="checkbox" id="check2_-13" >
-              <br>
-            </details>
-            
+            Lesson 3<input type="checkbox" id="check2_3" > 
+            Lesson 4<input type="checkbox" id="check2_4" >
             <br>
-            <div>
-              <b>Week 6</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              Lesson 11<input type="checkbox" id="check2_11" > 
-              Lesson 12<input type="checkbox" id="check2_12" >  
-              <br> 
-              <b>Factfulness(구문)</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              Size<input type="checkbox" id="check2_-14">  
-              Generalization<input type="checkbox" id="check2_-15">  
-              Urgency<input type="checkbox" id="check2_-16">  
-              <br> 
-              <b>영독작</b>&nbsp;&nbsp;&nbsp;&nbsp;
-              1~20<input type="checkbox" id="check2_-17">    
-              21~40<input type="checkbox" id="check2_-18">    
-              41~60<input type="checkbox" id="check2_-19">    
-              61~80<input type="checkbox" id="check2_-20">    
-              81~109<input type="checkbox" id="check2_-21">           
-            </div>
-            <hr>
-            <hr>
-          </details>
-          <br>
-          -->
-          Word lists of the first semester have been removed since October 2024.
-          <br><br>
-          <div>
-            <b>Week 1</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Lesson 5<input type="checkbox" id="check2_5"> 
+            Lesson 6<input type="checkbox" id="check2_6">
+            <br>
+            Lesson 7<input type="checkbox" id="check2_7" > 
+            Lesson 8<input type="checkbox" id="check2_8" >
+            <br>
+            Lesson 9<input type="checkbox" id="check2_9"> 
+            Lesson 10<input type="checkbox" id="check2_10">
+            <br>
+            Lesson 11<input type="checkbox" id="check2_11" > 
+            Lesson 12<input type="checkbox" id="check2_12" >  
+            <br>
             Lesson 15<input type="checkbox" id="check2_15" > 
             Lesson 16<input type="checkbox" id="check2_16" >  
-            <br>         
-          </div>
-          <div>
-            <b>Week 2</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>        
             Lesson 17<input type="checkbox" id="check2_17" > 
             Lesson 18<input type="checkbox" id="check2_18" >  
             Lesson 19<input type="checkbox" id="check2_19" >  
             <br>         
-          </div>
-          <div>
-            <b>Week 3</b>&nbsp;&nbsp;&nbsp;&nbsp;
             Lesson 20<input type="checkbox" id="check2_20" > 
             Lesson 21<input type="checkbox" id="check2_21" >  
             Lesson 22<input type="checkbox" id="check2_22" >  
-            <br>         
-          </div>
-          <hr>
-          <details>
-            <summary>Midterm Exam</summary>&nbsp;&nbsp;&nbsp;&nbsp;
-
-            
-            <br>English Culture Version 1<input type="checkbox" id="check2_-22" > 
-            <details>
-              <summary>Splited Lists</summary>
-              Underlined Only<input type="checkbox" id="check2_-23" > 
-              <br>List A~C<input type="checkbox" id="check2_-24" > 
-              <br>List D~E<input type="checkbox" id="check2_-25" > 
-              <br>List F~N<input type="checkbox" id="check2_-26" > 
-              <br>List O~Q<input type="checkbox" id="check2_-27" > 
-              <br>List R<input type="checkbox" id="check2_-28" > 
-              <br>List S<input type="checkbox" id="check2_-29" > 
-              <br>List T~Z<input type="checkbox" id="check2_-30" > 
-
-            </details>
-            <br>Added Words - Oct 8 <input type="checkbox" id="check2_-31"> 
-            
-
-
-            <br>
-            <br>선생님께서 밑줄치라 하신 것은 뜻 앞에 *로 표시함
-            <br>출처: 용욱이 <a href="https://substantial-hare-368.notion.site/103373ac53d780299d5ec84b30e7234d?pvs=4"  target="_blank">notion</a>(Oedipus, Antigone 부분 포함) + 내 필기
-            
-            <br><br>
-            <div style="color: #CC2222">책 속 용례 추가/단어 추가/오류 정정: <a href="https://docs.google.com/spreadsheets/d/1_IV9aCEe6NBE4ovWwid5Me9Zc492lAGr/edit?usp=sharing&ouid=107537621339064663881&rtpof=true&sd=true", target="_blank">Google Drive</a></div>
-            
-            <hr>
-            <div>            
-              <br>Biology<input type="checkbox" id="check2_-32" > 
-            </div>
-          </details>
-          <hr>
-          <div>
-            <b>Week 4</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>   
             Lesson 23<input type="checkbox" id="check2_23" > 
             Lesson 24<input type="checkbox" id="check2_24" >  
             Lesson 25<input type="checkbox" id="check2_25" >  
             <br>         
-          </div>
-          <div>
-            <b>Week 5</b>&nbsp;&nbsp;&nbsp;&nbsp;
             Lesson 26<input type="checkbox" id="check2_26" > 
             Lesson 27<input type="checkbox" id="check2_27" >  
             Lesson 28<input type="checkbox" id="check2_28" >  
             <br>         
-          </div>
-          <div>
-            <b>김지후 꺼 썌비기</b>&nbsp;&nbsp;&nbsp;&nbsp;
-            영문<input type="checkbox" id="check2_-33" > 
-            <br>         
-          </div>
         </div>
       </details>
-
-      <br><br><br>
-
-      <details>
+      <br>
+      <details open>
         <summary><b>3학년</b></summary>
         <div class="BookID">
           가공없이 올릴 수 있는 형태의 데이터를 구하지 못한 관계로 Hackers TEPS 지원은 중단합니다.
@@ -320,7 +203,7 @@
   <footer style="text-align: center; background-color: #eeeeee;">
     <br>
     <h5>
-      문의사항은 2학년 1반 이시후에게!
+      문의사항은 3513 이시후에게!
       <!--<br>📞010-9746-1008-->
       <a href="https://www.instagram.com/opal_2718?igsh=ZnJkOW02YTJubWhl"  target="_blank">
         <div>IG @opal2718</div>
@@ -335,7 +218,7 @@
       <br><b>2학년 객체: !!!이시후!!!+ㅎㄱㄹ</b>
     </h5>
     <br>
-    ©Sihoo Lee, 2024
+    © Sihoo Lee, 2024
   </footer>
 
   <script src="script.js"></script>
