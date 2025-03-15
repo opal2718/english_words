@@ -1,6 +1,7 @@
-var minLessonsList = [null, 0, -33, 0];
+var minLessonsList = [null, 1, -33, 1];
 var maxLessonsList = [null, 7, 28, 1];
 var directory_grade = [null, "./csvs/Grade1/Word_Master_week", "./csvs/Grade2/504words_lesson", "./csvs/Grade3/Hackers_TEPS_lesson"];
+var directory_grade_appendix = [null, null, "./csvs/Grade2/appendix", null];
 var grade = 2;
 var words = [];
 var meanings = [];
@@ -11,13 +12,13 @@ var split_blanks_2 = [];
 var answers = [];
 var buttons = ["#Answer", "#Quiz", "#Words", "#Quiz_Korean", "#Quiz_Korean_First", "#Quiz_Reversed"]
 var mode = "Answer";
+var doShuffle = true;
 
 function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
-function changeHTML(){
-  var totalHTML = "";
+function shuffleWords(){
   var empty = [];
   
   var Twords = [];
@@ -28,6 +29,7 @@ function changeHTML(){
   var Tsplit_blanks_2 = [];
   var Tanswers = [];
 
+  //shuffle words
   var emptyI = 0;
   for(emptyI = 0; emptyI < words.length; emptyI++){
     empty.push(emptyI);
@@ -37,10 +39,9 @@ function changeHTML(){
     Tsentences_kor.push(sentences_kor[emptyI]);
     Tsplit_blanks_1.push(split_blanks_1[emptyI]);
     Tsplit_blanks_2.push(split_blanks_2[emptyI]);
-    Tanswers.push(answers [emptyI]);
+    Tanswers.push(answers[emptyI]);
   }
-  shuffle(empty);
-
+  if(doShuffle) shuffle(empty);
   for(emptyI = 0; emptyI < words.length; emptyI++){
     words[emptyI] = Twords[empty[emptyI]];
     meanings[emptyI] = Tmeanings[empty[emptyI]];
@@ -50,17 +51,18 @@ function changeHTML(){
     split_blanks_2[emptyI] = Tsplit_blanks_2[empty[emptyI]];
     answers[emptyI] = Tanswers[empty[emptyI]];
   }
+}
+function changeHTML(){
+  var totalHTML = "";
   for(var i = 0; i < words.length; i++){
     if (mode == "Answer") {
       totalHTML += ("<b>" + words[i] + "</b>" + "<br>");
       totalHTML += ("뜻:"+meanings[i] + "<br><br>");
       totalHTML += ("예문:"+sentences[i] + "<br>");
       totalHTML += ("예문 번역:"+sentences_kor[i] + "<br><br><hr>");
-
     }
     if (mode == "Words") {
       totalHTML += ("<b>" + words[i] + "</b>" + "<br><br><hr>");
-
     }
     else if (mode == "Quiz_Korean") { //뜻 > 단어
       totalHTML += ((i+1)+". "+'<input value="" autocomplete="off" onkeyup="check(' + i + ')" type="text" id="blank' + i + '">'+ "<br>");
@@ -84,12 +86,162 @@ function changeHTML(){
     }
   }
   return totalHTML;
-
 }
-var related = [];
+
+function alterGrade(target){
+  grade = target
+  document.title = "Hello Words! | Grade "+target;
+}
+
+function wordSetAdd(word, meaning, sentence, sentence_kor, split_blank, answer){
+  words.push(word);
+  meanings.push(meaning);
+  sentences.push(sentence);
+  sentences_kor.push(sentence_kor);
+  split_blanks_1.push(split_blank[0]);
+  split_blanks_2.push(split_blank[1]);
+  if(mode == "Quiz_Reversed") answers.push(meaning);
+  else answers.push(answer);
+}
+
+function makePage(fileName, parseName){
+  //why am I using this meaningless for loop..?
+  for (var i = 1; i < 2; i++) {
+    parse = parseInt(i);
+    parseName = fileName;// + parse + '.csv';	// 파일 경로 + sequence + 확장자
+
+    //what is this $.ajax for..?
+    $.ajax({
+      url: parseName,
+      dataType: 'text',
+      success: function(data) {
+        var allRow = data;
+        var rows = allRow.split("\n");
+
+        shuffle(rows);
+        for (var i = 0; i < rows.length; i++) {
+          //data preprocessing
+          var value = rows[i].split(",");
+          if(value[0] == "") continue;
+          for(var j = 0; j < value.length; j++){
+            value[j] = value[j].replace(/쉼표/g, ",");
+            value[j] = value[j].replace(/큰따옴표/g, '"');
+            value[j] = value[j].replace(/따옴표/g, "'");
+            value[j] = value[j].replace(/엔터/g, "<br>");
+            value[j] = value[j].replace(/숫자/g, "");
+            while(value[j].indexOf("__") != -1){
+              value[j] = value[j].replace("__", "_");
+            }
+          }
+          var word = value[0];
+          var meaning = value[1];
+          var sentence = value[2];
+          var sentence_kor = value[3];
+          var blank = value[4];
+          var answer = value[6];
+          var split_blank = blank.split("_");
+
+          if(value.length >= 8 && value[7] != ""){
+            meaning = "*"+meaning;
+          }
+          if(value.length >= 10 && value[9] != ""){
+            meaning += "<br>"+value[9];
+          }
+          if(value.length >= 11 && value[10] != ""){
+            meaning += "<br>synonyms: "+value[10];
+            for(var j = 11; j < value.length; j++){
+              meaning += ", "+value[j];
+            }
+          }
+          wordSetAdd(word, meaning, sentence, sentence_kor, split_blank, answer);
+        }
+      }
+    });
+  }
+}
+
+function addWords(){
+  var fileName = directory_grade[grade];
+  var maxLessons = maxLessonsList[grade];
+  var minLessons = minLessonsList[grade];
+  
+  words = [];
+  meanings = [];
+  sentences = [];
+  sentences_kor = [];
+  split_blanks_1 = [];
+  split_blanks_2 = [];
+  answers = [];
+
+  
+  var sentencess = "";  
+  for(let lessonN = minLessons; lessonN <= maxLessons; lessonN++){
+    if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue; //ignore data that are not selected
+
+    //select the source file
+    if(grade == 1 && (lessonN == 1 || lessonN == 4)) continue;//없는 데이터 예외처리
+    document.title = "Hello Words! | Grade "+String(grade);
+    var thisfile = fileName+String(lessonN)+".csv";
+    //word lists out of the books
+    if(lessonN <= 0){
+      if(directory_grade_appendix[grade] == null) {console.error("there doesn't exist such a word list"); break;}
+      if(-6 < lessonN && lessonN < 0) thisfile = "grade2_s1_mid_"+String(-lessonN);
+      else if(-14 < lessonN && lessonN < -6) thisfile = "grade2_s1_mid_info_"+String(-lessonN-6)
+      else if(-21 <= lessonN && lessonN <= -17) thisfile = ".grade2_s1_final_"+String(-lessonN-16);
+      else {switch(lessonN){
+        case -6: thisfile = "grade2_s1_mid_munhak"; break;
+        case -14: thisfile = "grade2_munhak_size"; break;
+        case -15: thisfile = "grade2_munhak_generalization"; break;
+        case -16: thisfile = "grade2_munhak_urgency"; break;
+        case -22: thisfile = "Midterm1"; break;
+        case -23: thisfile = "Midterm_Important"; break;
+        case -24: thisfile = "Midterm1_abc"; break;
+        case -25: thisfile = "Midterm1_de"; break;
+        case -26: thisfile = "Midterm1_f2n"; break;
+        case -27: thisfile = "Midterm1_opq"; break;
+        case -28: thisfile = "Midterm1_r"; break;
+        case -29: thisfile = "Midterm1_s"; break;
+        case -30: thisfile = "Midterm1_t2z"; break;
+        case -31: thisfile = "Midterm1_added1"; break;
+        case -32: thisfile = "Biology_Words"; break;
+        case -33: thisfile = "grade2_s2_final"; break;
+      }}
+      thisfile = directory_grade_appendix[grade]+thisfile+".csv";
+    }
+    console.log(thisfile)
+    makePage(thisfile, "");
+  }
+  setTimeout(() => {
+    //alert(words.length);
+    shuffleWords();
+    sentencess += changeHTML();
+    $('#textArea').append(sentencess + "<br>");
+  }, 50);
+}
+
+function check(n) {
+  //alert($('#blank' + n).val());
+  //alert(answers[n]);
+  if(n == -1){    
+  }
+  else{
+
+    if ($('#blank' + n).val().toLowerCase() == answers[n].toLowerCase()) {
+      $('#blank' + n).css("color", "blue");
+    }
+    else {
+      $('#blank' + n).css("color", "red");
+    }
+    if($('#blank' + n).val() == "?"){
+      $('#blank' + n).val(answers[n]);
+      $('#blank' + n).css("color", "black");
+    }
+  }
+}
 function check_reversed(n) {
   //alert($('#blank' + n).val());
   //alert(answers[n]);
+  var related = [];
   if(n == -1){    
   }
   else{
@@ -138,152 +290,6 @@ function check_reversed(n) {
         $('#options' + String(n)).append(optionsArr);
         //$('#blank' + n).val(answers[n]);
       }
-    }
-  }
-}
-
-function alterGrade(target){
-  grade = target
-  document.title = "Hello Words! | Grade "+target;
-}
-
-function addWords(){
-  var fileName = directory_grade[grade];
-  var maxLessons = maxLessonsList[grade];
-  var minLessons = minLessonsList[grade];
-  
-  words = [];
-  meanings = [];
-  sentences = [];
-  sentences_kor = [];
-  split_blanks_1 = [];
-  split_blanks_2 = [];
-  answers = [];
-
-  var sentencess = "";  
-  for(let lessonN = minLessons; lessonN <= maxLessons; lessonN++){
-    if(!$("#check"+grade+"_"+lessonN).is(":checked")) continue;
-    if(grade == 1 && (lessonN == 1 || lessonN == 4)) continue;//없는 데이터 예외처리
-    if(grade != 2 && lessonN <= 0) continue;//없는 데이터 예외처리
-    document.title = "Hello Words! | Grade "+String(grade);
-    var thisfile = fileName+String(lessonN)+".csv";
-    if(grade == 2){/*
-      if(-6 < lessonN && lessonN < 0) thisfile = "./csvs/grade2_s1_mid_"+String(-lessonN)+".csv";
-      if(lessonN == -6) thisfile = "./csvs/grade2_s1_mid_munhak.csv";
-      if(-14 < lessonN && lessonN < -6) {
-        thisfile = "./csvs/grade2_s1_mid_info_"+String(-lessonN-6)+".csv"
-        document.title = "Hello 'Worlds!' | Grade 2";
-      }
-      if(lessonN == -14) thisfile = "./csvs/grade2_munhak_size.csv";
-      if(lessonN == -15) thisfile = "./csvs/grade2_munhak_generalization.csv";
-      if(lessonN == -16) thisfile = "./csvs/grade2_munhak_urgency.csv";
-      if(-21 <= lessonN && lessonN <= -17) thisfile = "./csvs/grade2_s1_final_"+String(-lessonN-16)+".csv";*/
-      switch(lessonN){
-        case -22: thisfile = "./csvs/Midterm1.csv"; break;
-        case -23: thisfile = "./csvs/Midterm_Important.csv"; break;
-        case -24: thisfile = "./csvs/Midterm1_abc.csv"; break;
-        case -25: thisfile = "./csvs/Midterm1_de.csv"; break;
-        case -26: thisfile = "./csvs/Midterm1_f2n.csv"; break;
-        case -27: thisfile = "./csvs/Midterm1_opq.csv"; break;
-        case -28: thisfile = "./csvs/Midterm1_r.csv"; break;
-        case -29: thisfile = "./csvs/Midterm1_s.csv"; break;
-        case -30: thisfile = "./csvs/Midterm1_t2z.csv"; break;
-        case -31: thisfile = "./csvs/Midterm1_added1.csv"; break;
-        case -32: thisfile = "./csvs/Biology_Words.csv"; break;
-        case -33: thisfile = "./csvs/grade2_s2_final.csv"; break;
-      }
-    }
-    console.log(thisfile)
-    makePage(thisfile, "");
-  }
-  setTimeout(() => {
-    //alert(words.length);
-
-    sentencess += changeHTML();
-    $('#textArea').append(sentencess + "<br>");
-  }, 500);
-}
-
-function makePage(fileName, parseName){
-  for (var i = 1; i < 2; i++) {
-    parse = parseInt(i);
-    parseName = fileName;// + parse + '.csv';	// 파일 경로 + sequence + 확장자
-
-    $.ajax({
-      url: parseName,
-      dataType: 'text',
-      success: function(data) {
-        var allRow = data;
-        var rows = allRow.split("\n");
-
-        shuffle(rows);
-        for (var i = 0; i < rows.length; i++) {
-          var value = rows[i].split(",");
-          if(value[0] == "") continue;
-          for(var j = 0; j < value.length; j++){
-            value[j] = value[j].replace(/쉼표/g, ",");
-            value[j] = value[j].replace(/큰따옴표/g, '"');
-            value[j] = value[j].replace(/따옴표/g, "'");
-            value[j] = value[j].replace(/엔터/g, "<br>");
-            value[j] = value[j].replace(/숫자/g, "");
-            while(value[j].indexOf("__") != -1){
-              value[j] = value[j].replace("__", "_");
-            }
-          }
-          var word = value[0];
-          var meaning = value[1];
-          var sentence = value[2];
-          var sentence_kor = value[3];
-          var blank = value[4];
-          var answer = value[6];
-          var split_blank = blank.split("_");
-
-          if(value.length >= 8 && value[7] != ""){
-            meaning = "*"+meaning;
-          }
-          if(value.length >= 10 && value[9] != ""){
-            meaning += "<br>"+value[9];
-          }
-          if(value.length >= 11 && value[10] != ""){
-            meaning += "<br>synonyms: "+value[10];
-            for(var j = 11; j < value.length; j++){
-              meaning += ", "+value[j];
-            }
-          }
-          wordSetAdd(word, meaning, sentence, sentence_kor, split_blank, answer);
-        }
-      }
-    });
-  }
-}
-
-function wordSetAdd(word, meaning, sentence, sentence_kor, split_blank, answer){
-  words.push(word);
-  meanings.push(meaning);
-  sentences.push(sentence);
-  sentences_kor.push(sentence_kor);
-  split_blanks_1.push(split_blank[0]);
-  split_blanks_2.push(split_blank[1]);
-  if(mode == "Quiz_Reversed") answers.push(meaning);
-  else answers.push(answer);
-}
-
-function check(n) {
-  //alert($('#blank' + n).val());
-  //alert(answers[n]);
-  if(n == -1){    
-  }
-  else{
-
-    if ($('#blank' + n).val().toLowerCase() == answers[n].toLowerCase()) {
-      $('#blank' + n).css("color", "blue");
-    }
-    else {
-      $('#blank' + n).css("color", "red");
-    }
-    if($('#blank' + n).val() == "?"){
-      $('#blank' + n).val(answers[n]);
-      $('#blank' + n).css("color", "black");
     }
   }
 }
