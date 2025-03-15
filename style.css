@@ -97,6 +97,9 @@
     height: 100%;
     width: 100%;
   }
+  #igimg{
+    height: 1em;
+  }
   #reload{
     border-width: 5px;
     border-radius: 100%;
