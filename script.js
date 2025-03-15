@@ -11,6 +11,7 @@ var split_blanks_1 = [];
 var split_blanks_2 = [];
 var answers = [];
 var buttons = ["#Answer", "#Quiz", "#Words", "#Quiz_Korean", "#Quiz_Korean_First", "#Quiz_Reversed"]
+// Answer Words Quiz_Korean Quiz_Reversed Quiz Quiz_Korean_First
 var mode = "Answer";
 var doShuffle = true;
 
@@ -53,6 +54,7 @@ function shuffleWords(){
   }
 }
 function changeHTML(){
+  console.log(mode);
   var totalHTML = "";
   for(var i = 0; i < words.length; i++){
     if (mode == "Answer") {
@@ -180,7 +182,6 @@ function addWords(){
 
     //select the source file
     if(grade == 1 && (lessonN == 1 || lessonN == 4)) continue;//없는 데이터 예외처리
-    document.title = "Hello Words! | Grade "+String(grade);
     var thisfile = fileName+String(lessonN)+".csv";
     //word lists out of the books
     if(lessonN <= 0){
@@ -208,7 +209,6 @@ function addWords(){
       }}
       thisfile = directory_grade_appendix[grade]+thisfile+".csv";
     }
-    console.log(thisfile)
     makePage(thisfile, "");
   }
   setTimeout(() => {
@@ -216,7 +216,7 @@ function addWords(){
     shuffleWords();
     sentencess += changeHTML();
     $('#textArea').append(sentencess + "<br>");
-  }, 500);
+  }, 100);
 }
 
 function check(n) {
@@ -352,6 +352,8 @@ function newSet(){
 }
 
 function Initiate(){
+  grade = "❤️";
+  alterGrade(grade);
   buttonInit();
   SetDday();
   window.addEventListener("keydown", (e) => {
