@@ -11,6 +11,7 @@ var split_blanks_1 = [];
 var split_blanks_2 = [];
 var answers = [];
 var buttons = ["Answer", "Quiz", "Words", "Quiz_Korean", "Quiz_Korean_First", "Quiz_Reversed"]
+var related = [];
 // Answer Words Quiz_Korean Quiz_Reversed Quiz Quiz_Korean_First
 var mode = "Answer";
 var doShuffle = true;
@@ -240,7 +241,6 @@ function check(n) {
 function check_reversed(n) {
   //alert($('#blank' + n).val());
   //alert(answers[n]);
-  var related = [];
   if(n == -1){    
   }
   else{
@@ -261,34 +261,34 @@ function check_reversed(n) {
         if(guessing >= 0){
           var whichOps = parseInt(guessing, 10);
           if(whichOps >= 0){
-            console.log(related[whichOps]);
             $('#blank' + n).val(related[whichOps]);
             $('#options' + String(n)).html("");
             check_reversed(n);
           }
         }
-        related = [];
-        for(tttt = 0; tttt < words.length; tttt++){
-          if(meanings[tttt].includes(answerV)) {
-            related.push(meanings[tttt]);
-          }
+        if(guessing < 0){
+          related = [];
+          for(tttt = 0; tttt < words.length; tttt++){
+            if(meanings[tttt].includes(answerV)) {
+              related.push(meanings[tttt]);
+            }
 
+          }
+          shuffle(related);
+          var ttttt = 0;
+          var optionsArr = "보기: <br>";
+          for(ttttt = 0; ttttt < Math.min(related.length, 10); ttttt++){
+            optionsArr += "&nbsp;&nbsp;&nbsp;&nbsp;"
+            optionsArr += ttttt;
+            optionsArr += ": ";
+            var tttttS = String(related[ttttt]).replace(/<br>/g, '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+            optionsArr += tttttS;
+            optionsArr += "<br>";
+          }
+          optionsArr += "...";
+          $('#options' + String(n)).html("");
+          $('#options' + String(n)).append(optionsArr);
         }
-        shuffle(related);
-        var ttttt = 0;
-        var optionsArr = "보기: <br>";
-        for(ttttt = 0; ttttt < Math.min(related.length, 10); ttttt++){
-          optionsArr += "&nbsp;&nbsp;&nbsp;&nbsp;"
-          optionsArr += ttttt;
-          optionsArr += ": ";
-          var tttttS = String(related[ttttt]).replace(/<br>/g, '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-          optionsArr += tttttS;
-          optionsArr += "<br>";
-        }
-        optionsArr += "...";
-        $('#options' + String(n)).html("");
-        $('#options' + String(n)).append(optionsArr);
-        //$('#blank' + n).val(answers[n]);
       }
     }
   }
