@@ -261,6 +261,7 @@ function check_reversed(n) {
         if(guessing >= 0){
           var whichOps = parseInt(guessing, 10);
           if(whichOps >= 0){
+            console.log(related[whichOps]);
             $('#blank' + n).val(related[whichOps]);
             $('#options' + String(n)).html("");
             check_reversed(n);
