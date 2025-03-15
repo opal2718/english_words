@@ -266,7 +266,7 @@ function check_reversed(n) {
             check_reversed(n);
           }
         }
-        if(guessing < 0){
+        if(guessing < 0 && (answerV.length > 1 && answerV[answerV.length-1] != ":")){
           related = [];
           for(tttt = 0; tttt < words.length; tttt++){
             if(meanings[tttt].includes(answerV)) {
