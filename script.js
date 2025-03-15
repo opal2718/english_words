@@ -216,7 +216,7 @@ function addWords(){
     shuffleWords();
     sentencess += changeHTML();
     $('#textArea').append(sentencess + "<br>");
-  }, 200);
+  }, 500);
 }
 
 function check(n) {
@@ -319,20 +319,26 @@ function buttonInit(){
   }
   //mode alteration
   for(let i = 0; i < buttons.length; i++){
-    $("#"+buttons[i]).change(function(){
-      if("#"+$(buttons[i]).is(":checked")){
-        mode = buttons[i];
-        console.log(mode);
-        for(let j = 0; j < buttons.length; j++){
-          if(i == j) continue;
-          $("#"+buttons[j]).prop("checked", false);
+    $("#"+buttons[i]).click(function(){
+      mode = buttons[i];
+      for(let j = 0; j < buttons.length; j++){
+        if(i == j){
+          $("#"+buttons[j]).css("border", "thin solid black")
+          continue;
         }
+        $("#"+buttons[j]).css("border", "none");
       }
-      else mode = "";
       $('#textArea').html("");
       addWords();
     });
   }
+  $(".gradeBox").on("toggle", function() {
+    if ($(this).prop("open")) {
+      $(this).css("border", "thin solid black");
+    } else {
+      $(this).css("border", "none");
+    }
+  });
 }
 
 function SetDday(){
@@ -364,5 +370,6 @@ function Initiate(){
     if (e.key == "F2") newSet();
   });
   newSet();
+  $("#"+mode).click();
 }
 Initiate();

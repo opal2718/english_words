@@ -43,10 +43,52 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NB29TN2"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <header style="background-color: #eeeeee;">
-    <h1 style="text-align: center; margin-bottom: 0; padding-bottom: 0;">단어 테스트</h1>
-    <p style="color: #999999; text-align: center;">version 3.1.2</p>
-    
+  <header style="background-color: #eeeeee; position: sticky;">
+    <h1 style="text-align: center;padding-top: 1%; margin-bottom: 0;">Hello Words!</h1>
+    <p style="color: #999999; text-align: center; margin-top:0;">version 3.1.3</p>
+    <!--<p style="line-height: 170%;">
+      <b style="font-size: larger;">Mode</b><br>
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;Words<input type="checkbox" checked>
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;Words_No Meaning<input type="checkbox" id="Words">
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(단어 제시)<input type="checkbox" id="Quiz_Reversed">
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(영어 문장 > 단어)<input type="checkbox" id="Quiz">
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(뜻 > 단어)<input type="checkbox" id="Quiz_Korean">
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(한국어 문장 > 단어), 첫 글자 보임<input type="checkbox" id="Quiz_Korean_First">
+      단어만, 문장만, 단어&문장 버튼 추가
+    </p>-->
+    <div id="mode_bar">
+      <b id="mode_mode" class="modeButtons" style="font-size: larger;">Mode</b>
+      <button class="modeButtons" id="Answer">
+        <div class="mode_title">단어 공부</div>
+        <div class="mode_element">단어, 뜻, 예문(eng), 예문(한)</div>
+      </button>
+      <button class="modeButtons" id="Words">
+        <div class="mode_title">단어 공부</div>
+        <div class="mode_element">단어</div>
+      </button>
+      <button class="modeButtons" id="Quiz_Reversed">
+        <div class="mode_title">퀴즈</div>
+        <div class="mode_element">단어 > 뜻</div>
+      </button>
+      <button class="modeButtons" id="Quiz">
+        <div class="mode_title">퀴즈</div>
+        <div class="mode_element">문장 > 단어</div>
+        <div class="mode_description">첫 글자 표시</div>
+      </button>
+      <button class="modeButtons" id="Quiz_Korean">
+        <div class="mode_title">퀴즈</div>
+        <div class="mode_element">뜻 > 단어</div>
+      </button>
+      <button class="modeButtons" id="Quiz_Korean_First">
+        <div class="mode_title">퀴즈</div>
+        <div class="mode_element">문장 > 단어</div>
+        <div class="mode_description">첫 글자&예문(한) 표시</div>
+      </button>
+      <button class="modeButtons" id="reload" onclick="newSet()" style="background-color: #000000; color:white">
+        <div class="mode_title">새로고침</div>
+        <div class="mode_description">단어 목록 재배열</div>
+      </button>
+    </div>
   </header>
   <hr>
   <div>
@@ -54,22 +96,22 @@
     <div style="text-align: center; background-color: #eeeeee;">
       <br>
       <details>
-        <summary style="color: rgba(255, 0, 0, 0.671);">사이트 사용법 접기/펼치기</summary>
-        <h3 style="line-height: 200%;">
+        <summary style="color: rgba(0, 0, 0, 0.379);"><b>사이트 사용법 접기/펼치기</b></summary>
+        <div>
           모드와 단어 세트를 변경하면 자동으로 문제 목록이 새로고침됩니다.
           <br>2.6.1 버전부터 왼쪽 하단 새로고침 버튼 또는 키보드 F2 키로도 새로고침이 가능합니다.
           <br>Quiz와 Quiz_Korean 모드에서 빈칸에 답을 적으시면 자동으로 채점됩니다.
           <br>빈칸의 글씨가 붉은색이면 오답, 파란색이면 정답입니다.
           <br>빈칸에 '?'라고 적으시면 답을 보실 수 있습니다.
-        </h3>
-        <h5>
-          <h3><br><br>Quiz(단어 제시) 사용법</h3>
+        </div>
+        <div>
+          <div style="font-size:110%; margin-top:10px; margin-bottom: 0; padding-bottom: 0;"><b>퀴즈(문장 > 단어) 사용법</b></div>
           콜론(:) 뒤에 키워드를 입력하면 보기가 제시됩니다. (ex) ":잘못된"
           <br>찾고자 하는 보기가 나타났다면, (ex) 보기란에  "0: 잘못된, 틀린"이 나타남
           <br>다시 콜론을 입력한 뒤 보기의 번호를 입력해주세요. (ex) ":잘못된:0"
           <br>자동으로 정확한 답안이 입력됩니다.
-        </h5>
-        <br><br><br><hr>
+        </div>
+        <br><hr>
       </details>
 
       <!--공지사항
@@ -81,21 +123,11 @@
       
     -->
       <br>
-      <p style="line-height: 170%;">
-        <b style="font-size: larger;">Mode</b><br>
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Words<input type="checkbox" id="Answer" checked>
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Words_No Meaning<input type="checkbox" id="Words">
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(단어 제시)<input type="checkbox" id="Quiz_Reversed">
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(영어 문장 > 단어)<input type="checkbox" id="Quiz">
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(뜻 > 단어)<input type="checkbox" id="Quiz_Korean">
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Quiz(한국어 문장 > 단어), 첫 글자 보임<input type="checkbox" id="Quiz_Korean_First">
-        <!--단어만, 문장만, 단어&문장 버튼 추가-->
-      </p>
       <div id="gradeBoxParent">
         <br><hr><br>
-        <details open class="gradeBox">
+        <details class="gradeBox">
           <summary><b>1학년</b></summary>
-          <br>
+          <hr>
           <div class="BookID">
             Word Master 데이터의 경우 Lesson 번호가 일치하지 않을 수 있습니다. <br>반드시 단어책과 대조하여 확인 후 학습 바랍니다.
             <br><br>
@@ -114,11 +146,12 @@
             Lesson 13, 14<input type="checkbox" id="check1_7">
             <br>
           </div>
+          <br>
         </details>
         <br>
-        <details open class="gradeBox">
+        <details class="gradeBox">
           <summary><b>2학년</b></summary>
-          <br>
+          <hr>
           <div class="BookID">
               Lesson 1<input type="checkbox" id="check2_1" > 
               Lesson 2<input type="checkbox" id="check2_2" >
@@ -158,15 +191,18 @@
               Lesson 28<input type="checkbox" id="check2_28" >  
               <br>         
           </div>
+          <br>
         </details>
         <br>
-        <details open class="gradeBox">
+        <details class="gradeBox">
           <summary><b>3학년</b></summary>
+          <hr>
           <div class="BookID">
             <b>Week 1</b>&nbsp;&nbsp;&nbsp;&nbsp;
             Lesson 1<input type="checkbox" id="check3_1">
             <br>
           </div>
+          <br>
         </details>
         <br>
       </div>
@@ -177,24 +213,19 @@
   </div>
 
   <!--오른쪽 아래 광고-->
+  <!--
   <div id = "ad">
     <a id = "dday" href="https://newjeans.kr/"  target="_blank">D</a>
     <img id = "njimg" src="images/Newjeans_Murakami.png">
   </div>
+    -->
 
-  <!--왼쪽 아래 새로고침-->
-  <div id="reload">
-    <button style="border:none; margin:0em; background: none;" type="button" onclick="newSet()">
-      <img id = "refreshimg" src="images/refresh.png">
-      <!--<div id="reloadtext">REFRESH</div>-->
-    </button>
-  </div>
   
 
   <!--안내문-->
   <footer style="text-align: center; background-color: #eeeeee;">
     <br>
-    <h5>
+    <h5 style="margin-top: 0; padding-top: 0;">
       문의사항은 3513 이시후에게!
       <!--<br>📞010-9746-1008-->
       <a style="text-decoration: none;" href="https://www.instagram.com/opal_2718?igsh=ZnJkOW02YTJubWhl"  target="_blank">
@@ -209,8 +240,8 @@
       <br>
       <br><b>2학년 객체: 이시후+<span style="font-weight: lighter;">ㅎㄱㄹ</span></b>
     </h5>
-    <br>
-    © Sihoo Lee, 2024
+    © Sihoo Lee, 2024<br>
+    A bit of Rights Reserved<br><br>
   </footer>
 
   <script src="script.js"></script>
