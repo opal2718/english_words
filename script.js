@@ -2,7 +2,7 @@ var minLessonsList = [null, 1, -33, 1];
 var maxLessonsList = [null, 7, 28, 1];
 var directory_grade = [null, "./csvs/Grade1/Word_Master_week", "./csvs/Grade2/504words_lesson", "./csvs/Grade3/Hackers_TEPS_lesson"];
 var directory_grade_appendix = [null, null, "./csvs/Grade2/appendix", null];
-var grade = 2;
+var grade = 2718;
 var words = [];
 var meanings = [];
 var sentences = [];
@@ -216,7 +216,7 @@ function addWords(){
     shuffleWords();
     sentencess += changeHTML();
     $('#textArea').append(sentencess + "<br>");
-  }, 50);
+  }, 500);
 }
 
 function check(n) {
