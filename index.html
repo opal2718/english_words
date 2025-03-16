@@ -45,11 +45,18 @@
   <!-- End Google Tag Manager (noscript) -->
   <header id="headering">
     <h1 style="text-align: center;padding-top: 1%; margin-bottom: 0;">Hello Words!</h1>
-    <p style="color: #999999; text-align: center; margin-top:0;">version 3.1.8</p>
+    <p style="color: #999999; text-align: center; margin-top:0;">version 3.1.9</p>
     <details open style="color: rgba(0, 0, 0, 0.679); text-align: center;">
       <summary style="list-style-type: none;">모든 메뉴 축소/확대(클릭)</summary>
+      <!--모드-->
       <div id="mode_bar">
-        <b id="mode_mode" class="modeButtons" style="font-size: larger;">Mode</b>
+        <b id="mode_mode" class="modeButtons" style="font-size: larger;">
+          Mode
+          <div style="font-weight: lighter; font-size: 0.5em; padding-top: 0.2em;">
+            상단 고정
+            <input type="checkbox" id="head_float" style="zoom: 80%;" checked>
+          </div>
+        </b>
         <button class="modeButtons" id="Answer">
           <div class="mode_title">단어 공부</div>
           <div class="mode_element">단어, 뜻, 예문(eng), 예문(한)</div>
@@ -84,6 +91,7 @@
       <div style="margin-top: 0%;">
         <!--세팅-->
         <div style="text-align: center; background-color: #eeeeee; margin-left: 10%; margin-right: 10%;">
+          <!--사용법-->
           <details>
             <summary style="color: rgba(0, 0, 0, 0.379);"><b>사이트 사용법 접기/펼치기</b></summary>
             <div>
@@ -92,6 +100,7 @@
               <br>모든 모드에서 빈칸에 답을 적으시면 자동으로 채점됩니다.
               <br>빈칸의 글씨가 붉은색이면 오답, 파란색이면 정답입니다.
               <br>빈칸에 '?'라고 적으시면 답을 보실 수 있습니다.
+              <br>*(03/17) 모바일에서 상단 고정은 제대로 동작하지 않을 수 있습니다.
             </div>
             <div>
               <div style="font-size:110%; margin-top:10px; margin-bottom: 0; padding-bottom: 0;"><b>퀴즈(문장 > 단어) 사용법</b></div>
@@ -157,20 +166,22 @@
                   <br>        
                   Lesson 17<input type="checkbox" id="check2_17" > 
                   Lesson 18<input type="checkbox" id="check2_18" >  
-                  Lesson 19<input type="checkbox" id="check2_19" >  
                   <br>         
+                  Lesson 19<input type="checkbox" id="check2_19" >  
                   Lesson 20<input type="checkbox" id="check2_20" > 
+                  <br>   
                   Lesson 21<input type="checkbox" id="check2_21" >  
                   Lesson 22<input type="checkbox" id="check2_22" >  
-                  <br>   
+                  <br>       
                   Lesson 23<input type="checkbox" id="check2_23" > 
                   Lesson 24<input type="checkbox" id="check2_24" >  
-                  Lesson 25<input type="checkbox" id="check2_25" >  
-                  <br>         
+                  <br>
+                  Lesson 25<input type="checkbox" id="check2_25" >    
                   Lesson 26<input type="checkbox" id="check2_26" > 
+                  <br>
                   Lesson 27<input type="checkbox" id="check2_27" >  
                   Lesson 28<input type="checkbox" id="check2_28" >  
-                  <br>         
+                  <br>        
               </div>
               <br>
             </details>
@@ -226,9 +237,81 @@
       데이터 제공
       <br>1학년 영어: 이시후, 이민석
       <br>2학년 영어: 이시후, 이민석, 최용욱, (최형욱, 김영준)
-      <br>3학년 영어: 이시후, 최사윤
+      <br>3학년 영어: 이시후, 이민석
       <br>
-      <br><b>2학년 객체: 이시후+<span style="font-weight: lighter;">ㅎㄱㄹ</span></b>
+      <br><b>40기 객체: 이시후, <span style="font-weight: lighter;">(ㅎㄱㄹ)</span></b>      
+      <details style="color:rgba(0, 0, 0, 0.461)">
+        <summary>etc - 40기 지필고사(archived)</summary>
+        <details>
+          <summary>2-1 중간고사</summary>
+          <b>이 아래는 Quiz(ENG, KOR)로 하셔야 함<br>빈칸에는 출력 결과 쓰세요</b><br>
+          <b>Midterm Exam(영독작)</b>&nbsp;&nbsp;&nbsp;&nbsp;
+          Words List(1~20)<input type="checkbox" id="check2_-1" >
+          Words List(21~40)<input type="checkbox" id="check2_-2" >
+          Words List(41~60)<input type="checkbox" id="check2_-3" >
+          Words List(61~80)<input type="checkbox" id="check2_-4" >
+          Words List(81~)<input type="checkbox" id="check2_-5" >
+          <br>
+          <b>Midterm Exam(구문)</b>&nbsp;&nbsp;&nbsp;&nbsp;
+          Words List<input type="checkbox" id="check2_-6" >
+          <br>
+          <b>객체 중간고사(이안순T)</b>&nbsp;&nbsp;&nbsp;&nbsp;
+          객체1<input type="checkbox" id="check2_-7" >
+          객체2<input type="checkbox" id="check2_-8" >
+          객체3<input type="checkbox" id="check2_-9" >
+          객체4<input type="checkbox" id="check2_-10" disabled>
+          객체5<input type="checkbox" id="check2_-11" disabled>
+          객체6<input type="checkbox" id="check2_-12" >
+          객체7<input type="checkbox" id="check2_-13" >
+          <br>
+        </details>
+        <details>
+          <summary>2-1 기말고사</summary>
+          <b>Factfulness(구문)</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            Size<input type="checkbox" id="check2_-14">  
+            Generalization<input type="checkbox" id="check2_-15">  
+            Urgency<input type="checkbox" id="check2_-16">  
+            <br> 
+            <b>영독작</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            1~20<input type="checkbox" id="check2_-17">    
+            21~40<input type="checkbox" id="check2_-18">    
+            41~60<input type="checkbox" id="check2_-19">    
+            61~80<input type="checkbox" id="check2_-20">    
+            81~109<input type="checkbox" id="check2_-21">   
+          <br>
+        </details>
+        <details>
+          <summary>2-2 중간고사</summary>&nbsp;&nbsp;&nbsp;&nbsp;
+          <br>English Culture Version 1<input type="checkbox" id="check2_-22" > 
+          <details>
+            <summary>Splited Lists</summary>
+            Underlined Only<input type="checkbox" id="check2_-23" > 
+            <br>List A~C<input type="checkbox" id="check2_-24" > 
+            <br>List D~E<input type="checkbox" id="check2_-25" > 
+            <br>List F~N<input type="checkbox" id="check2_-26" > 
+            <br>List O~Q<input type="checkbox" id="check2_-27" > 
+            <br>List R<input type="checkbox" id="check2_-28" > 
+            <br>List S<input type="checkbox" id="check2_-29" > 
+            <br>List T~Z<input type="checkbox" id="check2_-30" > 
+
+          </details>
+          <br>Added Words - Oct 8 <input type="checkbox" id="check2_-31"> 
+          
+
+
+          <br>
+          <br>선생님께서 밑줄치라 하신 것은 뜻 앞에 *로 표시함
+          <br>출처: 용욱이 <a href="https://substantial-hare-368.notion.site/103373ac53d780299d5ec84b30e7234d?pvs=4"  target="_blank">notion</a>(Oedipus, Antigone 부분 포함) + 내 필기
+          
+          <br><br>
+          <div style="color: #CC2222">책 속 용례 추가/단어 추가/오류 정정: <a href="https://docs.google.com/spreadsheets/d/1_IV9aCEe6NBE4ovWwid5Me9Zc492lAGr/edit?usp=sharing&ouid=107537621339064663881&rtpof=true&sd=true", target="_blank">Google Drive</a></div>
+          
+          <hr>
+          <div>            
+            <br>Biology<input type="checkbox" id="check2_-32" > 
+          </div>
+        </details>
+      </details>
     </h5>
     © Sihoo Lee, 2024<br>
     A bit of Rights Reserved<br><br>

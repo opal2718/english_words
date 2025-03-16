@@ -314,7 +314,7 @@ function buttonInit(){
         }
         $('#textArea').html("");
         addWords();
-      })
+      });
     }
   }
   //mode alteration
@@ -339,6 +339,31 @@ function buttonInit(){
       $(this).css("border", "none");
     }
   });
+  $("#head_float").change(function(){
+    if($("#head_float").is(":checked")){
+      $('#headering').css(
+        {"background-color": "#eeeeee", 
+          "position": "fixed",
+          "left":"10%",
+          "right":"10%",
+          "z-index": "1000"
+        });
+      $('#margining').css(
+        {"margin-top": "25%"
+        });
+    }else{
+      $('#headering').css(
+        {"background-color": "#eeeeee", 
+          "position": "static",
+          "left":"auto",
+          "right":"auto",
+          "z-index": "1000"
+        });
+        $('#margining').css(
+          {"margin-top": "0%"
+          });
+    }
+  })
 }
 
 function SetDday(){
