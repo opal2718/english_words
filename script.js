@@ -341,6 +341,7 @@ function buttonInit(){
   });
   $("#head_float").change(function(){
     if($("#head_float").is(":checked")){
+      alert("메뉴 상단 고정 기능은 가로 화면에서만 사용하기를 권장합니다.\n[모든 메뉴 확대/축소] 버튼을 눌러 상단 메뉴바의 크기를 줄일 수 있습니다.")
       $('#headering').css(
         {"background-color": "#eeeeee", 
           "position": "fixed",
