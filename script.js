@@ -1,6 +1,6 @@
 var minLessonsList = [null, 1, -33, 1];
-var maxLessonsList = [null, 7, 29, 5];
-var directory_grade = [null, "./csvs/Grade1/Word_Master_week", "./csvs/Grade2/504words_lesson", "./csvs/Grade3/HackersTEPS_Day"];
+var maxLessonsList = [null, 7, 300, 5];
+var directory_grade = [null, "./csvs/Grade1/Word_Master_week", "./csvs/Grade2/week", "./csvs/Grade3/HackersTEPS_Day"];
 var directory_grade_appendix = [null, null, "./csvs/Grade2/appendix", null];
 var grade = 2718;
 var words = [];
@@ -308,6 +308,7 @@ function buttonInit(){
           for(let j = 1; j <= 3; j++){
             if(grade_temp == j) continue;
             for(let k = minLessonsList[j]; k <= maxLessonsList[j]; k++){
+              if(!$("#check"+j+"_"+k)) continue;
               $("#check"+j+"_"+k).prop("checked", false);
             }
           }
