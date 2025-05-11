@@ -41,7 +41,7 @@ html{
     justify-content: space-between; /* Distributes space between items */
     align-items: stretch; /* Ensures all children stretch to the same height */
   }
-  #mode_bar{
+  .mode_bar{
     display: flex;         /* Enables flex layout */
     justify-content: space-between; /* Distributes space between items */
     align-items: stretch; /* Ensures all children stretch to the same height */
@@ -126,7 +126,7 @@ html{
     justify-content: space-between; /* Distributes space between items */
     align-items: stretch; /* Ensures all children stretch to the same height */
   }
-  #mode_bar{
+  .mode_bar{
     display: flex;         /* Enables flex layout */
     justify-content: space-between; /* Distributes space between items */
     align-items: stretch; /* Ensures all children stretch to the same height */

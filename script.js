@@ -392,8 +392,97 @@ function newSet(){
     addWords();
   });
 }
+bigMenu = ""+
+"<div class=\"mode_bar\">\n"+
+"  <b id=\"mode_mode\" class=\"modeButtons\" style=\"font-size: larger;\">\n"+
+"    Mode\n"+
+"    <div style=\"font-weight: lighter; font-size: 0.5em; padding-top: 0.2em;\">\n"+
+"      상단 고정\n"+
+"      <input type=\"checkbox\" id=\"head_float\" style=\"zoom: 80%;\">\n"+
+"    </div>\n"+
+"  </b>\n"+
+"  <button class=\"modeButtons\" id=\"Answer\">\n"+
+"    <div class=\"mode_title\">단어 공부</div>\n"+
+"    <div class=\"mode_element\">단어, 뜻, 예문(eng), 예문(한)</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"Words\">\n"+
+"    <div class=\"mode_title\">단어 공부</div>\n"+
+"    <div class=\"mode_element\">단어</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"Quiz_Reversed\">\n"+
+"    <div class=\"mode_title\">퀴즈</div>\n"+
+"    <div class=\"mode_element\">단어 > 뜻</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"Quiz\">\n"+
+"    <div class=\"mode_title\">퀴즈</div>\n"+
+"    <div class=\"mode_element\">문장 > 단어</div>\n"+
+"    <div class=\"mode_description\">첫 글자 표시</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"Quiz_Korean\">\n"+
+"    <div class=\"mode_title\">퀴즈</div>\n"+
+"    <div class=\"mode_element\">뜻 > 단어</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"Quiz_Korean_First\">\n"+
+"    <div class=\"mode_title\">퀴즈</div>\n"+
+"    <div class=\"mode_element\">문장 > 단어</div>\n"+
+"    <div class=\"mode_description\">첫 글자&예문(한) 표시</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"reload\" onclick=\"newSet()\" style=\"background-color: #000000; color:white\">\n"+
+"    <div class=\"mode_title\">새로고침</div>\n"+
+"    <div class=\"mode_description\">단어 목록 재배열</div>\n"+
+"  </button>\n"+
+"</div>"
+smallMenu = ""+
+"<div class=\"mode_bar\">\n"+
+"  <b id=\"mode_mode\" class=\"modeButtons\" style=\"font-size: larger;\">\n"+
+"    Mode\n"+
+"    <div style=\"font-weight: lighter; font-size: 0.5em; padding-top: 0.2em;\">\n"+
+"      상단 고정\n"+
+"      <input type=\"checkbox\" id=\"head_float\" style=\"zoom: 80%;\">\n"+
+"    </div>\n"+
+"  </b>\n"+
+"  <button class=\"modeButtons\" id=\"Answer\">\n"+
+"    <div class=\"mode_title\">단어 공부</div>\n"+
+"    <div class=\"mode_element\">단어, 뜻, 예문(eng), 예문(한)</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"Words\">\n"+
+"    <div class=\"mode_title\">단어 공부</div>\n"+
+"    <div class=\"mode_element\">단어</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"Quiz_Reversed\">\n"+
+"    <div class=\"mode_title\">퀴즈</div>\n"+
+"    <div class=\"mode_element\">단어 > 뜻</div>\n"+
+"  </button>\n"+
+"</div>\n"+
+"<br>\n"+
+"<div class=\"mode_bar\">\n"+
+"  <button class=\"modeButtons\" id=\"Quiz\">\n"+
+"    <div class=\"mode_title\">퀴즈</div>\n"+
+"    <div class=\"mode_element\">문장 > 단어</div>\n"+
+"    <div class=\"mode_description\">첫 글자 표시</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"Quiz_Korean\">\n"+
+"    <div class=\"mode_title\">퀴즈</div>\n"+
+"    <div class=\"mode_element\">뜻 > 단어</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"Quiz_Korean_First\">\n"+
+"    <div class=\"mode_title\">퀴즈</div>\n"+
+"    <div class=\"mode_element\">문장 > 단어</div>\n"+
+"    <div class=\"mode_description\">첫 글자&예문(한) 표시</div>\n"+
+"  </button>\n"+
+"  <button class=\"modeButtons\" id=\"reload\" onclick=\"newSet()\" style=\"background-color: #000000; color:white\">\n"+
+"    <div class=\"mode_title\">새로고침</div>\n"+
+"    <div class=\"mode_description\">단어 목록 재배열</div>\n"+
+"  </button>\n"+
+"</div>"
 
 function Initiate(){
+  alert(window.innerWidth);
+  if(window.innerWidth < 1025){
+    $("#menuPanel").html(smallMenu);
+  }else{
+    $("#menuPanel").html(bigMenu);
+  }
   grade = "❤️";
   alterGrade(grade);
   buttonInit();

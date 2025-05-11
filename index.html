@@ -45,49 +45,53 @@
   <!-- End Google Tag Manager (noscript) -->
   <header id="headering">
     <h1 style="text-align: center;padding-top: 1%; margin-bottom: 0;">Hello Words!</h1>
-    <p style="color: #999999; text-align: center; margin-top:0;">version 3.5.4</p>
+    <p style="color: #999999; text-align: center; margin-top:0;">version 4.1.1</p>
     <details open style="color: rgba(0, 0, 0, 0.679); text-align: center;">
       <summary style="list-style-type: none;">모든 메뉴 축소/확대(클릭)</summary>
       <!--모드-->
-      <div id="mode_bar">
-        <b id="mode_mode" class="modeButtons" style="font-size: larger;">
-          Mode
-          <div style="font-weight: lighter; font-size: 0.5em; padding-top: 0.2em;">
-            상단 고정
-            <input type="checkbox" id="head_float" style="zoom: 80%;">
-          </div>
-        </b>
-        <button class="modeButtons" id="Answer">
-          <div class="mode_title">단어 공부</div>
-          <div class="mode_element">단어, 뜻, 예문(eng), 예문(한)</div>
-        </button>
-        <button class="modeButtons" id="Words">
-          <div class="mode_title">단어 공부</div>
-          <div class="mode_element">단어</div>
-        </button>
-        <button class="modeButtons" id="Quiz_Reversed">
-          <div class="mode_title">퀴즈</div>
-          <div class="mode_element">단어 > 뜻</div>
-        </button>
-        <button class="modeButtons" id="Quiz">
-          <div class="mode_title">퀴즈</div>
-          <div class="mode_element">문장 > 단어</div>
-          <div class="mode_description">첫 글자 표시</div>
-        </button>
-        <button class="modeButtons" id="Quiz_Korean">
-          <div class="mode_title">퀴즈</div>
-          <div class="mode_element">뜻 > 단어</div>
-        </button>
-        <button class="modeButtons" id="Quiz_Korean_First">
-          <div class="mode_title">퀴즈</div>
-          <div class="mode_element">문장 > 단어</div>
-          <div class="mode_description">첫 글자&예문(한) 표시</div>
-        </button>
-        <button class="modeButtons" id="reload" onclick="newSet()" style="background-color: #000000; color:white">
-          <div class="mode_title">새로고침</div>
-          <div class="mode_description">단어 목록 재배열</div>
-        </button>
+      <hr>
+      <div id="menuPanel">
+        <div id="mode_bar">
+          <b id="mode_mode" class="modeButtons" style="font-size: larger;">
+            Mode
+            <div style="font-weight: lighter; font-size: 0.5em; padding-top: 0.2em;">
+              상단 고정
+              <input type="checkbox" id="head_float" style="zoom: 80%;">
+            </div>
+          </b>
+          <button class="modeButtons" id="Answer">
+            <div class="mode_title">단어 공부</div>
+            <div class="mode_element">단어, 뜻, 예문(eng), 예문(한)</div>
+          </button>
+          <button class="modeButtons" id="Words">
+            <div class="mode_title">단어 공부</div>
+            <div class="mode_element">단어</div>
+          </button>
+          <button class="modeButtons" id="Quiz_Reversed">
+            <div class="mode_title">퀴즈</div>
+            <div class="mode_element">단어 > 뜻</div>
+          </button>
+          <button class="modeButtons" id="Quiz">
+            <div class="mode_title">퀴즈</div>
+            <div class="mode_element">문장 > 단어</div>
+            <div class="mode_description">첫 글자 표시</div>
+          </button>
+          <button class="modeButtons" id="Quiz_Korean">
+            <div class="mode_title">퀴즈</div>
+            <div class="mode_element">뜻 > 단어</div>
+          </button>
+          <button class="modeButtons" id="Quiz_Korean_First">
+            <div class="mode_title">퀴즈</div>
+            <div class="mode_element">문장 > 단어</div>
+            <div class="mode_description">첫 글자&예문(한) 표시</div>
+          </button>
+          <button class="modeButtons" id="reload" onclick="newSet()" style="background-color: #000000; color:white">
+            <div class="mode_title">새로고침</div>
+            <div class="mode_description">단어 목록 재배열</div>
+          </button>
+        </div>
       </div>
+      <hr>
       <div style="margin-top: 0%;">
         <!--세팅-->
         <div style="text-align: center; background-color: #eeeeee; margin-left: 10%; margin-right: 10%;">
