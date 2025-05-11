@@ -477,7 +477,6 @@ smallMenu = ""+
 "</div>"
 
 function Initiate(){
-  alert(window.innerWidth);
   if(window.innerWidth < 1025){
     $("#menuPanel").html(smallMenu);
   }else{
