@@ -1,5 +1,5 @@
 var minLessonsList = [null, 1, -33, 1];
-var maxLessonsList = [null, 7, 300, 5];
+var maxLessonsList = [null, 7, 300, 6];
 var directory_grade = [null, "./csvs/Grade1/Word_Master_week", "./csvs/Grade2/week", "./csvs/Grade3/HackersTEPS_Day"];
 var directory_grade_appendix = [null, null, "./csvs/Grade2/appendix", null];
 var grade = 2718;
