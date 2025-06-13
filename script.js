@@ -1,7 +1,7 @@
-var minLessonsList = [null, 1, -33, 1];
+var minLessonsList = [null, 1, -33, -1];
 var maxLessonsList = [null, 7, 300, 6];
 var directory_grade = [null, "./csvs/Grade1/Word_Master_week", "./csvs/Grade2/week", "./csvs/Grade3/HackersTEPS_Day"];
-var directory_grade_appendix = [null, null, "./csvs/Grade2/appendix", null];
+var directory_grade_appendix = [null, null, "./csvs/Grade2/appendix", "./csvs/Grade3/appendix"];
 var grade = 2718;
 var words = [];
 var meanings = [];
@@ -184,7 +184,7 @@ function addWords(){
     if(grade == 1 && (lessonN == 1 || lessonN == 4)) continue;//없는 데이터 예외처리
     var thisfile = fileName+String(lessonN)+".csv";
     //word lists out of the books
-    if(lessonN <= 0){
+    if(lessonN <= 0 && grade == 2){
       if(directory_grade_appendix[grade] == null) {console.error("there doesn't exist such a word list"); break;}
       if(-6 < lessonN && lessonN < 0) thisfile = "grade2_s1_mid_"+String(-lessonN);
       else if(-14 < lessonN && lessonN < -6) thisfile = "grade2_s1_mid_info_"+String(-lessonN-6)
@@ -207,6 +207,13 @@ function addWords(){
         case -32: thisfile = "Biology_Words"; break;
         case -33: thisfile = "grade2_s2_final"; break;
       }}
+      thisfile = directory_grade_appendix[grade]+thisfile+".csv";
+    }
+    else if(lessonN <= 0 && grade == 3){
+      if(directory_grade_appendix[grade] == null) {console.error("there doesn't exist such a word list"); break;}
+      switch(lessonN){
+        case 0: thisfile = "Final_Chap9"; break;
+      }
       thisfile = directory_grade_appendix[grade]+thisfile+".csv";
     }
     makePage(thisfile, "");
