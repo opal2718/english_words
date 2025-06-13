@@ -1,7 +1,7 @@
 var minLessonsList = [null, 1, -33, -1];
 var maxLessonsList = [null, 7, 300, 6];
 var directory_grade = [null, "./csvs/Grade1/Word_Master_week", "./csvs/Grade2/week", "./csvs/Grade3/HackersTEPS_Day"];
-var directory_grade_appendix = [null, null, "./csvs/Grade2/appendix", "./csvs/Grade3/appendix"];
+var directory_grade_appendix = [null, null, "./csvs/Grade2/appendix/", "./csvs/Grade3/appendix/"];
 var grade = 2718;
 var words = [];
 var meanings = [];
