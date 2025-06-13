@@ -213,8 +213,10 @@ function addWords(){
       if(directory_grade_appendix[grade] == null) {console.error("there doesn't exist such a word list"); break;}
       switch(lessonN){
         case 0: thisfile = "Final_Chap9"; break;
+        case -1: thisfile = "Final_Chap10"; break;
       }
       thisfile = directory_grade_appendix[grade]+thisfile+".csv";
+      print(thisfile);
     }
     makePage(thisfile, "");
   }
